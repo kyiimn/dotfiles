@@ -45,25 +45,26 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Some applications
-bindsym $mod+Ctrl+m exec alacritty --title 'MPDClient-floating' -e ncmpcpp
-bindsym $mod+Ctrl+n exec alacritty --title cava -e cava
-bindsym $mod+Ctrl+b exec alacritty --title tty-clock -e tty-clock -c -s
+bindsym $mod+Ctrl+m exec alacritty --config-file .config/alacritty/large.yml --title 'MPDClient-floating' -e ncmpcpp
+bindsym $mod+Ctrl+n exec alacritty --config-file .config/alacritty/large.yml --title 'cava' -e cava
+bindsym $mod+Ctrl+b exec alacritty --config-file .config/alacritty/large.yml --title 'tty-clock' -e tty-clock -c -s
+bindsym $mod+Ctrl+l exec alacritty --title 'Matrix' -e ncmatrix
 bindsym $mod+Ctrl+t exec alacritty -e gotop
-bindsym $mod+Ctrl+i exec qutebrowser --target window
 bindsym $mod+Ctrl+v exec alacritty -e vim
 bindsym $mod+Ctrl+e exec alacritty -e vifmrun
 bindsym $mod+Ctrl+c exec alacritty -e calcurse
+bindsym $mod+Ctrl+i exec qutebrowser --target window
 bindsym $mod+Ctrl+r exec rofi -show run
-bindsym $mod+Ctrl+l exec alacritty --title 'Matrix' -e ncmatrix
 
 bindsym $mod+Ctrl+F1 exec alacritty -e vifmrun
-bindsym $mod+Ctrl+F2 exec chromium
+bindsym $mod+Ctrl+F2 exec qutebrowser
 bindsym $mod+Ctrl+F3 exec alacritty -e bc
 bindsym $mod+Ctrl+F4 exec alacritty -e ncmpcpp
 
 bindsym $mod+u exec .config/i3/menu/app_menu.sh
 bindsym $mod+i exec .config/i3/menu/fav_menu.sh
 bindsym $mod+w exec rofi -show window
+bindsym $mod+l exec xscreensaver-command -lock
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -117,6 +118,22 @@ bindsym $mod+a focus parent
 # switch to next/prev workspace
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
+
+# workspace set output
+set $outputRight DP-0
+set $outputLeft DP-2
+
+workspace $ws1 output $outputLeft
+workspace $ws2 output $outputLeft
+workspace $ws3 output $outputLeft
+workspace $ws4 output $outputLeft
+workspace $ws5 output $outputLeft
+workspace $ws6 output $outputRight
+workspace $ws7 output $outputRight
+workspace $ws8 output $outputRight
+workspace $ws9 output $outputRight
+workspace $ws10 output $outputRight
+
  
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -178,10 +195,10 @@ bindsym $mod+m mode "move"
 # exitmode
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (Shift+r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-     bindsym l exec --no-startup-id i3exit lock, mode "default"
+     bindsym l exec --no-startup-id xscreensaver-command -lock, mode "default"
      bindsym e exec --no-startup-id i3exit logout, mode "default"
-     bindsym s exec --no-startup-id i3exit suspend, mode "default"
-     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+     bindsym s exec --no-startup-id xscreensaver-command -suspend, mode "default"
+     bindsym h exec --no-startup-id xss-lock -n xscreensaver-command -lock, mode "default"
      bindsym Shift+r exec --no-startup-id i3exit reboot, mode "default"
      bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
@@ -197,10 +214,9 @@ popup_during_fullscreen smart
  
 # SET GAPS
 #smart_gaps on
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 gaps top 38
 gaps inner 20 
-
 
 set $bg-color 	         		#ffffff
 set $inactive-bg-color   		#222222
@@ -217,7 +233,8 @@ set $unfocused-indicator-color	#000000
 set $urgent-indicator-color		#bb3333
 
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $focused-indicator-color
+#client.focused          $bg-color           $bg-color          $text-color          $focused-indicator-color
+client.focused          $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-indicator-color
@@ -231,29 +248,30 @@ for_window [class="(?i)virt-manager"] floating enable
 for_window [class="(?i)lazarus"] floating enable
 for_window [class="(?i)gambas3"] floating enable
 for_window [class="(?i)fontforge"] floating enable
-for_window [class="(?)unity$"] floating enable
+for_window [title="(?i)github desktop"] floating enable
+for_window [class="(?i)obs"] floating enable
 
 for_window [title="(?i)matrix"] fullscreen enable
 
 for_window [title="(?i)yaourt"] floating enable
-for_window [title="(?i)yaourt"] resize set 1400 800
-for_window [title="(?i)yaourt"] move position 580 140
+#for_window [title="(?i)yaourt"] resize set 1400 800
+#for_window [title="(?i)yaourt"] move position 580 140
 
 for_window [title="(?i)alacritty-floating"] floating enable
 for_window [title="(?i)alacritty-floating"] resize set 1200 700
-for_window [title="(?i)alacritty-floating"] move position 180 185
+for_window [title="(?i)alacritty-floating"] move position 1260 485
 
 for_window [title="(?i)mpdclient-floating"] floating enable
-for_window [title="(?i)mpdclient-floating"] resize set 1200 700
-for_window [title="(?i)mpdclient-floating"] move position 180 185
+for_window [title="(?i)mpdclient-floating"] resize set 1000 700
+for_window [title="(?i)mpdclient-floating"] move position 40 70
 
 for_window [title="(?i)cava"] floating enable
 for_window [title="(?i)cava"] resize set 800 400
-for_window [title="(?i)cava"] move position 1580 620
+for_window [title="(?i)cava"] move position 140 1400
 
 for_window [title="(?i)tty-clock"] floating enable
 for_window [title="(?i)tty-clock"] resize set 800 400
-for_window [title="(?i)tty-clock"] move position 1580 105
+for_window [title="(?i)tty-clock"] move position 140 890
 
 ##### LAUNCH ######################################
 # STARTUP
@@ -264,18 +282,18 @@ exec --no-startup-id picom
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id kdeconnect-indicator
+exec --no-startup-id xscreensaver -no-splash
 #exec --no-startup-id oneko
 #exec --no-startup-id oneko -dog
 
 # MPDClient
-exec --no-startup-id alacritty --title 'MPDClient-floating' -e ncmpcpp
-exec --no-startup-id alacritty --title cava -e cava
-exec --no-startup-id alacritty --title tty-clock -e tty-clock -c -s
+#exec --no-startup-id alacritty --config-file .config/alacritty/large.yml --title 'MPDClient-floating' -e ncmpcpp
+#exec --no-startup-id alacritty --config-file .config/alacritty/large.yml --title cava -e cava
+#exec --no-startup-id alacritty --config-file .config/alacritty/large.yml --title tty-clock -e tty-clock -c -s
  
 # RELOAD
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-6.jpg #KaYuuBC7tpi-xcVmOl25LSLg81HhvBBa08wyzaR2mwU.png #.config/polybar/wallpapers/bg_2.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallhaven-eydedl.jpg #bigsur-dark.jpg #wallpaper-6.jpg #KaYuuBC7tpi-xcVmOl25LSLg81HhvBBa08wyzaR2mwU.png #.config/polybar/wallpapers/bg_2.jpg
  
 bar {
 		i3bar_command ~/.config/polybar/launch.sh
 }
-

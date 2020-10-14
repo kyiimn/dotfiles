@@ -3,10 +3,12 @@
 ARR=()
 ARR+=("Application:")
 ARR+=(" terminal (alacritty)")
-ARR+=(" filemanager (pcmanfm)")
+ARR+=(" filemanager (polo)")
 ARR+=(" filemanager (vifm)")
 ARR+=(" filemanager (mc)")
 ARR+=(" webbrowser (qutebrowser)")
+ARR+=(" webbrowser (firefox)")
+ARR+=(" webbrowser (chrome)")
 ARR+=(" email (thunderbird)")
 ARR+=(" libreoffice")
 ARR+=(" vim")
@@ -17,26 +19,37 @@ ARR+=(" system update (yaourt)")
 ARR+=("")
 ARR+=("Development:")
 ARR+=(" visual studio code")
-ARR+=(" chromium")
 ARR+=(" dbeaver")
+ARR+=(" firefox-developer")
+ARR+=(" github-desktop")
 ARR+=(" virtualmachine (virt-manager)")
 ARR+=(" fontforge")
 ARR+=(" remmina")
-ARR+=(" gambas3")
 ARR+=(" lazarus")
 ARR+=("")
-ARR+=("Multimedia:")
+ARR+=("Graphics:")
 ARR+=(" gimp")
-ARR+=(" davinci resolve")
-ARR+=(" audacity")
 ARR+=(" photoshop")
 ARR+=(" krita")
-ARR+=(" flstudio")
+ARR+=(" inkscape")
 ARR+=(" darktable")
+ARR+=(" scribus")
+ARR+=(" texmaker")
 ARR+=("")
-ARR+=("Fun:")
+ARR+=("Sound Programming:")
+ARR+=(" flstudio")
+ARR+=(" audacity")
+ARR+=(" ardour")
+ARR+=(" muse")
+ARR+=(" rosegarden")
+ARR+=("")
+ARR+=("Multimedia:")
+ARR+=(" obsstudio")
+ARR+=(" davinci resolve")
 ARR+=(" mpdclient (ncmpcpp)")
 ARR+=(" videoplayer (vlc)")
+ARR+=("")
+ARR+=("Fun:")
 ARR+=(" steam")
 ARR+=(" mame")
 ARR+=(" matrix")
@@ -55,7 +68,7 @@ case $CHOICE in
 	" webbrowser (qutebrowser)") i3-msg "exec qutebrowser --target window";;
 	" telegram") i3-msg "exec telegram-desktop";;
 	" gotop") i3-msg "exec alacritty -e gotop";;
-	" system update (yaourt)") i3-msg "exec alacritty --title yaourt -e yaourt -Syyu --aur";;
+	" system update (yaourt)") i3-msg "exec alacritty --title yaourt -e systemupdate.sh";;
 	" email (thunderbird)") i3-msg "exec thunderbird";;
 	" discord") i3-msg "exec discord";;
 	" visual studio code") i3-msg "exec code";;
@@ -79,5 +92,16 @@ case $CHOICE in
 	" darktable") i3-msg "exec darktable";;
 	" matrix") i3-msg "exec alacritty --title 'Matrix' -e ncmatrix";;
 	" fontforge") i3-msg "exec fontforge";;
-	*) ;;
+    " github-desktop") i3-msg "exec github-desktop";;
+    " obsstudio") i3-msg "exec obs";;
+    " webbrowser (chrome)") i3-msg "exec google-chrome-beta";;
+    " inkscape") i3-msg "exec inkscape";;
+    " texmaker") i3-msg "exec texmaker";;
+    " scribus") i3-msg "exec scribus";;
+    " muse") i3-msg "exec muse3";;
+    " ardour") i3-msg "exec ardour6";;
+    " rosegarden") i3-msg "exec rosegarden";;
+    " webbrowser (firefox)") i3-msg "exec firefox";;
+    " firefox-developer") i3-msg "exec firefox-developer-edition";;
+    " filemanager (polo)") i3-msg "exec polo-gtk";;
 esac
