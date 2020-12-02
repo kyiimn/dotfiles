@@ -3,14 +3,14 @@
 ARR=()
 ARR+=("Application:")
 ARR+=(" terminal (alacritty)")
-ARR+=(" filemanager (polo)")
 ARR+=(" filemanager (vifm)")
 ARR+=(" filemanager (mc)")
 ARR+=(" webbrowser (qutebrowser)")
 ARR+=(" webbrowser (chrome)")
 ARR+=(" email (thunderbird)")
+ARR+=(" calculator")
+ARR+=(" joplin")
 ARR+=(" libreoffice")
-ARR+=(" vim")
 ARR+=(" telegram")
 ARR+=(" discord")
 ARR+=(" gotop")
@@ -20,6 +20,8 @@ ARR+=("Development:")
 ARR+=(" visual studio code")
 ARR+=(" dbeaver")
 ARR+=(" firefox-developer")
+ARR+=(" emacs")
+ARR+=(" vim")
 ARR+=(" github-desktop")
 ARR+=(" virtualmachine (virt-manager)")
 ARR+=(" fontforge")
@@ -53,15 +55,19 @@ ARR+=(" steam")
 ARR+=(" mame")
 ARR+=(" matrix")
 
-CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 45 -p "app")
+CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app")
 
 case $CHOICE in
+    " joplin") i3-msg "exec joplin-desktop";;
+    " calculator") i3-msg "exec rofi -show calc -modi calc -no-show-match -no-sort";;
+    " google keep") i3-msg "exec google-keep";;
+    " emacs") i3-msg "exec emacs";;
 	" filemanager (pcmanfm)") i3-msg "exec pcmanfm";;
 	" itch") i3-msg "exec itch";;
 	" ankama") i3-msg "exec ankama-launcher";;
 	" gambas3") i3-msg "exec gambas3";;
 	" lazarus") i3-msg "exec lazarus";;
-	" terminal (alacritty)") i3-msg "exec alacritty -e tmux";;
+	" terminal (alacritty)") i3-msg "exec alacritty";;
 	" filemanager (vifm)") i3-msg "exec alacritty -e vifmrun";;
 	" filemanager (mc)") i3-msg "exec alacritty -e mc";;
 	" webbrowser (qutebrowser)") i3-msg "exec qutebrowser --target window";;

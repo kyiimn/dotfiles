@@ -153,7 +153,7 @@ filetype <text/*> vim
 fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never %c -p
 
 " PDFs
-filextype *.pdf evince %c %i &
+filextype *.pdf zathura %c %i &
 fileviewer *.pdf
         \ vifmimg pdf %px %py %pw %ph %c
         \ %pc
@@ -181,7 +181,7 @@ fileviewer <audio/*>
 
 " Videos
 " filetype <video/*> mpv %c %i </dev/null &>/dev/null &
-filetype <video/*> vlc %c %i </dev/null &>/dev/null &
+filetype <video/*> mpv %c %i </dev/null &>/dev/null &
 fileviewer <video/*>
         \ vifmimg video %px %py %pw %ph %c
         \ %pc

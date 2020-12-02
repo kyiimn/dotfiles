@@ -6,15 +6,17 @@ font pango:D2Coding 10
 floating_modifier $mod
  
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux
-bindsym $mod+Ctrl+Return exec alacritty --title 'Alacritty-floating'
+bindsym $mod+Return exec alacritty
  
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 bindsym $mod+F4 kill
  
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun
+
+# calculator
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 
 # Audio mixer
 bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1%+ unmute"
@@ -45,58 +47,59 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Some applications
-bindsym $mod+Ctrl+m exec alacritty --config-file .config/alacritty/large.yml --title 'MPDClient-floating' -e ncmpcpp
-bindsym $mod+Ctrl+n exec alacritty --config-file .config/alacritty/large.yml --title 'cava' -e cava
-bindsym $mod+Ctrl+b exec alacritty --config-file .config/alacritty/large.yml --title 'tty-clock' -e tty-clock -c -s
-bindsym $mod+Ctrl+l exec alacritty --title 'Matrix' -e ncmatrix
-bindsym $mod+Ctrl+t exec alacritty -e gotop
-bindsym $mod+Ctrl+v exec alacritty -e vim
-bindsym $mod+Ctrl+e exec alacritty -e vifmrun
-bindsym $mod+Ctrl+c exec alacritty -e calcurse
-bindsym $mod+Ctrl+i exec qutebrowser --target window
-bindsym $mod+Ctrl+r exec rofi -show run
+bindsym $mod+Ctrl+m         exec alacritty --config-file .config/alacritty/large.yml --title 'MPDClient-floating' -e ncmpcpp
+bindsym $mod+Ctrl+n         exec alacritty --config-file .config/alacritty/large.yml --title 'cava' -e cava
+bindsym $mod+Ctrl+b         exec alacritty --config-file .config/alacritty/large.yml --title 'tty-clock' -e tty-clock -c -s
+bindsym $mod+Ctrl+t         exec alacritty -e gotop
+bindsym $mod+Ctrl+v         exec alacritty -e vim
+bindsym $mod+Ctrl+e         exec alacritty -e vifmrun
+bindsym $mod+Ctrl+c         exec alacritty -e calcurse
+bindsym $mod+Ctrl+i         exec qutebrowser --target window
+bindsym $mod+Ctrl+r         exec rofi -show run
+bindsym $mod+Ctrl+p         exec xpad
+bindsym $mod+Ctrl+j         exec joplin-desktop
 
-bindsym $mod+Ctrl+F1 exec alacritty -e vifmrun
-bindsym $mod+Ctrl+F2 exec qutebrowser
-bindsym $mod+Ctrl+F3 exec alacritty -e bc
-bindsym $mod+Ctrl+F4 exec alacritty -e ncmpcpp
-
-bindsym $mod+u exec .config/i3/menu/app_menu.sh
-bindsym $mod+i exec .config/i3/menu/fav_menu.sh
-bindsym $mod+w exec rofi -show window
-bindsym $mod+l exec xscreensaver-command -lock
+bindsym $mod+u              exec .config/i3/menu/app_menu.sh
+bindsym $mod+w              exec rofi -show window
 
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+minus    move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus          scratchpad show
 
 # Screenshot
-bindsym --release Print exec scrot
+bindsym --release Print     exec scrot
 bindsym --release $mod+Print exec scrot -s
  
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left           focus left
+bindsym $mod+h              focus left
+bindsym $mod+Down           focus down
+bindsym $mod+j              focus down
+bindsym $mod+Up             focus up
+bindsym $mod+k              focus up
+bindsym $mod+Right          focus right
+bindsym $mod+l              focus right
  
 # move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left     move left
+bindsym $mod+Shift+h        move left
+bindsym $mod+Shift+Down     move down
+bindsym $mod+Shift+j        move down
+bindsym $mod+Shift+Up       move up
+bindsym $mod+Shift+k        move up
+bindsym $mod+Shift+Right    move right
+bindsym $mod+Shift+l        move right
  
 # split in horizontal orientation
-bindsym $mod+h split h
-bindsym $mod+b split h
+bindsym $mod+b              split h
  
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v              split v
  
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f              fullscreen toggle
  
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
@@ -104,24 +107,26 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+e layout toggle split
  
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space    floating toggle
  
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space          focus mode_toggle
  
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+a              focus parent
  
 # focus the child container
 #bindsym $mod+d focus child
 
 # switch to next/prev workspace
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Left      workspace prev
+bindsym $mod+Ctrl+h         workspace prev
+bindsym $mod+Ctrl+Right     workspace next
+bindsym $mod+Ctrl+l         workspace next
 
 # workspace set output
-set $outputRight DP-0
-set $outputLeft DP-2
+set $outputRight DP-2
+set $outputLeft DP-0
 
 workspace $ws1 output $outputLeft
 workspace $ws2 output $outputLeft
@@ -133,6 +138,7 @@ workspace $ws7 output $outputRight
 workspace $ws8 output $outputRight
 workspace $ws9 output $outputRight
 workspace $ws10 output $outputRight
+
 
  
 # switch to workspace
@@ -206,7 +212,7 @@ mode "$mode_system" {
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
-bindsym $mod+F12 mode "$mode_system"
+bindsym $mod+plus mode "$mode_system"
 
 focus_follows_mouse no
 
@@ -215,8 +221,11 @@ popup_during_fullscreen smart
 # SET GAPS
 #smart_gaps on
 for_window [class="^.*"] border pixel 0
-gaps top 38
-gaps inner 20 
+#gaps top 38
+#gaps inner 20 
+gaps top 50
+gaps bottom -15
+gaps inner 50
 
 set $bg-color 	         		#ffffff
 set $inactive-bg-color   		#222222
@@ -253,7 +262,7 @@ for_window [class="(?i)obs"] floating enable
 
 for_window [title="(?i)matrix"] fullscreen enable
 
-for_window [title="(?i)yaourt"] floating enable
+#for_window [title="(?i)yaourt"] floating enable
 #for_window [title="(?i)yaourt"] resize set 1400 800
 #for_window [title="(?i)yaourt"] move position 580 140
 
@@ -273,6 +282,12 @@ for_window [title="(?i)tty-clock"] floating enable
 for_window [title="(?i)tty-clock"] resize set 800 400
 for_window [title="(?i)tty-clock"] move position 140 890
 
+for_window [class="xpad"] floating enable
+#for_window [window_role="pop-up"] floating enable,move absolute center
+
+for_window [title="Google Keep"] floating enable
+
+
 ##### LAUNCH ######################################
 # STARTUP
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -283,6 +298,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xscreensaver -no-splash
+exec --no-startup-id ntfd
+exec --no-startup-id xpad -N
+exec --no-startup-id cadence --minimized
+exec --no-startup-id libinput-gestures
 #exec --no-startup-id oneko
 #exec --no-startup-id oneko -dog
 
@@ -292,7 +311,10 @@ exec --no-startup-id xscreensaver -no-splash
 #exec --no-startup-id alacritty --config-file .config/alacritty/large.yml --title tty-clock -e tty-clock -c -s
  
 # RELOAD
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallhaven-eydedl.jpg #bigsur-dark.jpg #wallpaper-6.jpg #KaYuuBC7tpi-xcVmOl25LSLg81HhvBBa08wyzaR2mwU.png #.config/polybar/wallpapers/bg_2.jpg
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/uco3vvio49h51.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-10.png
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/bigsur-dark.jpg
+#wallpaper-7.jpg #wallhaven-eydedl.jpg #bigsur-dark.jpg #wallpaper-6.jpg #KaYuuBC7tpi-xcVmOl25LSLg81HhvBBa08wyzaR2mwU.png #.config/polybar/wallpapers/bg_2.jpg
  
 bar {
 		i3bar_command ~/.config/polybar/launch.sh
