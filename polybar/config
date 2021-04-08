@@ -1,0 +1,405 @@
+[colors]
+background = #1e222a
+foreground = #adb1b9
+foreground-light = #ffffff
+
+color0 = #1e222a
+color1 = #e06c75
+color2 = #98c379
+color3 = #e5c07b
+color4 = #61afef
+color5 = #c678dd
+color6 = #56b6c2
+color7 = #abb2bf
+color8 = #545862
+color9 = #e06c75
+color10 = #98c379
+color11 = #e5c07b
+color12 = #61afef
+color13 = #c678dd
+color14 = #56b6c2
+color15 = #c8ccd4
+dark-light = #272A2B
+active-light = #313435
+
+round-background = #2b2f37
+
+[bar/top]
+monitor = DisplayPort-1
+width =  100%
+height = 22
+padding-left = 1
+padding-right = 0
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = false
+border-top-size = 6
+border-bottom-size = 6
+border-top-color = ${colors.background}
+border-bottom-color = ${colors.background}
+
+line-size = 3
+wm-restack = bspwm
+
+modules-left = round-left bspwm round-right
+modules-center = mpd
+modules-right = pulseaudio_bar
+
+font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
+font-1 = JetBrainsMono Nerd Font:size=18;5
+font-2 = Material Design Icons:style=Bold:size=13;3
+font-3 = unifont:fontformat=truetype:size=13:antialias=true;
+font-4 = Noto Sans CJK KR:size=11;3
+
+
+[bar/bottom]
+tray-position = right
+monitor = DisplayPort-0
+width =  100%
+height = 22
+padding-left = 1
+padding-right = 0
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = false
+border-top-size = 8
+border-bottom-size = 6
+border-top-color = ${colors.background}
+border-bottom-color = ${colors.background}
+
+line-size = 3
+wm-restack = bspwm
+
+modules-left = round-left bspwm round-right
+modules-center =    
+modules-right = temperature gputemp round-left cpu round-right mem updates wlan pulseaudio round-left time round-right 
+
+font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
+font-1 = JetBrainsMono Nerd Font:size=18;5
+font-2 = Material Design Icons:style=Bold:size=13;3
+font-3 = unifont:fontformat=truetype:size=13:antialias=true;
+
+
+[module/round-left]
+type = custom/text
+content = " %{T3}%{T-}"
+content-foreground = ${colors.round-background}
+
+[module/round-right]
+type = custom/text
+content = "%{T3}%{T-} "
+content-foreground = ${colors.round-background}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+format-padding = 0
+label = %temperature-c%
+label-warn = %temperature-c%
+ramp-0 =  "󰜗" 
+ramp-foreground = #a4ebf3
+label-padding-right = 2
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+
+format = <label-state>
+
+ws-icon-0 = 1;%{F#F9DE8F}  
+ws-icon-1 = 2;%{F#ff9b93}   
+ws-icon-2 = 3;%{F#95e1d3}    
+ws-icon-3 = 4;%{F#81A1C1}
+ws-icon-4 = 5;%{F#A3BE8C} 
+
+label-separator = ""
+label-separator-background = #2b2f37
+
+#label-focused = %icon%  
+label-focused = 
+label-focused-foreground = #ffffff
+label-focused-underline =  #ffffff
+label-focused-padding = 1
+label-focused-background = ${colors.round-background}
+
+label-unfocused = 
+label-unfocused-foreground = #ffffff
+label-unfocused-padding = 1
+label-unfocused-background = ${colors.round-background}
+
+#label-occupied =  %icon%  
+label-occupied = 
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.round-background}
+label-occupied-padding = 1
+
+#label-empty = %icon%
+label-empty = 
+label-empty-foreground = #646870
+label-empty-padding = 1
+label-empty-background =${colors.round-background}
+
+#label-urgent = %icon%
+label-urgent = 
+label-urgent-foreground = #88C0D0
+label-urgent-background = ${colors.round-background}
+label-urgent-padding = 1
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+index-sort = true
+
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 0;10
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-background = #2b2f37
+
+label-focused = "%icon%"
+label-focused-foreground = ${colors.foreground-light}
+label-focused-underline =  ${colors.foreground-light}
+label-focused-padding = 1
+label-focused-background = #2b2f37
+
+label-occupied = "%icon%"
+label-occupied-foreground = #646870
+label-occupied-background = #2b2f37
+label-occupied-padding = 1
+
+label-unfocused = "%icon%"
+label-unfocused-foreground = #646870
+label-unfocused-padding = 1
+label-unfocused-background = #2b2f37
+
+label-visible = "%icon%"
+label-visible-foreground = ${colors.foreground-light}
+label-visible-padding = 1
+label-visible-background = #2b2f37
+
+label-urgent = "%icon%"
+label-urgent-foreground = #88C0D0
+label-urgent-background = #2b2f37
+label-urgent-padding = 1
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-padding = 1
+format-volume = "<ramp-volume><label-volume> "
+format-muted-prefix = " "
+label-muted = "Muted"
+label-muted-foreground = ${colors.foreground}
+
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-3 = " "
+ramp-volume-4 = " "
+ramp-volume-foreground = #61afef
+
+[module/pulseaudio_bar]
+type = internal/pulseaudio
+format-volume = <label-volume> <bar-volume>
+format-volume-padding-right = 2
+label-volume = " " 
+label-volume-foreground = ${colors.foreground}
+
+format-muted-foreground = ${colors.foreground}
+label-muted = 󰚙
+
+format-muted-padding-right = 2
+format-muted-background = ${colors.background}
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #61afef
+bar-volume-foreground-1 = #61afef
+bar-volume-foreground-2 = #61afef
+bar-volume-foreground-3 = #61afef
+bar-volume-foreground-4 = #61afef
+bar-volume-foreground-5 = #61afef
+bar-volume-foreground-6 = #61afef
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-foreground = #61afef
+bar-volume-indicator-font = 2
+bar-volume-fill = ━ 
+bar-volume-fill-foreground = #61afef
+bar-volume-fill-font = 2
+bar-volume-empty = ━
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+format-volume-padding = 1
+
+[module/time]
+type = internal/date
+interval = 60
+format = <label>
+format-background = ${colors.round-background}
+date = %{F#888e96}󰥔 %H:%M%{F-}
+time-alt = %{F#61afef}󰃭 %Y-%m-%d (%a)%{F-}
+
+label = %date%%time%
+
+
+[module/mem]
+type = custom/script
+exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
+format = <label>
+format-prefix = "﬙ " 
+format-prefix-foreground = #d19a66
+format-padding = 1
+label = %output%MB
+
+[module/updates]
+type = custom/script
+exec = checkupdates | wc -l
+format =  <label>
+format-foreground = #bf616a
+format-padding = 2
+interval = 30
+label =%output% updates
+label-foreground = #bf616a
+
+[module/powermenu]
+type = custom/text 
+content =" " 
+content-padding =2
+click-left = doas zzz &
+content-foreground =  #e06c75
+
+[module/wlan]
+type = internal/network
+interface = wlp7s0
+interval = 3.0
+format-connected = "󰤪 <label-connected>"
+format-connected-foreground = #a3be8c
+format-connected-padding = 2
+label-connected = "%essid%" 
+label-connected-foreground = #a3be8c
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 98
+
+
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 2
+format-charging-foreground = ${colors.color4}
+label-charging = %percentage%%
+label-charging-foreground = ${colors.foreground}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 2
+format-discharging-foreground = ${colors.foreground}
+label-discharging = %percentage%%
+
+format-full-prefix = "  "
+format-full-prefix-foreground = #A0E8A2
+format-foreground = ${colors.color4}
+format-background = #2b2f37 
+
+ramp-capacity-foreground =  #A0E8A2  
+ramp-capacity-0 = " " 
+ramp-capacity-1 = " " 
+ramp-capacity-2 = " " 
+ramp-capacity-3 = " " 
+ramp-capacity-4 = " "
+
+animation-charging-0 = " " 
+animation-charging-1 = " " 
+animation-charging-2 = " " 
+animation-charging-3 = " " 
+animation-charging-4 = " "
+
+animation-charging-foreground = #DF8890
+animation-charging-framerate = 910 
+
+
+[module/volume]
+type = custom/script
+exec = amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]'
+format = <label>
+internal = 5.0
+label = %output% 
+label-foreground = #BF616A
+format-padding = 2
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <label>
+format-prefix = " "
+label = %percentage%%
+format-prefix-foreground = #61afef
+label-foreground = ${colors.foreground}
+format-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 2.5
+
+format-prefix = " " 
+format = <label> 
+
+label = CPU %percentage%%
+
+format-background = ${colors.round-background}
+format-foreground = #989cff
+
+[module/mpd]
+type = internal/mpd
+interval = 1
+format-online = "%{F#dddddd}<label-song>%{F-} <label-time> <icon-prev> <toggle> <icon-next>" 
+format-online-prefix = "  "
+format-online-prefix-foreground = #BF616A
+format-online-padding = 2
+
+label-song = "%{T5}%artist% - %title%%{T-}"
+label-song-maxlen = 64
+label-song-ellipsis = true
+
+label-offline = "MPD is offline"
+
+icon-play-foreground = #A0E8A2
+icon-play = " "
+icon-pause-foreground = #A0E8A2
+icon-pause = " "
+icon-stop-foreground = #A0E8A2
+icon-stop = " "
+icon-prev-foreground = #A0E8A2
+icon-prev = " "
+icon-next-foreground = #A0E8A2
+icon-next = " "
+
+[module/gputemp]
+type = custom/script
+exec = ~/.config/polybar/scripts/gputemp
+format = %{F#BF616A}󰜗%{F-} <label>
+format-padding = 2
+label = %output%
+label-foreground = ${colors.foreground}

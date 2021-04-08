@@ -3,9 +3,10 @@
 ARR=()
 ARR+=("Application:")
 ARR+=(" terminal (alacritty)")
-ARR+=(" filemanager (vifm)")
+ARR+=(" filemanager (ranger)")
 ARR+=(" filemanager (mc)")
-ARR+=(" webbrowser (qutebrowser)")
+ARR+=(" filemanager (pcmanfm)")
+ARR+=(" webbrowser (firefox)")
 ARR+=(" webbrowser (chrome)")
 ARR+=(" email (thunderbird)")
 ARR+=(" calculator")
@@ -13,20 +14,36 @@ ARR+=(" joplin")
 ARR+=(" libreoffice")
 ARR+=(" telegram")
 ARR+=(" discord")
-ARR+=(" gotop")
+ARR+=(" bpytop")
 ARR+=(" system update (yaourt)")
 ARR+=("")
 ARR+=("Development:")
 ARR+=(" visual studio code")
+ARR+=(" virt-manager")
+ARR+=(" remmina")
 ARR+=(" dbeaver")
-ARR+=(" firefox-developer")
+ARR+=(" pgmodeler")
+ARR+=(" azure data studio")
+ARR+=(" github-desktop")
+ARR+=(" fontforge")
+ARR+=(" lazarus")
 ARR+=(" emacs")
 ARR+=(" vim")
-ARR+=(" github-desktop")
-ARR+=(" virtualmachine (virt-manager)")
-ARR+=(" fontforge")
-ARR+=(" remmina")
-ARR+=(" lazarus")
+ARR+=("")
+ARR+=("Game Development:")
+ARR+=(" unreal-engine")
+ARR+=(" unityhub")
+ARR+=(" maya")
+ARR+=(" blender")
+ARR+=("")
+ARR+=("Sound Programming:")
+ARR+=(" flstudio")
+ARR+=(" vocaloid")
+ARR+=(" ardour")
+ARR+=(" audacity")
+ARR+=(" muse")
+ARR+=(" rosegarden")
+ARR+=(" svstudio")
 ARR+=("")
 ARR+=("Graphics:")
 ARR+=(" gimp")
@@ -37,13 +54,6 @@ ARR+=(" darktable")
 ARR+=(" scribus")
 ARR+=(" texmaker")
 ARR+=("")
-ARR+=("Sound Programming:")
-ARR+=(" flstudio")
-ARR+=(" audacity")
-ARR+=(" ardour")
-ARR+=(" muse")
-ARR+=(" rosegarden")
-ARR+=("")
 ARR+=("Multimedia:")
 ARR+=(" obsstudio")
 ARR+=(" davinci resolve")
@@ -51,6 +61,7 @@ ARR+=(" mpdclient (ncmpcpp)")
 ARR+=(" videoplayer (vlc)")
 ARR+=("")
 ARR+=("Fun:")
+ARR+=(" lutris")
 ARR+=(" steam")
 ARR+=(" mame")
 ARR+=(" matrix")
@@ -58,10 +69,17 @@ ARR+=(" matrix")
 CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app")
 
 case $CHOICE in
-    " joplin") i3-msg "exec joplin-desktop";;
-    " calculator") i3-msg "exec rofi -show calc -modi calc -no-show-match -no-sort";;
-    " google keep") i3-msg "exec google-keep";;
-    " emacs") i3-msg "exec emacs";;
+    " lutris") i3-msg "exec lutris";;
+	" svstudio") i3-msg "exec svstudio";;
+	" vocaloid") i3-msg "excc /usr/share/playonlinux/playonlinux --run 'Vocaloid4FE' ";;
+	" unityhub") i3-msg "exec unityhub";;
+    	" blender") i3-msg "exec blender";;
+    	" maya") i3-msg "exec /usr/autodesk/maya2020/bin/maya2020";;
+	" unreal-engine") i3-msg "exec ~/UnrealEngine/Engine/latest/Engine/Binaries/Linux/UE4Editor";;
+	" joplin") i3-msg "exec /opt/appimages/Joplin.AppImage";;
+    	" calculator") i3-msg "exec rofi -show calc -modi calc -no-show-match -no-sort";;
+    	" google keep") i3-msg "exec google-keep";;
+    	" emacs") i3-msg "exec emacs";;
 	" filemanager (pcmanfm)") i3-msg "exec pcmanfm";;
 	" itch") i3-msg "exec itch";;
 	" ankama") i3-msg "exec ankama-launcher";;
@@ -70,9 +88,12 @@ case $CHOICE in
 	" terminal (alacritty)") i3-msg "exec alacritty";;
 	" filemanager (vifm)") i3-msg "exec alacritty -e vifmrun";;
 	" filemanager (mc)") i3-msg "exec alacritty -e mc";;
+    	" filemanager (ranger)") i3-msg "exec alacritty -e ranger";;
+    	" filemanager (pcmanfm)") i3-msg "exec pcmanfm";;
 	" webbrowser (qutebrowser)") i3-msg "exec qutebrowser --target window";;
 	" telegram") i3-msg "exec telegram-desktop";;
 	" gotop") i3-msg "exec alacritty -e gotop";;
+    	" bpytop") i3-msg "exec alacritty -e bpytop";;
 	" system update (yaourt)") i3-msg "exec alacritty --title yaourt -e systemupdate.sh";;
 	" email (thunderbird)") i3-msg "exec thunderbird";;
 	" discord") i3-msg "exec discord";;
@@ -83,30 +104,30 @@ case $CHOICE in
 	" mpdclient (ncmpcpp)") i3-msg "exec alacritty --title 'MPDClient-floating' -e ncmpcpp";;
 	" videoplayer (vlc)") i3-msg "exec vlc";;
 	" steam") i3-msg "exec steam";;
-	" virtualmachine (virt-manager)") i3-msg "exec virt-manager";;
+	" virt-manager") i3-msg "exec virt-manager";;
 	" libreoffice") i3-msg "exec libreoffice";;
+    	" azure data studio") i3-msg "exec azuredatastudio";;
 	" mame") i3-msg "exec mame";;
-	" chromium") i3-msg "exec chromium";;
+	" chrome") i3-msg "exec chrome";;
 	" gimp") i3-msg "exec gimp";;
 	" davinci resolve") i3-msg "exec /opt/resolve/bin/resolve";;
 	" audacity") i3-msg "exec audacity";;
 	" photoshop") i3-msg "exec wine ~/.wine/drive_c/Photoshop7/Photoshop.exe";;
 	" krita") i3-msg "exec krita";;
-	" flstudio") i3-msg "exec wine ~/.wine/drive_c/FLStudio20/FL64.exe";;
-    " remmina") i3-msg "exec remmina";;
+	" flstudio") i3-msg "exec /usr/share/playonlinux/playonlinux --run 'FLStudio 20' ";;
+    	" remmina") i3-msg "exec remmina";;
 	" darktable") i3-msg "exec darktable";;
 	" matrix") i3-msg "exec alacritty --title 'Matrix' -e ncmatrix";;
 	" fontforge") i3-msg "exec fontforge";;
-    " github-desktop") i3-msg "exec github-desktop";;
-    " obsstudio") i3-msg "exec obs";;
-    " webbrowser (chrome)") i3-msg "exec google-chrome-beta";;
-    " inkscape") i3-msg "exec inkscape";;
-    " texmaker") i3-msg "exec texmaker";;
-    " scribus") i3-msg "exec scribus";;
-    " muse") i3-msg "exec muse3";;
-    " ardour") i3-msg "exec ardour6";;
-    " rosegarden") i3-msg "exec rosegarden";;
-    " webbrowser (firefox)") i3-msg "exec firefox";;
-    " firefox-developer") i3-msg "exec firefox-developer-edition";;
-    " filemanager (polo)") i3-msg "exec polo-gtk";;
+    	" github-desktop") i3-msg "exec github-desktop";;
+    	" obsstudio") i3-msg "exec obs";;
+    	" webbrowser (chrome)") i3-msg "exec google-chrome-stable";;
+    	" inkscape") i3-msg "exec inkscape";;
+    	" texmaker") i3-msg "exec texmaker";;
+    	" scribus") i3-msg "exec scribus";;
+    	" muse") i3-msg "exec muse3";;
+    	" ardour") i3-msg "exec ardour6";;
+    	" rosegarden") i3-msg "exec rosegarden";;
+    	" webbrowser (firefox)") i3-msg "exec firefox-developer-edition";;
+    	" pgmodeler") i3-msg "exec pgmodeler";;
 esac

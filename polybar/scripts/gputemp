@@ -1,0 +1,4 @@
+#!/bin/sh
+gput=`cat /sys/class/drm/card0/device/hwmon/hwmon*/temp1_input`
+let gputt="$gput/1000"
+echo $gputt°C
