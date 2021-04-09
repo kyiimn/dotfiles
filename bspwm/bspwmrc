@@ -9,13 +9,13 @@ pgrep -x picom > /dev/null || picom &
 
 pgrep -x polkit-gnome-authentication-agent-1 > /dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 pgrep -x ibus-daemon > /dev/null || ibus-daemon -drx &
-pgrep -f telegram-desktop > /dev/null || QT_IM_MODULE=ibus telegram-desktop -startintray &
 pgrep -x nm-applet > /dev/null || nm-applet &
 pgrep -x blueman-applet > /dev/null || blueman-applet &
 pgrep -x kdeconnect-indicator > /dev/null || kdeconnect-indicator &
 pgrep -x xscreensaver > /dev/null || xscreensaver -no-splash &
 pgrep -x ntfd > /dev/null || ntfd &
 pgrep -x xpad > /dev/null || xpad -N &
+pgrep -f telegram-desktop > /dev/null || QT_IM_MODULE=ibus telegram-desktop -startintray &
 pgrep -f cadence > /dev/null || cadence --minimized &
 pgrep -f OneDrive > /dev/null || rclone --vfs-cache-mode writes mount onedrive: ~/OneDrive &
 
@@ -28,11 +28,11 @@ bspc monitor DisplayPort-1 -d 6 7 8 9 0
 
 #bspc config focus_follows_pointer true
 
-bspc config top_padding -10
+bspc config top_padding -20
 bspc config bottom_padding -10
 
 # borders
-bspc config border_width 0
+bspc config border_width 2
 
 #gaps 
 bspc config gapless_monocle false
@@ -51,3 +51,4 @@ bspc rule -a xpad state=floating
 bspc rule -a "Github Desktop" state=floating
 
 ~/.config/polybar/launch.sh &
+
