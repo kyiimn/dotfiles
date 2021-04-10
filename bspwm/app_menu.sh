@@ -66,7 +66,7 @@ ARR+=(" steam")
 ARR+=(" mame")
 ARR+=(" matrix")
 
-CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app" -theme ~/.config/rofi/light.rasi)
+CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app" -theme ~/.config/rofi/nord.rasi)
 
 case $CHOICE in
     " lutris") exec lutris;;
