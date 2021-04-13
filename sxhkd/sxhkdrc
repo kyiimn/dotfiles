@@ -79,7 +79,8 @@ super + {Left,Down,Up,Right}
 
 # tiled 상태일때 위치이동
 super + ctrl + {Up,Down,Left,Right}
-    bspc node -s {north,south,west,east}
+    dir={north,south,west,east}; \
+	bspc node -s "$dir.local" --follow || bspc node -m "$dir" --follow
 
 # 크기변경
 super + shift + {Up,Down,Left,Right}
