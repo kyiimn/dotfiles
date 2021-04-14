@@ -62,7 +62,7 @@ super + u
     ~/.config/bspwm/app_menu.sh
 
 super + w
-    rofi -show window
+    rofi -show window -theme ~/.config/rofi/nord.rasi
 
 Print
     scrot

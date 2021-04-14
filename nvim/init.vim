@@ -95,8 +95,8 @@ set expandtab
 set cindent
 
 " 붙여넣기 설정
-"set paste
-set mouse-=a
+set paste
+set mouse=a
 
 " 한글 입력 설정
 set encoding=utf-8
