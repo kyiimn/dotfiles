@@ -53,5 +53,6 @@ bspc rule -a Transmission-gtk state=floating
 bspc rule -a xpad state=floating
 bspc rule -a "Github Desktop" state=floating
 
+~/.config/scripts/redshift-ctrl toggle daylight
 ~/.config/polybar/launch.sh &
 

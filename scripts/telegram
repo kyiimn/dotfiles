@@ -1,4 +1,4 @@
 #!/bin/bash
 
-UNREAD=`telegram-cli -e dialog_list | grep unread | awk '{sum+=$(NF-1)} END {print sum}'`
+UNREAD=`telegram-cli -e dialog_list | grep unread | grep -v Joker | awk '{sum+=$(NF-1)} END {print sum}'`
 echo ${UNREAD}

@@ -72,7 +72,7 @@ wm-restack = bspwm
 
 modules-left = round-left bspwm round-right mpd
 modules-center =    
-modules-right = temperature gputemp pulseaudio_bar round-left cpu round-right mem updates telegram wlan round-left time round-right 
+modules-right = temperature gputemp pulseaudio_bar round-left cpu round-right mem updates telegram wlan redshift round-left time round-right 
 
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
 font-1 = JetBrainsMono Nerd Font:size=18;5
@@ -416,3 +416,13 @@ format = %{F#BF616A}󰜗%{F-} <label>
 format-padding = 1
 label = %output%
 label-foreground = ${colors.foreground}
+
+[module/redshift]
+type = custom/script
+exec = ~/.config/scripts/redshift-ctrl
+interval = 1.0
+format = <label>
+format-foreground = #e8f000
+format-padding = 1
+label = %output%
+click-left = ~/.config/scripts/redshift-ctrl toggle &

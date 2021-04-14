@@ -1,0 +1,3 @@
+#!/bin/bash
+#redshift -p | grep Color | awk '{print $(NF)}'
+cat ~/.config/redshift/lastval
