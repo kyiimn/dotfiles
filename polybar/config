@@ -1,25 +1,36 @@
 [colors]
 background = #00000000
-#background = #1e222a
+foreground = #ffffff
+foreground-light = #000000
+highlight = #ffffff
+
+color16 = #81cfff
+color17 = #f1ba86
+color18 = #ffa1aa
+color19 = #d03c45
+color20 = #a3be8c
+color21 = #989cff
+color22 = #A0E8A2
+color23 = #a4ebf3
+dark-light = #272A2B
+active-light = #313435
+
+round-background = #771b1f27
+
+[colors-dark]
+background = #00000000
 foreground = #adb1b9
 foreground-light = #ffffff
+highlight = #ffffff
 
-color0 = #1e222a
-color1 = #e06c75
-color2 = #98c379
-color3 = #e5c07b
-color4 = #61afef
-color5 = #c678dd
-color6 = #56b6c2
-color7 = #abb2bf
-color8 = #545862
-color9 = #e06c75
-color10 = #98c379
-color11 = #e5c07b
-color12 = #61afef
-color13 = #c678dd
-color14 = #56b6c2
-color15 = #c8ccd4
+color16 = #61afef
+color17 = #d19a66
+color18 = #bf616a
+color19 = #e06c75
+color20 = #a3be8c
+color21 = #989cff
+color22 = #A0E8A2
+color23 = #a4ebf3
 dark-light = #272A2B
 active-light = #313435
 
@@ -50,6 +61,8 @@ font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
 font-1 = JetBrainsMono Nerd Font:size=18;5
 font-2 = Material Design Icons:style=Bold:size=13;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
+font-4 = Noto Sans CJK KR:size=9;2
+font-5 = JetBrainsMono Nerd Font:style=Bold:pixelsize=13;3
 
 
 [bar/bottom]
@@ -72,23 +85,24 @@ wm-restack = bspwm
 
 modules-left = round-left bspwm round-right mpd
 modules-center =    
-modules-right = temperature gputemp pulseaudio_bar round-left cpu round-right mem updates telegram wlan redshift round-left time round-right 
+modules-right = temperature gputemp pulseaudio_bar round-left cpu round-right mem updates telegram wlan redshift round-left time round-right powermenu
 
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
 font-1 = JetBrainsMono Nerd Font:size=18;5
 font-2 = Material Design Icons:style=Bold:size=12;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = Noto Sans CJK KR:size=9;2
+font-5 = JetBrainsMono Nerd Font:style=Bold:pixelsize=13;3
 
 
 [module/round-left]
 type = custom/text
-content = " %{T3}%{T-}"
+content = " %{T6}%{T-}"
 content-foreground = ${colors.round-background}
 
 [module/round-right]
 type = custom/text
-content = "%{T3}%{T-} "
+content = "%{T6}%{T-} "
 content-foreground = ${colors.round-background}
 
 [module/temperature]
@@ -102,7 +116,7 @@ format-padding = 1
 label = %temperature-c%
 label-warn = %temperature-c%
 ramp-0 =  "󰜗" 
-ramp-foreground = #a4ebf3
+ramp-foreground = ${colors.color23}
 
 [module/bspwm]
 type = internal/bspwm
@@ -126,13 +140,13 @@ label-separator-background = #2b2f37
 
 #label-focused = %icon%  
 label-focused = 
-label-focused-foreground = #ffffff
-label-focused-underline =  #ffffff
+label-focused-foreground = ${colors.highlight}
+label-focused-underline =  ${colors.highlight}
 label-focused-padding = 1
 label-focused-background = ${colors.round-background}
 
 label-unfocused = 
-label-unfocused-foreground = #ffffff
+label-unfocused-foreground = ${colors.highlight}
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.round-background}
 
@@ -219,7 +233,7 @@ ramp-volume-1 = " "
 ramp-volume-2 = " "
 ramp-volume-3 = " "
 ramp-volume-4 = " "
-ramp-volume-foreground = #61afef
+ramp-volume-foreground = ${colors.color16}
 
 [module/pulseaudio_bar]
 type = internal/pulseaudio
@@ -235,19 +249,19 @@ format-muted-padding-right = 2
 format-muted-background = ${colors.background}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #61afef
-bar-volume-foreground-1 = #61afef
-bar-volume-foreground-2 = #61afef
-bar-volume-foreground-3 = #61afef
-bar-volume-foreground-4 = #61afef
-bar-volume-foreground-5 = #61afef
-bar-volume-foreground-6 = #61afef
+bar-volume-foreground-0 = ${colors.color16}
+bar-volume-foreground-1 = ${colors.color16}
+bar-volume-foreground-2 = ${colors.color16}
+bar-volume-foreground-3 = ${colors.color16}
+bar-volume-foreground-4 = ${colors.color16}
+bar-volume-foreground-5 = ${colors.color16}
+bar-volume-foreground-6 = ${colors.color16}
 bar-volume-gradient = false
 bar-volume-indicator = 
-bar-volume-indicator-foreground = #61afef
+bar-volume-indicator-foreground = ${colors.color16}
 bar-volume-indicator-font = 2
 bar-volume-fill = ━ 
-bar-volume-fill-foreground = #61afef
+bar-volume-fill-foreground = ${colors.color16}
 bar-volume-fill-font = 2
 bar-volume-empty = ━
 bar-volume-empty-font = 2
@@ -259,8 +273,8 @@ type = internal/date
 interval = 60
 format = <label>
 format-background = ${colors.round-background}
-date = %{F#888e96}󰥔 %H:%M%{F-}
-time-alt = %{F#61afef}󰃭 %Y-%m-%d (%a)%{F-}
+date = %{F#a8aeb6}󰥔 %H:%M%{F-}
+time-alt = %{F#81cfff}󰃭 %Y-%m-%d (%a)%{F-}
 
 label = %date%%time%
 
@@ -270,7 +284,7 @@ type = custom/script
 exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
 format = <label>
 format-prefix = "﬙ " 
-format-prefix-foreground = #d19a66
+format-prefix-foreground = ${colors.color17}
 format-padding = 1
 label = %output%MB
 
@@ -278,7 +292,7 @@ label = %output%MB
 type = custom/script
 exec = ~/.config/scripts/telegram
 format =   <label>
-format-foreground = #61afef
+format-foreground = ${colors.color16}
 format-padding = 1
 interval = 10
 label = %output% unreads
@@ -289,7 +303,7 @@ click-left = telegram-desktop &
 type = custom/script
 exec = checkupdates | wc -l
 format =   <label>
-format-foreground = #bf616a
+format-foreground = ${colors.color18}
 format-padding = 1
 interval = 30
 label =%output% updates
@@ -299,20 +313,20 @@ label-foreground = ${colors.foreground}
 [module/powermenu]
 type = custom/text 
 content =" " 
-content-padding =2
-click-left = doas zzz &
-content-foreground =  #e06c75
+content-padding = 1
+click-left = ~/.config/rofi/bin/menu_powermenu &
+content-foreground =  ${colors.color19}
 
 [module/wlan]
 type = internal/network
 interface = wlp7s0
 interval = 3.0
 format-connected = "󰤪 <label-connected>"
-format-connected-foreground = #a3be8c
+format-connected-foreground = ${colors.color20}
 format-connected-padding = 1
 label-connected = "%essid%" 
 label-connected-foreground = ${colors.foreground}
-#label-connected-foreground = #a3be8c
+#label-connected-foreground = ${colors.color20}
 
 [module/battery]
 type = internal/battery
@@ -323,7 +337,7 @@ full-at = 98
 
 format-charging = <animation-charging> <label-charging>
 format-charging-padding = 2
-format-charging-foreground = ${colors.color4}
+format-charging-foreground = ${colors.color16}
 label-charging = %percentage%%
 label-charging-foreground = ${colors.foreground}
 
@@ -333,11 +347,11 @@ format-discharging-foreground = ${colors.foreground}
 label-discharging = %percentage%%
 
 format-full-prefix = "  "
-format-full-prefix-foreground = #A0E8A2
-format-foreground = ${colors.color4}
+format-full-prefix-foreground = ${colors.color22}
+format-foreground = ${colors.color16}
 format-background = #2b2f37 
 
-ramp-capacity-foreground =  #A0E8A2  
+ramp-capacity-foreground =  ${colors.color22}  
 ramp-capacity-0 = " " 
 ramp-capacity-1 = " " 
 ramp-capacity-2 = " " 
@@ -368,7 +382,7 @@ type = internal/xbacklight
 format = <label>
 format-prefix = " "
 label = %percentage%%
-format-prefix-foreground = #61afef
+format-prefix-foreground = ${colors.color16}
 label-foreground = ${colors.foreground}
 format-padding = 2
 
@@ -382,14 +396,14 @@ format = <label>
 label = CPU %percentage%%
 
 format-background = ${colors.round-background}
-format-foreground = #989cff
+format-foreground = ${colors.color21}
 
 [module/mpd]
 type = internal/mpd
 interval = 1
 format-online = "%{F#dddddd}<label-song>%{F-} <label-time> <icon-prev> <toggle> <icon-next>" 
 format-online-prefix = "  "
-format-online-prefix-foreground = #BF616A
+format-online-prefix-foreground = ${colors.color18}
 format-online-padding = 2
 
 label-song = "%{T5}%artist% - %title%%{T-}"
@@ -398,15 +412,15 @@ label-song-ellipsis = true
 
 label-offline = "MPD is offline"
 
-icon-play-foreground = #A0E8A2
+icon-play-foreground = ${colors.color22}
 icon-play = " "
-icon-pause-foreground = #A0E8A2
+icon-pause-foreground = ${colors.color22}
 icon-pause = " "
-icon-stop-foreground = #A0E8A2
+icon-stop-foreground = ${colors.color22}
 icon-stop = " "
-icon-prev-foreground = #A0E8A2
+icon-prev-foreground = ${colors.color22}
 icon-prev = " "
-icon-next-foreground = #A0E8A2
+icon-next-foreground = ${colors.color22}
 icon-next = " "
 
 [module/gputemp]

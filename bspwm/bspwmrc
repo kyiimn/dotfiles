@@ -19,7 +19,7 @@ pgrep -f telegram-desktop > /dev/null || QT_IM_MODULE=ibus telegram-desktop -sta
 pgrep -f cadence > /dev/null || cadence --minimized &
 pgrep -f OneDrive > /dev/null || rclone --vfs-cache-mode writes mount onedrive: ~/OneDrive &
 
-feh --bg-fill ~/Pictures/wallpaper-32.jpg &
+feh --bg-fill ~/Pictures/wallpaper-31.png
 
 
 # workspaces 
@@ -33,7 +33,7 @@ bspc config top_padding -24
 bspc config bottom_padding -10
 
 # borders
-bspc config border_width 2
+bspc config border_width 0
 bspc config normal_border_color "#444444"
 bspc config focused_border_color "#bbc5ff"
 
@@ -53,6 +53,6 @@ bspc rule -a Transmission-gtk state=floating
 bspc rule -a xpad state=floating
 bspc rule -a "Github Desktop" state=floating
 
-~/.config/scripts/redshift-ctrl toggle daylight
+~/.config/scripts/redshift-ctrl night
 ~/.config/polybar/launch.sh &
 

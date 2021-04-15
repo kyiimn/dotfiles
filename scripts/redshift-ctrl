@@ -2,9 +2,14 @@ SELF=`dirname "$0"`
 CTEMP=`${SELF}/redshift-status`
 
 NIGHT_TEMP=4500K
-if [ "$1" = 'toggle' ]; then
-	if [ $CTEMP = $NIGHT_TEMP ] || [ "$2" = 'daylight' ]
-	then
+if [ "$1" = 'daylight' ]; then
+	redshift -x
+	echo 6500K > ~/.config/redshift/lastval
+elif [ "$1" = 'night' ]; then
+	redshift -P -O $NIGHT_TEMP
+	echo $NIGHT_TEMP > ~/.config/redshift/lastval
+elif [ "$1" = 'toggle' ]; then
+	if [ $CTEMP = $NIGHT_TEMP ]; then
 		redshift -x
 		echo 6500K > ~/.config/redshift/lastval
 		notify-send "Redshift" "Period changed to 6500K"
