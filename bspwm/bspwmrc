@@ -19,7 +19,7 @@ pgrep -f telegram-desktop > /dev/null || QT_IM_MODULE=ibus telegram-desktop -sta
 pgrep -f cadence > /dev/null || cadence --minimized &
 pgrep -f OneDrive > /dev/null || rclone --vfs-cache-mode writes mount onedrive: ~/OneDrive &
 
-feh --bg-fill ~/Pictures/wallpaper-31.png
+feh --bg-fill ~/Pictures/wallpaper-28.jpg
 
 
 # workspaces 

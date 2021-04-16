@@ -98,7 +98,7 @@ colors:
 #  duration: 0
 #  color: '0xffffff'
 
-background_opacity: 0.80
+background_opacity: 0.99
 
 live_config_reload: true
 
