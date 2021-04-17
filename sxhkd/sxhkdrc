@@ -26,7 +26,7 @@ XF86MonBrightness{Down,Up}
     xbacklight {-dec,-inc} 10
 
 super + ctrl + e
-    alacritty -e vifmrun
+    alacritty -e ranger
 
 super + ctrl + m
     alacritty --title mpdclient -e ncmpcpp

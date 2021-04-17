@@ -1,2 +1,8 @@
 #!/bin/bash
-acpi -V | grep Adapter | awk '{print $(NF)}'
+POWER=`acpi -V 2>&1 | grep Adapter | awk '{print $(NF)}'`
+if [ -z "$POWER" ]
+then
+	echo 'on-line'
+else
+	echo $POWER
+fi
