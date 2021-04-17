@@ -1,3 +1,5 @@
+#!/bin/bash
+
 SELF=`dirname "$0"`
 CTEMP=`${SELF}/redshift-status`
 

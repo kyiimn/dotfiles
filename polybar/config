@@ -325,18 +325,18 @@ format =   <label>
 format-foreground = ${colors.lightblue}
 format-padding = 1
 interval = 10
-label = %output% unreads
+label = %output%
 label-foreground = ${colors.foreground}
 click-left = telegram-desktop &
 
 [module/updates]
 type = custom/script
-exec = checkupdates | wc -l
+exec = ~/.config/scripts/update
 format =   <label>
 format-foreground = ${colors.lightred}
 format-padding = 1
 interval = 30
-label =%output% updates
+label =%output%
 label-foreground = ${colors.foreground}
 
 [module/powermenu]
@@ -375,13 +375,13 @@ adapter = ACAD
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-padding = 2
+format-charging-padding = 1
 format-charging-foreground = ${colors.lightblue}
 label-charging = %percentage%%
 label-charging-foreground = ${colors.foreground}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-padding = 2
+format-discharging-padding = 1
 format-discharging-foreground = ${colors.foreground}
 label-discharging = %percentage%%
 
@@ -413,7 +413,7 @@ format-prefix = " "
 label = %percentage%%
 format-prefix-foreground = ${colors.lightblue}
 label-foreground = ${colors.foreground}
-format-padding = 2
+format-padding = 1
 
 [module/cpu]
 type = internal/cpu

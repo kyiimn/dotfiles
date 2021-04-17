@@ -1,0 +1,9 @@
+#!/bin/bash
+SELF=`dirname "$0"`
+POWER=`${SELF}/power-status`
+if [ $POWER = 'on-line' ]; then
+	UPDATES=`checkupdates | wc -l`
+	echo $UPDATES updates
+else
+	echo N/A
+fi
