@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 xrdb merge ~/.Xresources &
 
-pgrep -x picom > /dev/null || picom &
+pgrep -x picom > /dev/null || picom --experimental-backends &
 
 pgrep -x polkit-gnome-authentication-agent-1 > /dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 pgrep -x ibus-daemon > /dev/null || ibus-daemon -drx &
