@@ -108,7 +108,7 @@ case $CHOICE in
 	" libreoffice") exec libreoffice;;
     	" azure data studio") exec azuredatastudio;;
 	" mame") exec mame;;
-	" chrome") exec chrome;;
+	" chrome") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
 	" gimp") exec gimp;;
 	" davinci resolve") exec /opt/resolve/bin/resolve;;
 	" audacity") exec audacity;;
@@ -121,7 +121,7 @@ case $CHOICE in
 	" fontforge") exec fontforge;;
     	" github-desktop") exec github-desktop;;
     	" obsstudio") exec obs;;
-    	" webbrowser (chrome)") exec google-chrome-stable;;
+    	" webbrowser (chrome)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
     	" inkscape") exec inkscape;;
     	" texmaker") exec texmaker;;
     	" scribus") exec scribus;;

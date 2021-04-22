@@ -64,6 +64,9 @@ super + u
 super + w
     rofi -show window -theme ~/.config/rofi/nord.rasi
 
+super + Tab
+	rofi -show window -theme ~/.config/rofi/nord.rasi
+
 Print
     scrot
 
