@@ -8,6 +8,7 @@ ARR+=(" filemanager (mc)")
 ARR+=(" filemanager (pcmanfm)")
 ARR+=(" webbrowser (firefox)")
 ARR+=(" webbrowser (chrome)")
+ARR+=(" webbrowser (chrome over tor)")
 ARR+=(" email (thunderbird)")
 ARR+=(" calculator")
 ARR+=(" joplin")
@@ -108,7 +109,6 @@ case $CHOICE in
 	" libreoffice") exec libreoffice;;
     	" azure data studio") exec azuredatastudio;;
 	" mame") exec mame;;
-	" chrome") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
 	" gimp") exec gimp;;
 	" davinci resolve") exec /opt/resolve/bin/resolve;;
 	" audacity") exec audacity;;
@@ -121,7 +121,8 @@ case $CHOICE in
 	" fontforge") exec fontforge;;
     	" github-desktop") exec github-desktop;;
     	" obsstudio") exec obs;;
-    	" webbrowser (chrome)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
+    	" webbrowser (chrome)") exec google-chrome-stable;;
+    	" webbrowser (chrome over tor)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
     	" inkscape") exec inkscape;;
     	" texmaker") exec texmaker;;
     	" scribus") exec scribus;;
