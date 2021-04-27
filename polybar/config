@@ -38,6 +38,27 @@ orange = #d19a66
 purple = #989cff
 skyblue = #a4ebf3
 
+[colors-new]
+background = #00000000
+background-battery = #9e78bb
+background-volume = #6cb3ce
+background-wifi = #d37b7a
+background-cpu = #e9a56d
+background-mpd = #84b8ad
+background-time = #ffd484
+background-mem = #74cbcd
+background-power = #d03c45
+background-redshift = #e8f000
+background-workspace = #39465e
+background-workspace-highlight = #ffffff
+background-workspace-light = #5c737f
+background-temp = #a4ebf3
+background-telegram = #61afef
+background-updates = #bf616a
+background-backlight = #a0e8a2
+foreground = #1b222d
+foreground-workspace = #999999
+
 [bar/top]
 monitor = DisplayPort-1
 width =  100%
@@ -77,10 +98,6 @@ padding-right = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = false
-border-top-size = 8
-border-bottom-size = 6
-border-top-color = ${colors.background}
-border-bottom-color = ${colors.background}
 
 line-size = 3
 wm-restack = bspwm
@@ -102,21 +119,20 @@ monitor = eDP1
 width =  100%
 height = 20
 padding-left = 1
-padding-right = 0
-background = ${colors.background}
-foreground = ${colors.foreground}
+padding-right = 1
+background = ${colors-new.background}
+foreground = ${colors-new.foreground}
 bottom = false
 border-top-size = 6
 border-bottom-size = 6
-border-top-color = ${colors.background}
-border-bottom-color = ${colors.background}
 
-line-size = 3
+line-size = 1
 wm-restack = bspwm
 
-modules-left = round-left bspwm round-right mpd
+modules-left = bspwm mpd
 modules-center =    
-modules-right = temperature pulseaudio_bar round-left cpu round-right mem updates telegram wlan-miho xbacklight battery redshift round-left time round-right powermenu
+modules-right = cpu mem updates telegram wlan-miho pulseaudio battery time redshift powermenu
+module-margin-right = 1
 
 font-0 = FantasqueSansMono Nerd Font:style=Bold;size=7;3
 font-1 = FantasqueSansMono Nerd Font:size=16;2
@@ -125,15 +141,6 @@ font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = Noto Sans CJK KR:size=9;3
 font-5 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
 
-[module/round-left]
-type = custom/text
-content = " %{T6}%{T-}"
-content-foreground = ${colors.background-round}
-
-[module/round-right]
-type = custom/text
-content = "%{T6}%{T-} "
-content-foreground = ${colors.background-round}
 
 [module/temperature]
 type = internal/temperature
@@ -143,10 +150,11 @@ warn-temperature = 70
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 format-padding = 1
+format-background = ${colors-new.background-temp}
 label = %temperature-c%
 label-warn = %temperature-c%
 ramp-0 =  "󰜗" 
-ramp-foreground = ${colors.skyblue}
+
 
 [module/bspwm]
 type = internal/bspwm
@@ -158,262 +166,69 @@ enable-scroll = true
 reverse-scroll = false
 
 format = <label-state>
+format-background = ${colors-new.background}
 
-ws-icon-0 = 1;%{F#F9DE8F}  
-ws-icon-1 = 2;%{F#ff9b93}   
-ws-icon-2 = 3;%{F#95e1d3}    
-ws-icon-3 = 4;%{F#81A1C1}
-ws-icon-4 = 5;%{F#A3BE8C} 
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
 
-label-separator = ""
-label-separator-background = ${colors.background-round}
-
-#label-focused = %icon%  
-label-focused = 
-label-focused-foreground = ${colors.foreground-highlight}
-label-focused-underline =  ${colors.foreground-highlight}
+label-focused = %name%
+label-focused-background = ${colors-new.background-workspace-highlight}
+label-focused-foreground = ${colors-new.foreground}
 label-focused-padding = 1
-label-focused-background = ${colors.background-round}
 
-label-unfocused = 
-label-unfocused-foreground = ${colors.foreground-highlight}
+label-unfocused = %name%
+label-unfocused-background = ${colors-new.background-workspace-light}
+label-unfocused-foreground = ${colors-new.foreground}
 label-unfocused-padding = 1
-label-unfocused-background = ${colors.background-round}
 
-#label-occupied =  %icon%  
-label-occupied = 
-label-occupied-foreground = ${colors.foreground}
-label-occupied-background = ${colors.background-round}
+label-occupied = %name%
+label-occupied-background = ${colors-new.background-workspace}
+label-occupied-foreground = ${colors-new.foreground-workspace}
 label-occupied-padding = 1
 
-#label-empty = %icon%
-label-empty = 
-label-empty-foreground = ${colors.foreground-workspace-empty}
+label-empty = %name%
+label-empty-background = ${colors-new.background-workspace}
+label-empty-foreground = ${colors-new.foreground-workspace}
 label-empty-padding = 1
-label-empty-background =${colors.background-round}
 
-#label-urgent = %icon%
-label-urgent = 
-label-urgent-foreground = ${colors.foreground-urgent}
-label-urgent-background = ${colors.background-round}
+label-urgent = %name%
+label-urgent-background = ${colors-new.background-workspace}
+label-urgent-foreground = ${colors-new.foreground-workspace}
 label-urgent-padding = 1
 
-[module/i3]
-type = internal/i3
-
-pin-workspaces = true
-enable-click = true
-enable-scroll = true
-reverse-scroll = false
-index-sort = true
-
-ws-icon-0 = 1;1
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;5
-ws-icon-5 = 6;6
-ws-icon-6 = 7;7
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
-ws-icon-9 = 0;10
-
-label-mode = %mode%
-label-mode-padding = 1
-label-mode-background = ${colors.background-round}
-
-label-focused = "%icon%"
-label-focused-foreground = ${colors.foreground-highlight}
-label-focused-underline =  ${colors.foreground-highlight}
-label-focused-padding = 1
-label-focused-background = ${colors.background-round}
-
-label-occupied = "%icon%"
-label-occupied-foreground = ${colors.foreground}
-label-occupied-background = ${colors.background-round}
-label-occupied-padding = 1
-
-label-unfocused = "%icon%"
-label-unfocused-foreground = ${colors.foreground}
-label-unfocused-padding = 1
-label-unfocused-background = ${colors.background-round}
-
-label-visible = "%icon%"
-label-visible-foreground = ${colors.foreground-highlight}
-label-visible-padding = 1
-label-visible-background = ${colors.background-round}
-
-label-urgent = "%icon%"
-label-urgent-foreground = ${colors.foreground-urgent}
-label-urgent-background = ${colors.background-round}
-label-urgent-padding = 1
 
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
 interval = 5
-format-volumn-padding = 2
-format-volume = " <ramp-volume><label-volume> "
+format-volume-padding = 1
+format-volume = <ramp-volume><label-volume>
+format-volume-background = ${colors-new.background-volume}
 format-muted-prefix = " "
+format-muted-background = ${colors-new.background-volume}
 label-muted = "Muted"
-label-muted-foreground = ${colors.foreground}
 
 ramp-volume-0 = " "
 ramp-volume-1 = " "
 ramp-volume-2 = " "
 ramp-volume-3 = " "
 ramp-volume-4 = " "
-ramp-volume-foreground = ${colors.lightblue}
 
-[module/pulseaudio_bar]
-type = internal/pulseaudio
-format-volume = <label-volume> <bar-volume>
-format-volume-padding-right = 2
-label-volume = " " 
-label-volume-foreground = ${colors.foreground}
-
-format-muted-foreground = ${colors.foreground}
-label-muted = 󰚙
-
-format-muted-padding-right = 2
-format-muted-background = ${colors.background}
-
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.lightblue}
-bar-volume-foreground-1 = ${colors.lightblue}
-bar-volume-foreground-2 = ${colors.lightblue}
-bar-volume-foreground-3 = ${colors.lightblue}
-bar-volume-foreground-4 = ${colors.lightblue}
-bar-volume-foreground-5 = ${colors.lightblue}
-bar-volume-foreground-6 = ${colors.lightblue}
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-foreground = ${colors.lightblue}
-bar-volume-indicator-font = 2
-bar-volume-fill = ━ 
-bar-volume-fill-foreground = ${colors.lightblue}
-bar-volume-fill-font = 2
-bar-volume-empty = ━
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground}
-format-volume-padding = 1
 
 [module/time]
 type = internal/date
 interval = 60
 format = <label>
-format-background = ${colors.background-round}
-date = %{F#a8aeb6}󰥔 %H:%M%{F-}
-time-alt = %{F#81cfff}󰃭 %Y-%m-%d (%a)%{F-}
-
+format-background = ${colors-new.background-time}
+format-padding = 1
 label = %date%%time%
 
+date = 󰥔 %H:%M%
+time-alt = 󰃭 %Y-%m-%d (%a)
 
-[module/mem]
-type = custom/script
-exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
-format = <label>
-format-prefix = "﬙ " 
-format-prefix-foreground = ${colors.orange}
-format-padding = 1
-label = %output%MB
-
-[module/telegram]
-type = custom/script
-exec = ~/.config/scripts/telegram
-format =   <label>
-format-foreground = ${colors.lightblue}
-format-padding = 1
-interval = 10
-label = %output%
-label-foreground = ${colors.foreground}
-click-left = telegram-desktop &
-
-[module/updates]
-type = custom/script
-exec = ~/.config/scripts/update
-format =   <label>
-format-foreground = ${colors.lightred}
-format-padding = 1
-interval = 30
-label =%output%
-label-foreground = ${colors.foreground}
-
-[module/powermenu]
-type = custom/text 
-content =" " 
-content-padding = 1
-click-left = ~/.config/rofi/bin/menu_powermenu &
-content-foreground =  ${colors.foreground-power}
-
-[module/wlan]
-type = internal/network
-interface = wlp7s0
-interval = 3.0
-format-connected = "󰤪 <label-connected>"
-format-connected-foreground = ${colors.darkgreen}
-format-connected-padding = 1
-label-connected = "%essid%" 
-label-connected-foreground = ${colors.foreground}
-
-
-[module/wlan-miho]
-type = internal/network
-interface = wlp0s20f3
-interval = 3.0
-format-connected = "󰤪 <label-connected>"
-format-connected-foreground = ${colors.darkgreen}
-format-connected-padding = 1
-label-connected = "%essid%" 
-label-connected-foreground = ${colors.foreground}
-
-
-[module/battery]
-type = internal/battery
-battery = BAT1
-adapter = ACAD
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-padding = 1
-format-charging-foreground = ${colors.lightblue}
-label-charging = %percentage%%
-label-charging-foreground = ${colors.foreground}
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-padding = 1
-format-discharging-foreground = ${colors.foreground}
-label-discharging = %percentage%%
-
-format-full-prefix = "  "
-format-full-prefix-foreground = ${colors.lightgreen}
-format-foreground = ${colors.lightblue}
-
-ramp-capacity-foreground =  ${colors.lightgreen}  
-ramp-capacity-0 = " " 
-ramp-capacity-1 = " " 
-ramp-capacity-2 = " " 
-ramp-capacity-3 = " " 
-ramp-capacity-4 = " "
-
-animation-charging-0 = " " 
-animation-charging-1 = " " 
-animation-charging-2 = " " 
-animation-charging-3 = " " 
-animation-charging-4 = " "
-
-animation-charging-foreground = ${colors.foreground-battery-charging}
-animation-charging-framerate = 910 
-
-
-[module/xbacklight]
-type = internal/xbacklight
-format = <label>
-format-prefix = " "
-label = %percentage%%
-format-prefix-foreground = ${colors.lightblue}
-label-foreground = ${colors.foreground}
-format-padding = 1
 
 [module/cpu]
 type = internal/cpu
@@ -421,37 +236,137 @@ interval = 2.5
 
 format-prefix = " " 
 format = <label> 
+format-background = ${colors-new.background-cpu}
+format-padding = 1
 
 label = CPU %percentage%%
 
-format-background = ${colors.background-round}
-format-foreground = ${colors.purple}
+
+[module/mem]
+type = custom/script
+exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
+format = <label>
+format-prefix = " ﬙ " 
+format-prefix-background = ${colors-new.background-mem}
+label = "%output%MB "
+label-background = ${colors-new.background-mem}
+
+
+[module/telegram]
+type = custom/script
+exec = ~/.config/scripts/telegram
+format =   <label>
+format-background = ${colors-new.background-telegram}
+format-padding = 1
+interval = 10
+label = %output%
+click-left = telegram-desktop &
+
+
+[module/updates]
+type = custom/script
+exec = ~/.config/scripts/update
+format =   <label>
+format-background = ${colors-new.background-updates}
+format-padding = 1
+interval = 30
+label =%output%
+
+
+[module/powermenu]
+type = custom/text 
+content = " "
+content-padding = 1
+content-background =  ${colors-new.background-power}
+click-left = ~/.config/rofi/bin/menu_powermenu &
+
+[module/wlan]
+type = internal/network
+interface = wlp7s0
+interval = 3.0
+format-connected = "󰤪 <label-connected>"
+format-connected-background = ${colors-new.background-wifi}
+format-connected-padding = 1
+label-connected = "%essid%" 
+
+
+[module/wlan-miho]
+type = internal/network
+interface = wlp0s20f3
+interval = 3.0
+format-connected = "󰤪 <label-connected>"
+format-connected-background = ${colors-new.background-wifi}
+format-connected-padding = 1
+label-connected = "%essid%" 
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 99
+
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 1
+format-charging-background = ${colors-new.background-battery}
+label-charging = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 1
+format-discharging-background = ${colors-new.background-battery}
+label-discharging = %percentage%%
+
+format-full =   <label-full>
+format-full-padding = 1
+format-full-background = ${colors-new.background-battery}
+label-full = %percentage%%
+
+ramp-capacity-background =  ${colors-new.background-battery}
+ramp-capacity-0 = " " 
+ramp-capacity-1 = " " 
+ramp-capacity-2 = " " 
+ramp-capacity-3 = " " 
+ramp-capacity-4 = " "
+
+animation-charging-background = ${colors-new.background-battery}
+animation-charging-0 = " " 
+animation-charging-1 = " " 
+animation-charging-2 = " " 
+animation-charging-3 = " " 
+animation-charging-4 = " "
+animation-charging-framerate = 910 
+
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <label>
+format-prefix = " "
+format-background = ${colors-new.background-backlight}
+format-padding = 1
+label = %percentage%%
+
 
 [module/mpd]
 type = internal/mpd
 interval = 1
-format-online = "<label-song> <label-time> <icon-prev> <toggle> <icon-next>" 
-format-online-prefix = "  "
-format-online-prefix-foreground = ${colors.lightred}
-format-online-padding = 2
+format-online = "<toggle><label-song>" 
+format-online-background = ${colors-new.background-mpd}
+format-online-padding = 1
 
 label-song = "%{T5}%artist% - %title%%{T-}"
 label-song-maxlen = 64
 label-song-ellipsis = true
-label-song-foreground = ${colors.foreground-song}
+label-song-background = ${colors-new.background-mpd}
+label-song-padding = 1
 
 label-offline = "MPD is offline"
 
-icon-play-foreground = ${colors.lightgreen}
 icon-play = " "
-icon-pause-foreground = ${colors.lightgreen}
 icon-pause = " "
-icon-stop-foreground = ${colors.lightgreen}
 icon-stop = " "
-icon-prev-foreground = ${colors.lightgreen}
 icon-prev = " "
-icon-next-foreground = ${colors.lightgreen}
 icon-next = " "
+
 
 [module/gputemp]
 type = custom/script
@@ -461,12 +376,14 @@ format-padding = 1
 label = %output%
 label-foreground = ${colors.foreground}
 
+
 [module/redshift]
 type = custom/script
 exec = ~/.config/scripts/redshift-ctrl
 interval = 1.0
 format = <label>
-format-foreground = ${colors.foreground-redshift}
+format-background = ${colors-new.background-redshift}
 format-padding = 1
 label = %output%
 click-left = ~/.config/scripts/redshift-ctrl toggle &
+
