@@ -260,7 +260,7 @@ format-background = ${colors-new.background-telegram}
 format-padding = 1
 interval = 10
 label = %output%
-click-left = telegram-desktop &
+double-click-left = telegram-desktop &
 
 
 [module/updates]
@@ -271,7 +271,7 @@ format-background = ${colors-new.background-updates}
 format-padding = 1
 interval = 30
 label =%output%
-click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
+double-click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 
 [module/powermenu]
 type = custom/text 
