@@ -16,7 +16,7 @@ ARR+=(" libreoffice")
 ARR+=(" telegram")
 ARR+=(" discord")
 ARR+=(" bpytop")
-ARR+=(" system update (yaourt)")
+ARR+=(" system update (yay)")
 ARR+=("")
 ARR+=("Development:")
 ARR+=(" visual studio code")
@@ -95,7 +95,7 @@ case $CHOICE in
 	" telegram") exec telegram-desktop;;
 	" gotop") exec alacritty -e gotop;;
     	" bpytop") exec alacritty -e bpytop;;
-	" system update (yaourt)") exec alacritty --title yaourt -e systemupdate.sh;;
+	" system update (yay)") exec alacritty --title 'System Update' -e ~/.config/scripts/pause yay -Syyu;;
 	" email (thunderbird)") exec thunderbird;;
 	" discord") exec discord;;
 	" visual studio code") exec code;;

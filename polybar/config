@@ -129,9 +129,9 @@ border-bottom-size = 6
 line-size = 1
 wm-restack = bspwm
 
-modules-left = bspwm mpd
+modules-left = bspwm
 modules-center =    
-modules-right = cpu mem updates telegram wlan-miho pulseaudio battery time redshift powermenu
+modules-right = mpd updates telegram wlan-miho pulseaudio battery time redshift powermenu
 module-margin-right = 1
 
 font-0 = FantasqueSansMono Nerd Font:style=Bold;size=7;3
@@ -199,6 +199,8 @@ label-urgent-background = ${colors-new.background-workspace}
 label-urgent-foreground = ${colors-new.foreground-workspace}
 label-urgent-padding = 1
 
+label-separator = " "
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -234,22 +236,20 @@ time-alt = 󰃭 %Y-%m-%d (%a)
 type = internal/cpu
 interval = 2.5
 
-format-prefix = " " 
 format = <label> 
 format-background = ${colors-new.background-cpu}
 format-padding = 1
 
-label = CPU %percentage%%
+label =  %percentage%%
 
 
 [module/mem]
 type = custom/script
 exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
-format = <label>
-format-prefix = " ﬙ " 
-format-prefix-background = ${colors-new.background-mem}
-label = "%output%MB "
-label-background = ${colors-new.background-mem}
+format =  <label>
+format-background = ${colors-new.background-mem}
+format-padding = 1
+label = %output%MB
 
 
 [module/telegram]
@@ -271,7 +271,7 @@ format-background = ${colors-new.background-updates}
 format-padding = 1
 interval = 30
 label =%output%
-
+click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 
 [module/powermenu]
 type = custom/text 
@@ -279,6 +279,7 @@ content = " "
 content-padding = 1
 content-background =  ${colors-new.background-power}
 click-left = ~/.config/rofi/bin/menu_powermenu &
+
 
 [module/wlan]
 type = internal/network
@@ -351,7 +352,6 @@ type = internal/mpd
 interval = 1
 format-online = "<toggle><label-song>" 
 format-online-background = ${colors-new.background-mpd}
-format-online-padding = 1
 
 label-song = "%{T5}%artist% - %title%%{T-}"
 label-song-maxlen = 64
@@ -359,13 +359,15 @@ label-song-ellipsis = true
 label-song-background = ${colors-new.background-mpd}
 label-song-padding = 1
 
-label-offline = "MPD is offline"
+label-offline = "Offline"
+label-offline-padding = 1
+label-offline-background = ${colors-new.background-mpd}
 
-icon-play = " "
-icon-pause = " "
-icon-stop = " "
-icon-prev = " "
-icon-next = " "
+icon-play = "  "
+icon-pause = "  "
+icon-stop = "  "
+icon-prev = "  "
+icon-next = "  "
 
 
 [module/gputemp]

@@ -3,7 +3,7 @@ SELF=`dirname "$0"`
 POWER=`${SELF}/power-status`
 if [ $POWER = 'on-line' ]; then
 	UNREAD=`telegram-cli -e dialog_list | grep unread | grep -v Joker | awk '{sum+=$(NF-1)} END {print sum}'`
-	echo $UNREAD unreads
+	echo $UNREAD
 else
 	echo N/A
 fi
