@@ -116,6 +116,7 @@ font-2 = Material Design Icons:style=Bold:size=12;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = Noto Sans CJK KR:style=Bold:size=9;3
 font-5 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
+font-6 = Noto Sans CJK KR:size=10;1
 
 
 [bar/miho]
@@ -138,12 +139,13 @@ modules-center =
 modules-right = mpd updates telegram wlan-miho pulseaudio battery time powermenu
 module-margin-right = 1
 
-font-0 = FantasqueSansMono Nerd Font:style=Bold;size=7;3
+font-0 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
 font-1 = FantasqueSansMono Nerd Font:size=16;2
 font-2 = Material Design Icons:style=Bold:size=12;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = Noto Sans CJK KR:size=9;3
 font-5 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
+font-6 = Noto Sans CJK KR:size=10;1
 
 
 [module/title]
@@ -152,6 +154,7 @@ format = <label>
 format-foreground = ${colors-new.foreground-title}
 format-prefix = " "
 label = %title%
+label-font = 7
 label-maxlen = 256
 
 
