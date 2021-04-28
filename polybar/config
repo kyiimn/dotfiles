@@ -1,50 +1,11 @@
 [colors]
 background = #00000000
-background-round = #771b1f27
-foreground = #ffffff
-foreground-battery-charging = #DF8890
-foreground-highlight = #ffffff
-foreground-power = #d03c45
-foreground-redshift = #e8f000
-foreground-song = #dddddd
-foreground-urgent = #88C0D0
-foreground-workspace-empty = #646870
-
-darkgreen = #a3be8c
-lightblue = #81cfff
-lightgreen = #A0E8A2
-lightred = #ffa1aa
-orange = #f1ba86
-purple = #989cff
-skyblue = #a4ebf3
-
-[colors-dark]
-background = #00000000
-background-round = #2b2f37
-foreground = #adb1b9
-foreground-battery-charging = #DF8890
-foreground-highlight = #ffffff
-foreground-power = #e06c75
-foreground-redshift = #e8f000
-foreground-song = #dddddd
-foreground-urgent = #88C0D0
-foreground-workspace-empty = #646870
-
-darkgreen = #a3be8c
-lightblue = #61afef
-lightgreen = #A0E8A2
-lightred = #bf616a
-orange = #d19a66
-purple = #989cff
-skyblue = #a4ebf3
-
-[colors-new]
-background = #00000000
 background-battery = #9e78bb
 background-volume = #6cb3ce
 background-wifi = #d37b7a
 background-cpu = #e9a56d
 background-mpd = #84b8ad
+background-date = #74cbcd
 background-time = #ffd484
 background-mem = #74cbcd
 background-power = #d03c45
@@ -56,7 +17,8 @@ background-temp = #a4ebf3
 background-telegram = #61afef
 background-updates = #bf616a
 background-backlight = #a0e8a2
-background-gputemp = #bf616a
+background-gputemp = #9e78bb
+background-onedrive = #0078d4
 foreground = #1b222d
 foreground-workspace = #999999
 foreground-title = #dddddd
@@ -67,8 +29,8 @@ width =  100%
 height = 20
 padding-left = 1
 padding-right = 0
-background = ${colors-new.background}
-foreground = ${colors-new.foreground}
+background = ${colors.background}
+foreground = ${colors.foreground}
 bottom = false
 border-top-size = 6
 border-bottom-size = 6
@@ -96,8 +58,8 @@ width =  100%
 height = 20
 padding-left = 1
 padding-right = 1
-background = ${colors-new.background}
-foreground = ${colors-new.foreground}
+background = ${colors.background}
+foreground = ${colors.foreground}
 bottom = false
 border-top-size = 10
 border-bottom-size = 6
@@ -107,7 +69,7 @@ wm-restack = bspwm
 
 modules-left = bspwm title
 modules-center =    
-modules-right = mpd gputemp updates telegram wlan pulseaudio time powermenu
+modules-right = mpd gputemp pulseaudio updates telegram wlan date time powermenu
 module-margin-right = 1
 
 font-0 = FantasqueSansMono Nerd Font:size=12;3
@@ -125,9 +87,9 @@ width =  100%
 height = 20
 padding-left = 1
 padding-right = 1
-background = ${colors-new.background}
-foreground = ${colors-new.foreground}
-bottom = false
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = true
 border-top-size = 6
 border-bottom-size = 6
 
@@ -136,11 +98,11 @@ wm-restack = bspwm
 
 modules-left = bspwm title
 modules-center =    
-modules-right = mpd updates telegram wlan-miho pulseaudio battery time powermenu
+modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive date time powermenu
 module-margin-right = 1
 
-font-0 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
-font-1 = FantasqueSansMono Nerd Font:size=16;2
+font-0 = FantasqueSansMono Nerd Font:size=12;3
+font-1 = FantasqueSansMono Nerd Font:size=12;2
 font-2 = Material Design Icons:style=Bold:size=12;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
 font-4 = Noto Sans CJK KR:size=9;3
@@ -151,7 +113,7 @@ font-6 = Noto Sans CJK KR:size=10;1
 [module/title]
 type = internal/xwindow
 format = <label>
-format-foreground = ${colors-new.foreground-title}
+format-foreground = ${colors.foreground-title}
 format-prefix = " "
 label = %title%
 label-font = 7
@@ -166,7 +128,7 @@ warn-temperature = 70
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 format-padding = 1
-format-background = ${colors-new.background-temp}
+format-background = ${colors.background-temp}
 label = %temperature-c%
 label-warn = %temperature-c%
 ramp-0 =  "󰜗" 
@@ -182,7 +144,7 @@ enable-scroll = true
 reverse-scroll = false
 
 format = <label-state>
-format-background = ${colors-new.background}
+format-background = ${colors.background}
 
 ws-icon-0 = 1
 ws-icon-1 = 2
@@ -191,28 +153,28 @@ ws-icon-3 = 4
 ws-icon-4 = 5
 
 label-focused = %name%
-label-focused-background = ${colors-new.background-workspace-highlight}
-label-focused-foreground = ${colors-new.foreground}
+label-focused-background = ${colors.background-workspace-highlight}
+label-focused-foreground = ${colors.foreground}
 label-focused-padding = 1
 
 label-unfocused = %name%
-label-unfocused-background = ${colors-new.background-workspace-light}
-label-unfocused-foreground = ${colors-new.foreground}
+label-unfocused-background = ${colors.background-workspace-light}
+label-unfocused-foreground = ${colors.foreground}
 label-unfocused-padding = 1
 
 label-occupied = %name%
-label-occupied-background = ${colors-new.background-workspace}
-label-occupied-foreground = ${colors-new.foreground-workspace}
+label-occupied-background = ${colors.background-workspace}
+label-occupied-foreground = ${colors.foreground-workspace}
 label-occupied-padding = 1
 
 label-empty = %name%
-label-empty-background = ${colors-new.background-workspace}
-label-empty-foreground = ${colors-new.foreground-workspace}
+label-empty-background = ${colors.background-workspace}
+label-empty-foreground = ${colors.foreground-workspace}
 label-empty-padding = 1
 
 label-urgent = %name%
-label-urgent-background = ${colors-new.background-workspace}
-label-urgent-foreground = ${colors-new.foreground-workspace}
+label-urgent-background = ${colors.background-workspace}
+label-urgent-foreground = ${colors.foreground-workspace}
 label-urgent-padding = 1
 
 label-separator = " "
@@ -224,9 +186,9 @@ use-ui-max = true
 interval = 5
 format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors-new.background-volume}
+format-volume-background = ${colors.background-volume}
 format-muted-prefix = " "
-format-muted-background = ${colors-new.background-volume}
+format-muted-background = ${colors.background-volume}
 label-muted = "Muted"
 
 ramp-volume-0 = " "
@@ -236,16 +198,24 @@ ramp-volume-3 = " "
 ramp-volume-4 = " "
 
 
+[module/date]
+type = internal/date
+interval = 60
+format = <label>
+format-background = ${colors.background-date}
+format-padding = 1
+label = %date%
+date = 󰃭 %Y-%m-%d
+
+
 [module/time]
 type = internal/date
 interval = 60
 format = <label>
-format-background = ${colors-new.background-time}
+format-background = ${colors.background-time}
 format-padding = 1
-label = %date%%time%
-
-date = 󰥔 %H:%M%
-time-alt = 󰃭 %Y-%m-%d (%a)
+label = %time%
+time = 󰥔 %H:%M%
 
 
 [module/cpu]
@@ -253,7 +223,7 @@ type = internal/cpu
 interval = 2.5
 
 format = <label> 
-format-background = ${colors-new.background-cpu}
+format-background = ${colors.background-cpu}
 format-padding = 1
 
 label =  %percentage%%
@@ -263,7 +233,7 @@ label =  %percentage%%
 type = custom/script
 exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
 format =  <label>
-format-background = ${colors-new.background-mem}
+format-background = ${colors.background-mem}
 format-padding = 1
 label = %output%MB
 
@@ -272,7 +242,7 @@ label = %output%MB
 type = custom/script
 exec = ~/.config/scripts/telegram
 format =   <label>
-format-background = ${colors-new.background-telegram}
+format-background = ${colors.background-telegram}
 format-padding = 1
 interval = 10
 label = %output%
@@ -283,7 +253,7 @@ double-click-left = telegram-desktop &
 type = custom/script
 exec = ~/.config/scripts/update
 format =   <label>
-format-background = ${colors-new.background-updates}
+format-background = ${colors.background-updates}
 format-padding = 1
 interval = 30
 label =%output%
@@ -293,7 +263,7 @@ double-click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 type = custom/text 
 content = " "
 content-padding = 1
-content-background =  ${colors-new.background-power}
+content-background =  ${colors.background-power}
 click-left = ~/.config/rofi/bin/menu_powermenu &
 
 
@@ -302,7 +272,7 @@ type = internal/network
 interface = wlp7s0
 interval = 3.0
 format-connected = "󰤪 <label-connected>"
-format-connected-background = ${colors-new.background-wifi}
+format-connected-background = ${colors.background-wifi}
 format-connected-padding = 1
 label-connected = "%essid%" 
 
@@ -312,7 +282,7 @@ type = internal/network
 interface = wlp0s20f3
 interval = 3.0
 format-connected = "󰤪 <label-connected>"
-format-connected-background = ${colors-new.background-wifi}
+format-connected-background = ${colors.background-wifi}
 format-connected-padding = 1
 label-connected = "%essid%" 
 
@@ -323,29 +293,29 @@ battery = BAT1
 adapter = ACAD
 full-at = 99
 
+format-background = ${colors.background-battery}
+
 format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
-format-charging-background = ${colors-new.background-battery}
+format-charging-background = ${colors.background-battery}
 label-charging = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 1
-format-discharging-background = ${colors-new.background-battery}
+format-discharging-background = ${colors.background-battery}
 label-discharging = %percentage%%
 
 format-full =   <label-full>
 format-full-padding = 1
-format-full-background = ${colors-new.background-battery}
+format-full-background = ${colors.background-battery}
 label-full = %percentage%%
 
-ramp-capacity-background =  ${colors-new.background-battery}
 ramp-capacity-0 = " " 
 ramp-capacity-1 = " " 
 ramp-capacity-2 = " " 
 ramp-capacity-3 = " " 
 ramp-capacity-4 = " "
 
-animation-charging-background = ${colors-new.background-battery}
 animation-charging-0 = " " 
 animation-charging-1 = " " 
 animation-charging-2 = " " 
@@ -358,7 +328,7 @@ animation-charging-framerate = 910
 type = internal/xbacklight
 format = <label>
 format-prefix = " "
-format-background = ${colors-new.background-backlight}
+format-background = ${colors.background-backlight}
 format-padding = 1
 label = %percentage%%
 
@@ -367,17 +337,17 @@ label = %percentage%%
 type = internal/mpd
 interval = 1
 format-online = "<toggle><label-song>" 
-format-online-background = ${colors-new.background-mpd}
+format-online-background = ${colors.background-mpd}
 
 label-song = "%{T5}%artist% - %title%%{T-}"
 label-song-maxlen = 64
 label-song-ellipsis = true
-label-song-background = ${colors-new.background-mpd}
+label-song-background = ${colors.background-mpd}
 label-song-padding = 1
 
 label-offline = "Offline"
 label-offline-padding = 1
-label-offline-background = ${colors-new.background-mpd}
+label-offline-background = ${colors.background-mpd}
 
 icon-play = "  "
 icon-pause = "  "
@@ -390,7 +360,7 @@ icon-next = "  "
 type = custom/script
 exec = ~/.config/scripts/gputemp
 format = 﨏 <label>
-format-background = ${colors-new.background-mem}
+format-background = ${colors.background-mem}
 format-padding = 1
 label = %output%
 #䀹
@@ -400,8 +370,19 @@ type = custom/script
 exec = ~/.config/scripts/redshift-ctrl
 interval = 1.0
 format = <label>
-format-background = ${colors-new.background-redshift}
+format-background = ${colors.background-redshift}
 format-padding = 1
 label = %output%
 click-left = ~/.config/scripts/redshift-ctrl toggle &
+
+
+[module/onedrive]
+type = custom/script
+exec = ~/.config/scripts/onedrive status
+interval = 1.0
+format = <label>
+format-background = ${colors.background-onedrive}
+format-padding = 1
+label = "%output% "
+click-left = ~/.config/scripts/onedrive toggle
 
