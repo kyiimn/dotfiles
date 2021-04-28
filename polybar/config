@@ -32,7 +32,7 @@ padding-left = 1
 padding-right = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
-bottom = false
+bottom = true
 border-top-size = 6
 border-bottom-size = 6
 
@@ -61,8 +61,8 @@ padding-left = 1
 padding-right = 1
 background = ${colors.background}
 foreground = ${colors.foreground}
-bottom = false
-border-top-size = 10
+bottom = true
+border-top-size = 6
 border-bottom-size = 6
 
 line-size = 3
@@ -361,7 +361,7 @@ icon-next = "  "
 type = custom/script
 exec = ~/.config/scripts/gputemp
 format = 﨏 <label>
-format-background = ${colors.background-mem}
+format-background = ${colors.background-gputemp}
 format-padding = 1
 label = %output%
 #䀹
