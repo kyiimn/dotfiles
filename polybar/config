@@ -19,6 +19,7 @@ background-updates = #bf616a
 background-backlight = #a0e8a2
 background-gputemp = #9e78bb
 background-onedrive = #0078d4
+background-gdrive = #ea4335
 foreground = #1b222d
 foreground-workspace = #999999
 foreground-title = #dddddd
@@ -69,7 +70,7 @@ wm-restack = bspwm
 
 modules-left = bspwm title
 modules-center =    
-modules-right = mpd gputemp pulseaudio updates telegram wlan date time powermenu
+modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive date time powermenu
 module-margin-right = 1
 
 font-0 = FantasqueSansMono Nerd Font:size=12;3
@@ -98,7 +99,7 @@ wm-restack = bspwm
 
 modules-left = bspwm title
 modules-center =    
-modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive date time powermenu
+modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive date time powermenu
 module-margin-right = 1
 
 font-0 = FantasqueSansMono Nerd Font:size=12;3
@@ -385,4 +386,16 @@ format-background = ${colors.background-onedrive}
 format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/onedrive toggle
+
+
+[module/gdrive]
+type = custom/script
+exec = ~/.config/scripts/gdrive status
+interval = 1.0
+format = <label>
+format-background = ${colors.background-gdrive}
+format-padding = 1
+label = "%output% "
+click-left = ~/.config/scripts/gdrive toggle
+
 

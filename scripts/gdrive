@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ "$1" = 'mount' ]; then
+	pgrep -f GDrive > /dev/null || rclone --vfs-cache-mode writes mount gdrive: ~/GDrive &
+elif [ "$1" = 'unmount' ]; then
+	umount ~/GDrive
+elif [ "$1" = 'toggle' ]; then
+	ST=`pgrep -f GDrive | wc -l`
+	if [ $ST -eq 0 ]; then
+		pgrep -f GDrive > /dev/null || rclone --vfs-cache-mode writes mount gdrive: ~/GDrive &
+	else
+		umount ~/GDrive
+	fi
+elif [ "$1" = 'status' ]; then
+	MOUNT=`pgrep -f GDrive | wc -l`
+	if [ $MOUNT -eq 0 ]; then
+		echo 
+	else
+		echo 
+	fi
+fi
+
