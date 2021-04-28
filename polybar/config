@@ -3,6 +3,7 @@ background = #00000000
 background-battery = #9e78bb
 background-volume = #6cb3ce
 background-wifi = #d37b7a
+background-screenkey = #e9a56d
 background-cpu = #e9a56d
 background-mpd = #84b8ad
 background-date = #74cbcd
@@ -70,7 +71,7 @@ wm-restack = bspwm
 
 modules-left = bspwm title
 modules-center =    
-modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive date time powermenu
+modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive screenkey date time powermenu
 module-margin-right = 1
 
 font-0 = FantasqueSansMono Nerd Font:size=12;3
@@ -398,4 +399,14 @@ format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/gdrive toggle
 
+
+[module/screenkey]
+type = custom/script
+exec = ~/.config/scripts/screenkey.sh status
+interval = 1.0
+format = <label>
+format-background = ${colors.background-screenkey}
+format-padding = 1
+label = "%output% "
+click-left = ~/.config/scripts/screenkey.sh toggle
 
