@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "480x5-20+54"
+    geometry = "480x5-20+14"
     indicate_hidden = yes
     shrink = no
     transparency = 20
@@ -11,7 +11,7 @@
     horizontal_padding = 24
 
     frame_width = 0
-    frame_color = "#ffffff"
+    frame_color = "#39465e"
     separator_color = frame
     sort = yes
 
@@ -53,21 +53,21 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#ffffff"
-    foreground = "#555555"
-    frame_color = "#ffffff"
+    background = "#39465e"
+    foreground = "#ffffff"
+    frame_color = "#39465e"
     timeout = 10
 
 [urgency_normal]
-    background = "#ffffff"
-    foreground = "#555555"
-    frame_color = "#ffffff"
+    background = "#39465e"
+    foreground = "#ffffff"
+    frame_color = "#39465e"
     timeout = 10
 
 [urgency_critical]
-    background = "#ffffff"
-    foreground = "#555555"
-    frame_color = "#ff3333"
+    background = "#d03c45"
+    foreground = "#ffffff"
+    frame_color = "#d03c45"
     timeout = 0
 
 # vim: ft=cfg
