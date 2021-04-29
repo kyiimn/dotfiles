@@ -121,8 +121,8 @@ case $CHOICE in
 	" matrix") exec alacritty --title 'Matrix' -e ncmatrix;;
 	" fontforge") exec fontforge;;
     	" github-desktop") exec github-desktop;;
-    	" webbrowser (chrome)") exec google-chrome-stable;;
-    	" webbrowser (chrome over tor)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
+    	" webbrowser (chrome)") exec google-chrome-stable -incognito;;
+    	" webbrowser (chrome over tor)") exec google-chrome-stable -incognito --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
     	" inkscape") exec inkscape;;
     	" texmaker") exec texmaker;;
     	" scribus") exec scribus;;
