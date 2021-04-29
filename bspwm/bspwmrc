@@ -51,6 +51,7 @@ bspc rule -a UE4Editor state=floating
 bspc rule -a Transmission-gtk state=floating
 bspc rule -a xpad state=floating
 bspc rule -a "Github Desktop" state=floating
+bspc rule -a Screenkey manage=off
 
 ~/.config/scripts/redshift-ctrl night
 ~/.config/polybar/launch.sh &

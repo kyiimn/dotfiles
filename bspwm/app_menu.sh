@@ -70,6 +70,7 @@ ARR+=(" matrix")
 CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app" -theme ~/.config/rofi/nord.rasi)
 
 case $CHOICE in
+	" obsstudio") exec obs;;
     " lutris") exec lutris;;
 	" svstudio") exec svstudio;;
 	" vocaloid") excc /usr/share/playonlinux/playonlinux --run 'Vocaloid4FE' ;;
@@ -120,7 +121,6 @@ case $CHOICE in
 	" matrix") exec alacritty --title 'Matrix' -e ncmatrix;;
 	" fontforge") exec fontforge;;
     	" github-desktop") exec github-desktop;;
-    	" obsstudio") exec obs;;
     	" webbrowser (chrome)") exec google-chrome-stable;;
     	" webbrowser (chrome over tor)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
     	" inkscape") exec inkscape;;

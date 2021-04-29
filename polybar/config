@@ -100,7 +100,7 @@ wm-restack = bspwm
 
 modules-left = bspwm title
 modules-center =    
-modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive date time powermenu
+modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive screenkey date time powermenu
 module-margin-right = 1
 
 font-0 = FantasqueSansMono Nerd Font:size=12;3
