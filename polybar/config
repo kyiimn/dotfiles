@@ -191,7 +191,8 @@ format-volume = <ramp-volume> <label-volume>
 format-volume-background = ${colors.background-volume}
 format-muted-prefix = " "
 format-muted-background = ${colors.background-volume}
-label-muted = "Muted"
+label-muted = " Muted"
+format-muted-padding = 1
 
 ramp-volume-0 = " "
 ramp-volume-1 = " "
