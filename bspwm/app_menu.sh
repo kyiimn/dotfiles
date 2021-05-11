@@ -7,6 +7,7 @@ ARR+=(" filemanager (ranger)")
 ARR+=(" filemanager (mc)")
 ARR+=(" filemanager (pcmanfm)")
 ARR+=(" webbrowser (firefox)")
+ARR+=(" webbrowser (firefox over tor)")
 ARR+=(" webbrowser (chrome)")
 ARR+=(" webbrowser (chrome over tor)")
 ARR+=(" email (thunderbird)")
@@ -121,14 +122,15 @@ case $CHOICE in
 	" matrix") exec alacritty --title 'Matrix' -e ncmatrix;;
 	" fontforge") exec fontforge;;
     	" github-desktop") exec github-desktop;;
-    	" webbrowser (chrome)") exec google-chrome-stable -incognito;;
-    	" webbrowser (chrome over tor)") exec google-chrome-stable -incognito --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
+    	" webbrowser (chrome)") exec google-chrome-stable;;
+    	" webbrowser (chrome over tor)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
     	" inkscape") exec inkscape;;
     	" texmaker") exec texmaker;;
     	" scribus") exec scribus;;
     	" muse") exec muse3;;
     	" ardour") exec ardour6;;
     	" rosegarden") exec rosegarden;;
-    	" webbrowser (firefox)") exec firefox-developer-edition;;
+    	" webbrowser (firefox)") exec firefox;;
+		" webbrowser (firefox over tor)") exec proxychains firefox;;
     	" pgmodeler") exec pgmodeler;;
 esac

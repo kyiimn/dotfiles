@@ -7,7 +7,7 @@ xrdb merge ~/.Xresources &
 
 pgrep -x picom > /dev/null || picom --experimental-backends &
 
-pgrep -x polkit-gnome-authentication-agent-1 > /dev/null || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+pgrep -x polkit-mate-authentication-agent-1 > /dev/null || /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 pgrep -x ibus-daemon > /dev/null || ibus-daemon -drx &
 pgrep -x nm-applet > /dev/null || nm-applet &
 pgrep -x blueman-applet > /dev/null || blueman-applet &
@@ -17,6 +17,7 @@ pgrep -x ntfd > /dev/null || ntfd &
 pgrep -x xpad > /dev/null || xpad -N &
 pgrep -f telegram-desktop > /dev/null || QT_IM_MODULE=ibus telegram-desktop -startintray &
 pgrep -f cadence > /dev/null || cadence --minimized &
+pgrep -f 1password > /dev/null || 1password --silent &
 
 feh --bg-fill ~/Pictures/wallpaper-37.png
 
@@ -52,6 +53,7 @@ bspc rule -a Transmission-gtk state=floating
 bspc rule -a xpad state=floating
 bspc rule -a GitHub\ Desktop state=floating
 bspc rule -a Screenkey manage=off
+bspc rule -a 1Password state=floating
 
 ~/.config/scripts/redshift-ctrl night
 ~/.config/polybar/launch.sh &
