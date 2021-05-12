@@ -294,7 +294,7 @@ label-connected = "%essid%"
 type = internal/battery
 battery = BAT1
 adapter = ACAD
-full-at = 99
+full-at = 98
 
 format-background = ${colors.background-battery}
 
