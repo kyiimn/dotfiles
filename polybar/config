@@ -29,13 +29,14 @@ foreground-gdrive = #ea4335
 monitor = DisplayPort-1
 width =  100%
 height = 20
-padding-left = 1
+padding-left = 2
 padding-right = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = true
-border-top-size = 6
-border-bottom-size = 6
+border-top-size = 4
+border-bottom-size = 4
+border-color = ${colors.background}
 
 line-size = 3
 wm-restack = bspwm
@@ -43,14 +44,15 @@ wm-restack = bspwm
 modules-left = bspwm
 # modules-center = mpd
 # modules-right = temperature gputemp pulseaudio_bar
-module-margin-right = 1
+module-margin-right = 
 
-font-0 = FantasqueSansMono Nerd Font:size=12;3
-font-1 = FantasqueSansMono Nerd Font:size=12;2
+font-0 = JetBrainsMono Nerd Font:size=9;2
+font-1 = JetBrainsMono Nerd Font:size=12;2
 font-2 = Material Design Icons:style=Bold:size=12;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
-font-4 = Noto Sans CJK KR:size=9;3
-font-5 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
+font-4 = Noto Sans CJK KR:size=9;2
+font-5 = JetBrainsMono Nerd Font:style=Bold:size=14;3
+font-6 = Noto Sans CJK KR:size=10;1
 
 
 [bar/bottom]
@@ -58,13 +60,14 @@ font-5 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
 monitor = DisplayPort-0
 width =  100%
 height = 20
-padding-left = 1
-padding-right = 1
+padding-left = 2
+padding-right = 2
 background = ${colors.background}
 foreground = ${colors.foreground}
-bottom = true
-border-top-size = 6
-border-bottom-size = 6
+bottom = false
+border-top-size = 4
+border-bottom-size = 4
+border-color = ${colors.background}
 
 line-size = 3
 wm-restack = bspwm
@@ -72,15 +75,15 @@ wm-restack = bspwm
 modules-left = bspwm title
 modules-center =    
 modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive screenkey date time powermenu
-module-margin-right = 1
+module-margin-right = 
 
-font-0 = FantasqueSansMono Nerd Font:size=12;3
-font-1 = FantasqueSansMono Nerd Font:size=12;2
+font-0 = JetBrainsMono Nerd Font:size=9;2
+font-1 = JetBrainsMono Nerd Font:size=12;2
 font-2 = Material Design Icons:style=Bold:size=12;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
-font-4 = Noto Sans CJK KR:size=9;3
-font-5 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
-font-6 = Noto Sans CJK KR:size=10;1
+font-4 = Noto Sans CJK KR:size=8;2
+font-5 = JetBrainsMono Nerd Font:style=Bold:size=14;3
+font-6 = Noto Sans CJK KR:size=9;3
 
 
 [bar/miho]
@@ -363,7 +366,7 @@ icon-next = "  "
 [module/gputemp]
 type = custom/script
 exec = ~/.config/scripts/gputemp
-format = 﨏<label>
+format = 﨏 <label>
 format-foreground = ${colors.foreground-gputemp}
 format-padding = 1
 label = %output%
