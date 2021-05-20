@@ -16,7 +16,7 @@ elif [ "$1" = 'status' ]; then
 	if [ $MOUNT -eq 0 ]; then
 		echo 
 	else
-		echo 
+		echo 
 	fi
 fi
 

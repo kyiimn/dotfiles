@@ -1,5 +1,5 @@
 [colors]
-background = #00000000
+background = #44000000
 background-battery = #9e78bb
 background-volume = #6cb3ce
 background-wifi = #d37b7a
@@ -91,9 +91,10 @@ padding-left = 1
 padding-right = 1
 background = ${colors.background}
 foreground = ${colors.foreground}
-bottom = true
-border-top-size = 6
-border-bottom-size = 6
+bottom = false
+border-top-size = 3
+border-bottom-size = 3
+border-color = ${colors.background}
 
 line-size = 1
 wm-restack = bspwm
@@ -101,14 +102,14 @@ wm-restack = bspwm
 modules-left = bspwm title
 modules-center =    
 modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive screenkey date time powermenu
-module-margin-right = 1
+module-margin-right = 0.5
 
-font-0 = FantasqueSansMono Nerd Font:size=12;3
-font-1 = FantasqueSansMono Nerd Font:size=12;2
+font-0 = JetBrainsMono Nerd Font:size=9;2
+font-1 = JetBrainsMono Nerd Font:size=12;2
 font-2 = Material Design Icons:style=Bold:size=12;3
 font-3 = unifont:fontformat=truetype:size=13:antialias=true;
-font-4 = Noto Sans CJK KR:size=9;3
-font-5 = FantasqueSansMono Nerd Font:style=Bold:size=14;3
+font-4 = Noto Sans CJK KR:size=9;2
+font-5 = JetBrainsMono Nerd Font:style=Bold:size=14;3
 font-6 = Noto Sans CJK KR:size=10;1
 
 
@@ -130,7 +131,7 @@ warn-temperature = 70
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 format-padding = 1
-format-background = ${colors.background-temp}
+format-foreground = ${colors.background-temp}
 label = %temperature-c%
 label-warn = %temperature-c%
 ramp-0 =  "󰜗" 
@@ -188,24 +189,24 @@ use-ui-max = true
 interval = 5
 format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.background-volume}
-format-muted-prefix = " "
-format-muted-background = ${colors.background-volume}
+format-volume-foreground = ${colors.background-volume}
+format-muted-prefix = ""
+format-muted-foreground = ${colors.background-volume}
 label-muted = " Muted"
 format-muted-padding = 1
 
-ramp-volume-0 = " "
-ramp-volume-1 = " "
-ramp-volume-2 = " "
-ramp-volume-3 = " "
-ramp-volume-4 = " "
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-3 = ""
+ramp-volume-4 = ""
 
 
 [module/date]
 type = internal/date
 interval = 60
 format = <label>
-format-background = ${colors.background-date}
+format-foreground = ${colors.background-date}
 format-padding = 1
 label = %date%
 date = 󰃭 %Y-%m-%d
@@ -215,7 +216,7 @@ date = 󰃭 %Y-%m-%d
 type = internal/date
 interval = 60
 format = <label>
-format-background = ${colors.background-time}
+format-foreground = ${colors.background-time}
 format-padding = 1
 label = %time%
 time = 󰥔 %H:%M%
@@ -226,7 +227,7 @@ type = internal/cpu
 interval = 2.5
 
 format = <label> 
-format-background = ${colors.background-cpu}
+format-foreground = ${colors.background-cpu}
 format-padding = 1
 
 label =  %percentage%%
@@ -236,7 +237,7 @@ label =  %percentage%%
 type = custom/script
 exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
 format =  <label>
-format-background = ${colors.background-mem}
+format-foreground = ${colors.background-mem}
 format-padding = 1
 label = %output%MB
 
@@ -244,8 +245,8 @@ label = %output%MB
 [module/telegram]
 type = custom/script
 exec = ~/.config/scripts/telegram
-format =   <label>
-format-background = ${colors.background-telegram}
+format =  <label>
+format-foreground = ${colors.background-telegram}
 format-padding = 1
 interval = 10
 label = %output%
@@ -255,8 +256,8 @@ click-left = telegram-desktop &
 [module/updates]
 type = custom/script
 exec = ~/.config/scripts/update
-format =   <label>
-format-background = ${colors.background-updates}
+format =  <label>
+format-foreground = ${colors.background-updates}
 format-padding = 1
 interval = 30
 label =%output%
@@ -266,7 +267,7 @@ click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 type = custom/text 
 content = " "
 content-padding = 1
-content-background =  ${colors.background-power}
+content-foreground =  ${colors.background-power}
 click-left = ~/.config/rofi/bin/menu_powermenu &
 
 
@@ -275,7 +276,7 @@ type = internal/network
 interface = wlp7s0
 interval = 3.0
 format-connected = "󰤪 <label-connected>"
-format-connected-background = ${colors.background-wifi}
+format-connected-foreground = ${colors.background-wifi}
 format-connected-padding = 1
 label-connected = "%essid%" 
 
@@ -285,7 +286,7 @@ type = internal/network
 interface = wlp0s20f3
 interval = 3.0
 format-connected = "󰤪 <label-connected>"
-format-connected-background = ${colors.background-wifi}
+format-connected-foreground = ${colors.background-wifi}
 format-connected-padding = 1
 label-connected = "%essid%" 
 
@@ -296,21 +297,21 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-background = ${colors.background-battery}
+format-foreground = ${colors.background-battery}
 
 format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
-format-charging-background = ${colors.background-battery}
+format-charging-foreground = ${colors.background-battery}
 label-charging = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 1
-format-discharging-background = ${colors.background-battery}
+format-discharging-foreground = ${colors.background-battery}
 label-discharging = %percentage%%
 
 format-full =   <label-full>
 format-full-padding = 1
-format-full-background = ${colors.background-battery}
+format-full-foreground = ${colors.background-battery}
 label-full = %percentage%%
 
 ramp-capacity-0 = " " 
@@ -331,7 +332,7 @@ animation-charging-framerate = 910
 type = internal/xbacklight
 format = <label>
 format-prefix = " "
-format-background = ${colors.background-backlight}
+format-foreground = ${colors.background-backlight}
 format-padding = 1
 label = %percentage%%
 
@@ -340,17 +341,17 @@ label = %percentage%%
 type = internal/mpd
 interval = 1
 format-online = "<toggle><label-song>" 
-format-online-background = ${colors.background-mpd}
+format-online-foreground = ${colors.background-mpd}
 
 label-song = "%{T5}%artist% - %title%%{T-}"
 label-song-maxlen = 64
 label-song-ellipsis = true
-label-song-background = ${colors.background-mpd}
+label-song-foreground = ${colors.background-mpd}
 label-song-padding = 1
 
 label-offline = "Offline"
 label-offline-padding = 1
-label-offline-background = ${colors.background-mpd}
+label-offline-foreground = ${colors.background-mpd}
 
 icon-play = "  "
 icon-pause = "  "
@@ -362,8 +363,8 @@ icon-next = "  "
 [module/gputemp]
 type = custom/script
 exec = ~/.config/scripts/gputemp
-format = 﨏 <label>
-format-background = ${colors.background-gputemp}
+format = 﨏<label>
+format-foreground = ${colors.background-gputemp}
 format-padding = 1
 label = %output%
 #䀹
@@ -373,7 +374,7 @@ type = custom/script
 exec = ~/.config/scripts/redshift-ctrl
 interval = 1.0
 format = <label>
-format-background = ${colors.background-redshift}
+format-foreground = ${colors.background-redshift}
 format-padding = 1
 label = %output%
 click-left = ~/.config/scripts/redshift-ctrl toggle &
@@ -384,7 +385,7 @@ type = custom/script
 exec = ~/.config/scripts/onedrive status
 interval = 1.0
 format = <label>
-format-background = ${colors.background-onedrive}
+format-foreground = ${colors.background-onedrive}
 format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/onedrive toggle
@@ -395,7 +396,7 @@ type = custom/script
 exec = ~/.config/scripts/gdrive status
 interval = 1.0
 format = <label>
-format-background = ${colors.background-gdrive}
+format-foreground = ${colors.background-gdrive}
 format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/gdrive toggle
@@ -406,7 +407,7 @@ type = custom/script
 exec = ~/.config/scripts/screenkey.sh status
 interval = 1.0
 format = <label>
-format-background = ${colors.background-screenkey}
+format-foreground = ${colors.background-screenkey}
 format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/screenkey.sh toggle
