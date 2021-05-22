@@ -19,7 +19,7 @@ pgrep -f telegram-desktop > /dev/null || QT_IM_MODULE=ibus telegram-desktop -sta
 pgrep -f cadence > /dev/null || cadence --minimized &
 pgrep -f 1password > /dev/null || 1password --silent &
 
-feh --bg-fill ~/Pictures/wallpaper-37.png
+feh --bg-fill ~/Pictures/wallpaper-26.jpg
 
 
 # workspaces 
