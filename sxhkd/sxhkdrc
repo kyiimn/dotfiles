@@ -25,6 +25,9 @@ XF86Touchpad{On,Off}
 XF86MonBrightness{Down,Up}
     xbacklight {-dec,-inc} 10
 
+super + ctrl + 1
+	1password
+
 super + ctrl + e
     alacritty -e ranger
 
@@ -41,7 +44,7 @@ super + ctrl + t
     alacritty -e bpytop
 
 super + ctrl + i
-    qutebrowser --target window
+    firefox
 
 super + ctrl + v
     alacritty -e nvim

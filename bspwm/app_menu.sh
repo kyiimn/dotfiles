@@ -16,6 +16,7 @@ ARR+=(" telegram")
 ARR+=(" discord")
 ARR+=(" bpytop")
 ARR+=(" system update (yay)")
+ARR+=(" 1password")
 ARR+=("")
 ARR+=("Development:")
 ARR+=(" visual studio code")
@@ -47,7 +48,6 @@ ARR+=(" svstudio")
 ARR+=("")
 ARR+=("Graphics:")
 ARR+=(" gimp")
-ARR+=(" photoshop")
 ARR+=(" krita")
 ARR+=(" inkscape")
 ARR+=(" darktable")
@@ -56,19 +56,17 @@ ARR+=(" texmaker")
 ARR+=("")
 ARR+=("Multimedia:")
 ARR+=(" obsstudio")
-ARR+=(" davinci resolve")
 ARR+=(" mpdclient (ncmpcpp)")
 ARR+=(" videoplayer (vlc)")
 ARR+=("")
 ARR+=("Fun:")
 ARR+=(" lutris")
 ARR+=(" steam")
-ARR+=(" mame")
-ARR+=(" matrix")
 
 CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app" -theme ~/.config/rofi/nord.rasi)
 
 case $CHOICE in
+	" 1password") exec 1password;;
 	" obsstudio") exec obs;;
     " lutris") exec lutris;;
 	" svstudio") exec svstudio;;
