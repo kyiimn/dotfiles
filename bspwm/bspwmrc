@@ -54,7 +54,7 @@ bspc rule -a xpad state=floating
 bspc rule -a GitHub\ Desktop state=floating
 bspc rule -a Screenkey manage=off
 bspc rule -a 1Password state=floating
-bspc rule -a UnityHub state=floating
+#bspc rule -a UnityHub state=floating
 
 ~/.config/scripts/redshift-ctrl night
 ~/.config/polybar/launch.sh &
