@@ -36,6 +36,8 @@ Plug 'ctrlpvim/ctrlp.vim'               "Ctrl + P for search file
 Plug '~/.fzf'                           "https://github.com/junegunn/fzf.vim
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'               "fancy start page for empty vim
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'morhetz/gruvbox'
 call plug#end()            " required
 
 "NERDTree ON 단축키를 "\nt"로 설정
@@ -56,7 +58,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$'
 \ }
 
-color jellybeans
+" color jellybeans
+colorscheme onehalfdark
+" set background=dark
 
 " Tag List 환경설정
 filetype on                                 "vim filetype on

@@ -1,19 +1,19 @@
 [colors]
-background = #99000000
-background-workspace = #39465e
-background-workspace-highlight = #ffffff
+background = #f9f5d7
+background-workspace = #f9f5d7
+background-workspace-highlight = #84b8ad
 background-workspace-light = #5c737f
 foreground = #1b222d
 foreground-workspace = #999999
-foreground-title = #dddddd
+foreground-title = #4c4c4c
 foreground-battery = #9e78bb
-foreground-volume = #6cb3ce
+foreground-volume = #4c93ae
 foreground-wifi = #d37b7a
 foreground-screenkey = #e9a56d
 foreground-cpu = #e9a56d
-foreground-mpd = #84b8ad
-foreground-date = #74cbcd
-foreground-time = #ffd484
+foreground-mpd = #64988d
+foreground-date = #54abad
+foreground-time = #bf9444
 foreground-mem = #74cbcd
 foreground-power = #d03c45
 foreground-redshift = #e8f000
@@ -33,9 +33,9 @@ padding-left = 2
 padding-right = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
-bottom = true
-border-top-size = 4
-border-bottom-size = 4
+bottom = false
+border-top-size = 2
+border-bottom-size = 2
 border-color = ${colors.background}
 
 line-size = 3
@@ -46,27 +46,27 @@ modules-left = bspwm
 # modules-right = temperature gputemp pulseaudio_bar
 module-margin-right = 
 
-font-0 = JetBrainsMono Nerd Font:size=9;2
-font-1 = JetBrainsMono Nerd Font:size=12;2
-font-2 = Material Design Icons:style=Bold:size=12;3
-font-3 = unifont:fontformat=truetype:size=13:antialias=true;
-font-4 = Noto Sans CJK KR:size=9;2
+font-0 = JetBrainsMono Nerd Font:size=8;2
+font-1 = JetBrainsMono Nerd Font:size=10;2
+font-2 = Material Design Icons:style=Bold:size=10;3
+font-3 = unifont:fontformat=truetype:size=10:antialias=true;
+font-4 = Noto Sans CJK KR:size=8;2
 font-5 = JetBrainsMono Nerd Font:style=Bold:size=14;3
-font-6 = Noto Sans CJK KR:size=10;1
+font-6 = Noto Sans CJK KR:size=8;2
 
 
 [bar/bottom]
 #tray-position = right
 monitor = DisplayPort-0
 width =  100%
-height = 20
+height = 18
 padding-left = 2
 padding-right = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = false
-border-top-size = 6
-border-bottom-size = 4
+border-top-size = 5
+border-bottom-size = 2
 border-color = ${colors.background}
 
 line-size = 3
@@ -77,26 +77,26 @@ modules-center =
 modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive screenkey date time powermenu
 module-margin-right = 
 
-font-0 = JetBrainsMono Nerd Font:size=9;2
-font-1 = JetBrainsMono Nerd Font:size=12;2
-font-2 = Material Design Icons:style=Bold:size=12;3
-font-3 = unifont:fontformat=truetype:size=13:antialias=true;
+font-0 = JetBrainsMono Nerd Font:size=8;2
+font-1 = JetBrainsMono Nerd Font:size=10;2
+font-2 = Material Design Icons:style=Bold:size=10;3
+font-3 = unifont:fontformat=truetype:size=10:antialias=true;
 font-4 = Noto Sans CJK KR:size=8;2
 font-5 = JetBrainsMono Nerd Font:style=Bold:size=14;3
-font-6 = Noto Sans CJK KR:size=9;3
+font-6 = Noto Sans CJK KR:size=8;2
 
 
 [bar/miho]
 monitor = eDP1
 width =  100%
-height = 20
+height = 18
 padding-left = 1
 padding-right = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = false
-border-top-size = 3
-border-bottom-size = 3
+border-top-size = 2
+border-bottom-size = 2
 border-color = ${colors.background}
 
 line-size = 1
@@ -107,13 +107,13 @@ modules-center =
 modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive screenkey date time powermenu
 module-margin-right = 0.5
 
-font-0 = JetBrainsMono Nerd Font:size=9;2
-font-1 = JetBrainsMono Nerd Font:size=12;2
-font-2 = Material Design Icons:style=Bold:size=12;3
-font-3 = unifont:fontformat=truetype:size=13:antialias=true;
-font-4 = Noto Sans CJK KR:size=9;2
+font-0 = JetBrainsMono Nerd Font:size=8;2
+font-1 = JetBrainsMono Nerd Font:size=10;2
+font-2 = Material Design Icons:style=Bold:size=10;3
+font-3 = unifont:fontformat=truetype:size=10:antialias=true;
+font-4 = Noto Sans CJK KR:size=8;2
 font-5 = JetBrainsMono Nerd Font:style=Bold:size=14;3
-font-6 = Noto Sans CJK KR:size=10;1
+font-6 = Noto Sans CJK KR:size=8;2
 
 
 [module/title]
@@ -121,6 +121,7 @@ type = internal/xwindow
 format = <label>
 format-foreground = ${colors.foreground-title}
 format-prefix = " "
+format-padding = 2
 label = %title%
 label-font = 7
 label-maxlen = 256
