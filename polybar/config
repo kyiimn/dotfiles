@@ -72,8 +72,8 @@ border-color = ${colors.background}
 line-size = 3
 wm-restack = bspwm
 
-modules-left = bspwm title
-modules-center =    
+modules-left = bspwm
+modules-center = polywins
 modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive screenkey date time powermenu
 module-margin-right = 
 
@@ -275,11 +275,21 @@ content-foreground =  ${colors.foreground-power}
 click-left = ~/.config/rofi/bin/menu_powermenu &
 
 
+[module/polywins]
+type = custom/script
+exec = ~/.config/scripts/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+label-padding = 1
+tail = true
+
+
 [module/wlan]
 type = internal/network
 interface = wlp7s0
 interval = 3.0
-format-connected = "󰤪 <label-connected>"
+format-connected = "󰤪 "
+#<label-connected>"
 format-connected-foreground = ${colors.foreground-wifi}
 format-connected-padding = 1
 label-connected = "%essid%" 
