@@ -58,8 +58,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$'
 \ }
 
-" color jellybeans
-colorscheme onehalfdark
+color jellybeans
+" colorscheme onehalfdark
 " set background=dark
 
 " Tag List 환경설정

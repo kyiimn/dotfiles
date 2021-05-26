@@ -160,12 +160,14 @@ ws-icon-3 = 4
 ws-icon-4 = 5
 
 label-focused = %name%
-label-focused-background = ${colors.background-workspace-highlight}
+label-focused-underline = ${colors.background-workspace-highlight}
+label-focused-background = ${colors.background-workspace}
 label-focused-foreground = ${colors.foreground}
 label-focused-padding = 1
 
 label-unfocused = %name%
-label-unfocused-background = ${colors.background-workspace-light}
+label-unfocused-underline = ${colors.background-workspace-light}
+label-unfocused-background = ${colors.background-workspace}
 label-unfocused-foreground = ${colors.foreground}
 label-unfocused-padding = 1
 
