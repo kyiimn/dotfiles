@@ -110,7 +110,7 @@ wm-restack = bspwm
 
 modules-left = bspwm
 modules-center = polywins
-modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive screenkey datetime powermenu
+modules-right = wlan-miho updates telegram onedrive gdrive screenkey pulseaudio battery datetime powermenu
 
 module-margin-right = 1
 
