@@ -29,8 +29,8 @@ bspc monitor DisplayPort-1 -d 6 7 8 9 0
 #bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
 
-bspc config top_padding -10
-bspc config bottom_padding -10
+#bspc config top_padding -10
+#bspc config bottom_padding -10
 
 # borders
 bspc config border_radius 11
