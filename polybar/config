@@ -105,12 +105,12 @@ border-top-size = 2
 border-bottom-size = 2
 border-color = ${colors.background}
 
-line-size = 1
+line-size = 2
 wm-restack = bspwm
 
 modules-left = bspwm
 modules-center = polywins
-modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive screenkey date time powermenu
+modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive screenkey datetime powermenu
 
 module-margin-right = 1
 
@@ -341,20 +341,24 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
-format-foreground = ${colors.foreground-battery}
-format-underline = ${colors.foreground-battery}
-format-padding = 1
+format-foreground = ${colors.foreground}
 
 format-charging = <animation-charging> <label-charging>
 format-charging-foreground = ${colors.foreground}
+format-charging-underline = ${colors.foreground-battery}
+format-charging-padding = 1
 label-charging = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-foreground = ${colors.foreground}
+format-discharging-underline = ${colors.foreground-battery}
+format-discharging-padding = 1
 label-discharging = %percentage%%
 
 format-full =   <label-full>
 format-full-foreground = ${colors.foreground}
+format-full-underline = ${colors.foreground-battery}
+format-full-padding = 1
 label-full = %percentage%%
 
 ramp-capacity-0 = " " 
