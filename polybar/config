@@ -3,7 +3,7 @@ background = #f9f5d7
 background-workspace = #f9f5d7
 background-workspace-highlight = #84b8ad
 background-workspace-light = #5c737f
-foreground = #1b222d
+foreground = #4b525d
 foreground-workspace = #999999
 foreground-title = #4c4c4c
 foreground-battery = #9e78bb
@@ -69,15 +69,19 @@ border-top-size = 5
 border-bottom-size = 2
 border-color = ${colors.background}
 
-line-size = 3
+underline-size = 2
+
+line-size = 2
 wm-restack = bspwm
 
 modules-left = bspwm
 modules-center = polywins
-modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive screenkey date time powermenu
+modules-right = mpd gputemp pulseaudio updates telegram wlan onedrive gdrive screenkey datetime powermenu
 
 module-margin-left = 
 module-margin-right = 1
+
+separator = 
 
 font-0 = JetBrainsMono Nerd Font:size=8;2
 font-1 = JetBrainsMono Nerd Font:size=10;2
@@ -104,10 +108,11 @@ border-color = ${colors.background}
 line-size = 1
 wm-restack = bspwm
 
-modules-left = bspwm title
-modules-center =    
+modules-left = bspwm
+modules-center = polywins
 modules-right = mpd battery pulseaudio updates telegram wlan-miho onedrive gdrive screenkey date time powermenu
-module-margin-right = 0.5
+
+module-margin-right = 1
 
 font-0 = JetBrainsMono Nerd Font:size=8;2
 font-1 = JetBrainsMono Nerd Font:size=10;2
@@ -188,7 +193,7 @@ label-urgent-background = ${colors.background-workspace}
 label-urgent-foreground = ${colors.foreground-workspace}
 label-urgent-padding = 1
 
-label-separator = " "
+#label-separator = " "
 
 
 [module/pulseaudio]
@@ -198,10 +203,12 @@ interval = 5
 format-volume = <ramp-volume> <label-volume>
 format-volume-foreground = ${colors.foreground}
 format-volume-underline = ${colors.foreground-volume}
+format-volume-padding = 1
 
 format-muted =   <label-muted>
 format-muted-foreground = ${colors.foreground}
 format-muted-underline = ${colors.foreground-volume}
+format-muted-padding = 1
 label-muted = "Muted"
 
 ramp-volume-0 = ""
@@ -211,12 +218,24 @@ ramp-volume-3 = ""
 ramp-volume-4 = ""
 
 
+[module/datetime]
+type = internal/date
+interval = 60
+format = <label>
+format-foreground = ${colors.foreground}
+format-underline = ${colors.foreground-date}
+format-padding = 1
+label = %date%
+date = 󰃭 %Y-%m-%d %H:%M%
+
+
 [module/date]
 type = internal/date
 interval = 60
 format = <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-date}
+format-padding = 1
 label = %date%
 date = 󰃭 %Y-%m-%d
 
@@ -227,6 +246,7 @@ interval = 60
 format = <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-time}
+format-padding = 1
 label = %time%
 time = 󰥔 %H:%M%
 
@@ -238,6 +258,7 @@ interval = 2.5
 format = <label> 
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-cpu}
+format-padding = 1
 
 label =  %percentage%%
 
@@ -248,6 +269,7 @@ exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
 format =  <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-mem}
+format-padding = 1
 label = %output%MB
 
 
@@ -257,6 +279,7 @@ exec = ~/.config/scripts/telegram
 format =  <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-telegram}
+format-padding = 1
 interval = 10
 label = %output%
 click-left = telegram-desktop &
@@ -268,6 +291,7 @@ exec = ~/.config/scripts/update
 format =  <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-updates}
+format-padding = 1
 interval = 30
 label =%output%
 click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
@@ -277,6 +301,7 @@ click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 type = custom/text 
 content = " "
 content-foreground =  ${colors.foreground-power}
+content-padding = 1
 click-left = ~/.config/rofi/bin/menu_powermenu &
 
 
@@ -292,9 +317,10 @@ tail = true
 type = internal/network
 interface = wlp7s0
 interval = 3.0
-format-connected = "󰤪 "
+format-connected = "󰤪"
 format-connected-foreground = ${colors.foreground}
 format-connected-underline = ${colors.foreground-wifi}
+format-connected-padding = 1
 label-connected = "%essid%" 
 
 
@@ -305,6 +331,7 @@ interval = 3.0
 format-connected = "󰤪 <label-connected>"
 format-connected-foreground = ${colors.foreground}
 format-connected-underline = ${colors.foreground-wifi}
+format-connected-padding = 1
 label-connected = "%essid%" 
 
 
@@ -315,20 +342,19 @@ adapter = ACAD
 full-at = 98
 
 format-foreground = ${colors.foreground-battery}
+format-underline = ${colors.foreground-battery}
+format-padding = 1
 
 format-charging = <animation-charging> <label-charging>
 format-charging-foreground = ${colors.foreground}
-format-charging-underline = ${colors.foreground-battery}
 label-charging = %percentage%%
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-foreground = ${colors.foreground}
-format-discharging-underline = ${colors.foreground-battery}
 label-discharging = %percentage%%
 
 format-full =   <label-full>
 format-full-foreground = ${colors.foreground}
-format-full-underline = ${colors.foreground-battery}
 label-full = %percentage%%
 
 ramp-capacity-0 = " " 
@@ -351,6 +377,7 @@ format = <label>
 format-prefix = " "
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-backlight}
+format-padding = 1
 label = %percentage%%
 
 
@@ -384,6 +411,7 @@ exec = ~/.config/scripts/gputemp
 format = 﨏 <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-gputemp}
+format-padding = 1
 label = %output%
 
 
@@ -394,6 +422,7 @@ interval = 1.0
 format = <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-redshift}
+format-padding = 1
 label = %output%
 click-left = ~/.config/scripts/redshift-ctrl toggle &
 
@@ -405,6 +434,7 @@ interval = 1.0
 format = <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-onedrive}
+format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/onedrive toggle
 
@@ -416,6 +446,7 @@ interval = 1.0
 format = <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-gdrive}
+format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/gdrive toggle
 
@@ -427,6 +458,7 @@ interval = 1.0
 format = <label>
 format-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-screenkey}
+format-padding = 1
 label = "%output% "
 click-left = ~/.config/scripts/screenkey.sh toggle
 
