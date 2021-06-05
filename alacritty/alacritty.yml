@@ -14,11 +14,11 @@ window:
     x: 20
     y: 20
 
-  title: Alacritty
+  title: terminal
 
   class:
-    instance: Alacritty
-    general: Alacritty
+    instance: terminal
+    general: terminal
 
 scrolling:
   history: 5000
