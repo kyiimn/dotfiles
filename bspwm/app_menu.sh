@@ -63,7 +63,7 @@ ARR+=("Fun:")
 ARR+=(" lutris")
 ARR+=(" steam")
 
-CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app" -theme ~/.config/rofi/light.rasi)
+CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -lines 25 -p "app" -theme ~/.config/rofi/nord.rasi)
 
 case $CHOICE in
 	" 1password") exec 1password;;

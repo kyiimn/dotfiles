@@ -19,7 +19,7 @@ pgrep -f telegram-desktop > /dev/null || QT_IM_MODULE=ibus telegram-desktop -sta
 pgrep -f cadence > /dev/null || cadence --minimized &
 pgrep -f 1password > /dev/null || 1password --silent &
 
-feh --bg-fill ~/Pictures/wallpaper-41.png
+feh --bg-fill ~/Pictures/wallpaper-34.png
 
 
 # workspaces 
@@ -35,8 +35,8 @@ bspc config pointer_follows_monitor true
 # borders
 bspc config border_radius 0
 bspc config border_width 2
-bspc config normal_border_color "#494d5e"
-bspc config focused_border_color "#bbbb99"
+bspc config normal_border_color "#4c566a"
+bspc config focused_border_color "#81a1c1"
 
 #gaps 
 bspc config gapless_monocle false

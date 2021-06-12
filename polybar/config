@@ -1,29 +1,28 @@
 [colors]
-#background = #3b424d
-background = #2b2f40
-background-workspace-highlight = #84b8ad
-background-workspace-light = #5c737f
-foreground = #f9f5d7
+background = #2e3440
+foreground = #d8dee9
 foreground-workspace = #999999
+foreground-workspace-focused = #8fbcbb
+foreground-mpd = #8fbcbb
+foreground-gputemp = #88c0d0
+foreground-volume = #81a1c1
+foreground-updates = #bf616a
+foreground-telegram = #61afef
+foreground-wifi = #d08770
+foreground-onedrive = #61afef
+foreground-gdrive = #ebcb8b
+foreground-screenkey = #a3be8c
+foreground-date = #b48ead
+foreground-power = #d03c45
+
 foreground-title = #4c4c4c
 foreground-battery = #9e78bb
-foreground-volume = #4c93ae
-foreground-wifi = #d37b7a
-foreground-screenkey = #e9a56d
 foreground-cpu = #e9a56d
-foreground-mpd = #64988d
-foreground-date = #54abad
 foreground-time = #bf9444
 foreground-mem = #74cbcd
-foreground-power = #d03c45
 foreground-redshift = #e8f000
 foreground-temp = #a4ebf3
-foreground-telegram = #61afef
-foreground-updates = #bf616a
 foreground-backlight = #a0e8a2
-foreground-gputemp = #9e78bb
-foreground-onedrive = #0078d4
-foreground-gdrive = #ea4335
 
 [bar/top]
 monitor = DisplayPort-1
@@ -172,33 +171,25 @@ ws-icon-3 = 4
 ws-icon-4 = 5
 
 label-focused = %name%
-label-focused-underline = ${colors.background-workspace-highlight}
-label-focused-background = ${colors.background-workspace}
-label-focused-foreground = ${colors.background-workspace-highlight}
+label-focused-underline = ${colors.foreground-workspace-focused}
+label-focused-foreground = ${colors.foreground-workspace-focused}
 label-focused-padding = 1
 
 label-unfocused = %name%
-label-unfocused-underline = ${colors.background-workspace-light}
-label-unfocused-background = ${colors.background-workspace}
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = ${colors.foreground-workspace}
 label-unfocused-padding = 1
 
 label-occupied = %name%
-label-occupied-background = ${colors.background-workspace}
 label-occupied-foreground = ${colors.foreground-workspace}
 label-occupied-padding = 1
 
 label-empty = %name%
-label-empty-background = ${colors.background-workspace}
 label-empty-foreground = ${colors.foreground-workspace}
 label-empty-padding = 1
 
 label-urgent = %name%
-label-urgent-background = ${colors.background-workspace}
 label-urgent-foreground = ${colors.foreground-workspace}
 label-urgent-padding = 1
-
-#label-separator = " "
 
 
 [module/pulseaudio]

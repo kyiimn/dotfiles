@@ -4,9 +4,9 @@
 # SETTINGS {{{ ---
 
 #active_text_color="#f9f5d7"
-active_text_color="#ecb3b2"
+active_text_color="#5e81ac"
 active_bg=
-active_underline="#ECB3B2"
+active_underline="#5e81ac"
 
 inactive_text_color="#999999"
 inactive_bg=

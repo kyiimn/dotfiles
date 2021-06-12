@@ -31,6 +31,7 @@ Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nanotech/jellybeans.vim'
 "Plug 'iCyMind/NeoSolarized'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'ctrlpvim/ctrlp.vim'               "Ctrl + P for search file
 Plug '~/.fzf'                           "https://github.com/junegunn/fzf.vim
@@ -58,9 +59,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$'
 \ }
 
-color jellybeans
+" color jellybeans
 " colorscheme onehalfdark
 " set background=dark
+
+colorscheme nord
 
 " Tag List 환경설정
 filetype on                                 "vim filetype on
