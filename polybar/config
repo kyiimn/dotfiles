@@ -1,28 +1,5 @@
-[colors]
-background = #2e3440
-foreground = #d8dee9
-foreground-workspace = #999999
-foreground-workspace-focused = #8fbcbb
-foreground-mpd = #8fbcbb
-foreground-gputemp = #88c0d0
-foreground-volume = #81a1c1
-foreground-updates = #bf616a
-foreground-telegram = #61afef
-foreground-wifi = #d08770
-foreground-onedrive = #61afef
-foreground-gdrive = #ebcb8b
-foreground-screenkey = #a3be8c
-foreground-date = #b48ead
-foreground-power = #d03c45
-
-foreground-title = #4c4c4c
-foreground-battery = #9e78bb
-foreground-cpu = #e9a56d
-foreground-time = #bf9444
-foreground-mem = #74cbcd
-foreground-redshift = #e8f000
-foreground-temp = #a4ebf3
-foreground-backlight = #a0e8a2
+[global/wm]
+include-file = ~/.config/polybar/colors
 
 [bar/top]
 monitor = DisplayPort-1
@@ -40,7 +17,7 @@ border-color = ${colors.background}
 underline-size = 2
 
 line-size = 3 
-wm-restack = bspwm
+wm-restack = i3
 
 modules-left = bspwm
 # modules-center = mpd
@@ -71,9 +48,9 @@ border-bottom-size = 3
 border-color = ${colors.background}
 
 underline-size = 2
-
 line-size = 3
-wm-restack = bspwm
+
+wm-restack = i3
 
 modules-left = bspwm
 modules-center = polywins
@@ -109,7 +86,7 @@ border-color = ${colors.background}
 underline-size = 2
 
 line-size = 3
-wm-restack = bspwm
+wm-restack = i3
 
 modules-left = bspwm
 modules-center = polywins
@@ -153,10 +130,12 @@ ramp-foreground = ${colors.foreground-temp}
 
 
 [module/bspwm]
-type = internal/bspwm
+type = internal/i3
 
 pin-workspaces = true
-inline-mode = true
+#inline-mode = true
+index-sort = true
+
 enable-click = true
 enable-scroll = true
 reverse-scroll = false
@@ -190,6 +169,10 @@ label-empty-padding = 1
 label-urgent = %name%
 label-urgent-foreground = ${colors.foreground-workspace}
 label-urgent-padding = 1
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
 
 
 [module/pulseaudio]

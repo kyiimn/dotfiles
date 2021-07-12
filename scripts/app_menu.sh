@@ -5,7 +5,7 @@ ARR+=("Application:")
 ARR+=(" terminal (alacritty)")
 ARR+=(" filemanager (ranger)")
 ARR+=(" filemanager (mc)")
-ARR+=(" filemanager (pcmanfm)")
+ARR+=(" filemanager (thunar)")
 ARR+=(" webbrowser (firefox)")
 ARR+=(" webbrowser (firefox over tor)")
 ARR+=(" email (thunderbird)")
@@ -79,7 +79,7 @@ case $CHOICE in
     	" calculator") exec rofi -show calc -modi calc -no-show-match -no-sort;;
     	" google keep") exec google-keep;;
     	" emacs") exec emacs;;
-	" filemanager (pcmanfm)") exec pcmanfm;;
+	" filemanager (thunar)") exec thunar;;
 	" itch") exec itch;;
 	" ankama") exec ankama-launcher;;
 	" gambas3") exec gambas3;;

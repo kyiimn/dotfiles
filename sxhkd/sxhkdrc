@@ -62,7 +62,7 @@ super + l
     xscreensaver-command -lock
 
 super + u
-    ~/.config/bspwm/app_menu.sh
+    ~/.config/scripts/app_menu.sh
 
 super + w
     rofi -show window -theme ~/.config/rofi/nord.rasi

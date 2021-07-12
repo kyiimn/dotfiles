@@ -1,0 +1,28 @@
+[colors]
+#background = #2e3440
+background = #f8f8f8
+#foreground = #d8dee9
+foreground = #1e272e
+foreground-workspace = #595959
+foreground-workspace-focused = #4f8c8b
+foreground-mpd = #4f8c8b
+foreground-gputemp = #488090
+foreground-volume = #81a1c1
+foreground-updates = #8f212a
+foreground-telegram = #217faf
+foreground-wifi = #904730
+foreground-onedrive = #217faf
+foreground-gdrive = #ab9b4b
+foreground-screenkey = #738e4c
+foreground-date = #844e7d
+foreground-power = #d03c45
+
+foreground-title = #4c4c4c
+foreground-battery = #9e78bb
+foreground-cpu = #e9a56d
+foreground-time = #bf9444
+foreground-mem = #74cbcd
+foreground-redshift = #e8f000
+foreground-temp = #a4ebf3
+foreground-backlight = #a0e8a2
+

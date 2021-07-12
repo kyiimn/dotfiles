@@ -9,6 +9,6 @@ killall -q polybar
 echo "---" | tee -a /tmp/polybar-top1.log /tmp/polybar-top2.log
 echo "---" | tee -a /tmp/polybar-bottom1.log /tmp/polybar-bottom2.log
 #polybar black >>/tmp/polybar1.log 2>&1 & disown
-polybar top -c ~/.config/polybar/config -r >>/tmp/polybar-top1.log 2>&1 & 
+#polybar top -c ~/.config/polybar/config -r >>/tmp/polybar-top1.log 2>&1 & 
 polybar bottom -c ~/.config/polybar/config -r >>/tmp/polybar-bottom1.log 2>&1 &
 echo "Bars launched..."
