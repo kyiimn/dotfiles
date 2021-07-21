@@ -9,7 +9,6 @@ ARR+=(" filemanager (thunar)")
 ARR+=(" webbrowser (firefox)")
 ARR+=(" webbrowser (firefox over tor)")
 ARR+=(" email (thunderbird)")
-ARR+=(" calculator")
 ARR+=(" joplin")
 ARR+=(" libreoffice")
 ARR+=(" telegram")
@@ -23,26 +22,22 @@ ARR+=(" visual studio code")
 ARR+=(" virt-manager")
 ARR+=(" remmina")
 ARR+=(" dbeaver")
-ARR+=(" pgmodeler")
-ARR+=(" azure data studio")
 ARR+=(" github-desktop")
 ARR+=(" fontforge")
 ARR+=(" lazarus")
-ARR+=(" emacs")
 ARR+=(" vim")
 ARR+=("")
 ARR+=("Game Development:")
+ARR+=(" unreal-engine")
 ARR+=(" unityhub")
 ARR+=(" blender")
 ARR+=(" maya")
-ARR+=(" unreal-engine")
 ARR+=("")
 ARR+=("Sound Programming:")
 ARR+=(" flstudio")
 ARR+=(" vocaloid")
 ARR+=(" ardour")
 ARR+=(" audacity")
-ARR+=(" muse")
 ARR+=(" rosegarden")
 ARR+=(" svstudio")
 ARR+=("")
@@ -78,7 +73,6 @@ case $CHOICE in
 	" joplin") exec /opt/appimages/Joplin.AppImage;;
     	" calculator") exec rofi -show calc -modi calc -no-show-match -no-sort;;
     	" google keep") exec google-keep;;
-    	" emacs") exec emacs;;
 	" filemanager (thunar)") exec thunar;;
 	" itch") exec itch;;
 	" ankama") exec ankama-launcher;;
@@ -98,7 +92,6 @@ case $CHOICE in
 	" discord") exec discord;;
 	" visual studio code") exec code;;
 	" vim") exec alacritty -e vim;;
-	" emacs") exec emacs;;
 	" dbeaver") exec dbeaver;;
 	" mpdclient (ncmpcpp)") exec alacritty --title 'MPDClient-floating' -e ncmpcpp;;
 	" videoplayer (vlc)") exec vlc;;
