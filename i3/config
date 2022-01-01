@@ -1,49 +1,29 @@
 set $mod Mod4
 
 font pango:D2Coding 10
- 
-# Use Mouse+$mod to drag floating windows to their wanted position
+
 floating_modifier $mod
- 
+
 bindsym $mod+Return exec alacritty
- 
+
 bindsym $mod+q kill
 bindsym $mod+F4 kill
- 
-bindsym $mod+p					exec xpad
-bindsym $mod+d					exec rofi -show drun -theme ~/.config/rofi/nord.rasi
-bindsym $mod+c					exec rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/nord.rasi
-bindsym $mod+l					exec xscreensaver-command -lock
+
+bindsym $mod+d					exec rofi -show drun
 bindsym $mod+u					exec ~/.config/scripts/app_menu.sh
-bindsym $mod+w					exec rofi -show window -theme ~/.config/rofi/nord.rasi
-bindsym Ctrl+Tab				exec rofi -show window -theme ~/.config/rofi/nord.rasi
+bindsym $mod+c					exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+w					exec rofi -show window
+
+bindsym Ctrl+Tab				exec rofi -show window
+
+bindsym $mod+e				exec alacritty -e ranger
+bindsym $mod+g        exec code
+bindsym $mod+t        exec 1password
+bindsym $mod+i				exec qutebrowser
+bindsym $mod+l					exec xscreensaver-command -lock
 
 bindsym $mod+Ctrl+1				exec 1password
-bindsym $mod+Ctrl+e				exec thunar
-bindsym $mod+Ctrl+m				exec alacritty --title mpdclient -e ncmpcpp
-bindsym $mod+Ctrl+n				exec alacritty --title cava -e cava
-bindsym $mod+Ctrl+b				exec alacritty --title tty-clock -e tty-clock -c
-bindsym $mod+Ctrl+t				exec alacritty -e bpytop
-bindsym $mod+Ctrl+i				exec firefox
-bindsym $mod+Ctrl+v				exec alacritty -e nvim
-bindsym $mod+Ctrl+c				exec alacritty -e calcurse
-bindsym $mod+Ctrl+r				exec rofi -show run -theme ~/.config/rofi/nord.rasi
-bindsym $mod+Ctrl+j				exec /opt/appimages/Joplin.AppImage
-
-bindsym XF86AudioRaiseVolume	exec "amixer -q sset Master,0 1%+ unmute"
-bindsym XF86AudioLowerVolume	exec "amixer -q sset Master,0 1%- unmute"
-bindsym XF86AudioMute			exec "amixer -q sset Master,0 toggle"
-bindsym XF86AudioPlay			exec mpc toggle
-bindsym XF86AudioStop			exec mpc stop
-bindsym XF86AudioNext			exec mpc next
-bindsym XF86AudioPrev			exec mpc prev
-bindsym XF86Tools				exec alacritty --title 'MPDClient-floating' -e ncmpcpp
-
-bindsym XF86MonBrightnessDown	exec "xbacklight -dec 10"
-bindsym XF86MonBrightnessUp		exec "xbacklight -inc 10"
-
-bindsym XF86TouchpadOn			exec touchpad_toggle.sh
-bindsym XF86TouchpadOff			exec touchpad_toggle.sh
+bindsym $mod+Ctrl+r				exec rofi -show run
 
 bindsym $mod+Shift+minus		move scratchpad
 bindsym $mod+minus				scratchpad show
@@ -56,12 +36,12 @@ bindsym $mod+Left           	focus left
 bindsym $mod+Down           	focus down
 bindsym $mod+Up             	focus up
 bindsym $mod+Right          	focus right
- 
+
 bindsym $mod+Ctrl+Left     		move left
 bindsym $mod+Ctrl+Down     		move down
 bindsym $mod+Ctrl+Up       		move up
 bindsym $mod+Ctrl+Right    		move right
- 
+
 bindsym $mod+h              	split h
 bindsym $mod+v              	split v
  
@@ -73,8 +53,7 @@ bindsym $mod+a              	focus parent
 #bindsym $mod+Shift+Left		workspace prev
 #bindsym $mod+Shift+Right		workspace next
 
-set $outputTop					DisplayPort-1
-set $outputBottom				DisplayPort-0
+set $outputDisplay				DisplayPort-0
 
 set $ws1						"1"
 set $ws2						"2"
@@ -87,16 +66,16 @@ set $ws8						"8"
 set $ws9						"9"
 set $ws10						"10"
 
-workspace $ws1					output $outputBottom
-workspace $ws2					output $outputBottom
-workspace $ws3					output $outputBottom
-workspace $ws4					output $outputBottom
-workspace $ws5					output $outputBottom
-workspace $ws6					output $outputBottom
-workspace $ws7					output $outputBottom
-workspace $ws8					output $outputBottom
-workspace $ws9					output $outputBottom
-workspace $ws10					output $outputTop
+workspace $ws1					output $outputDisplay
+workspace $ws2					output $outputDisplay
+workspace $ws3					output $outputDisplay
+workspace $ws4					output $outputDisplay
+workspace $ws5					output $outputDisplay
+workspace $ws6					output $outputDisplay
+workspace $ws7					output $outputDisplay
+workspace $ws8					output $outputDisplay
+workspace $ws9					output $outputDisplay
+workspace $ws10					output $outputDisplay
 
 bindsym $mod+1					workspace $ws1
 bindsym $mod+2					workspace $ws2
@@ -198,8 +177,8 @@ set $unfocused-indicator-color	#000000
 set $urgent-indicator-color		#bb3333
 
 #                       border              background         text                 indicator
-#client.focused          $bg-color           $bg-color          $text-color          $focused-indicator-color
-client.focused          $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
+client.focused          $bg-color           $bg-color          $text-color          $focused-indicator-color
+#client.focused          $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-indicator-color
@@ -221,27 +200,22 @@ for_window [class="(?i)xpad"] floating enable
 
 ##### LAUNCH ######################################
 # STARTUP
-exec --no-startup-id xrdb merge ~/.Xresources
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+exec --no-startup-id xrandr --output DisplayPort-1 --left-of DisplayPort-0 --pos +840x0 --rotate right
 exec --no-startup-id picom
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ibus-daemon -drx
-exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id ntfd
-exec --no-startup-id xpad -N
-exec --no-startup-id QT_IM_MODULE=ibus telegram-desktop -startintray
+exec --no-startup-id telegram-desktop -startintray
 exec --no-startup-id cadence --minimized
 exec --no-startup-id 1password --silent
-exec --no-startup-id ~/.config/scripts/redshift-ctrl night
-#exec --no-startup-id rclone --vfs-cache-mode writes mount onedrive: ~/OneDrive
-#exec --no-startup-id libinput-gestures
+exec --no-startup-id ~/.local/bin/MountOnedrive.sh
 #exec --no-startup-id oneko
-#exec --no-startup-id oneko -dog
+exec --no-startup-id mpd
 
 # RELOAD
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-42.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
  
 bar {
 		i3bar_command ~/.config/polybar/launch.sh

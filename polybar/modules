@@ -1,0 +1,261 @@
+[module/updates]
+type = custom/script
+exec = ~/.config/scripts/update
+format = <label>
+format-background = ${colors.background-updates}
+format-padding = 1
+interval = 30
+label = %output%
+label-foreground = ${colors.foreground}
+click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
+
+
+[module/title]
+type = internal/xwindow
+format = <label>
+format-background = ${colors.background-title}
+format-foreground = ${colors.foreground-title}
+format-padding = 3
+label = %title%
+label-font = 2
+label-maxlen = 64
+
+
+[module/telegram]
+type = custom/script
+exec = ~/.config/scripts/telegram
+format =  <label>
+format-background = ${colors.background-telegram}
+format-padding = 1
+interval = 10
+label = %output%
+label-foreground = ${colors.foreground}
+click-left = telegram-desktop &
+
+
+[module/screenkey]
+type = custom/script
+exec = ~/.config/scripts/screenkey.sh status
+interval = 1.0
+format = <label>
+format-background = ${colors.background-screenkey}
+format-padding = 1
+label = "%output% "
+click-left = ~/.config/scripts/screenkey.sh toggle
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.background-volume}
+format-volume-padding = 1
+
+format-muted = " "
+format-muted-background = ${colors.background-volume}
+format-muted-padding = 1
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-3 = ""
+ramp-volume-4 = ""
+
+
+[module/mpd]
+type = internal/mpd
+interval = 1
+format-online = "<toggle> <label-song>"
+format-online-background = ${colors.background-mpd}
+format-online-padding = 3
+
+label-song = "%artist% - %title%"
+label-song-maxlen = 64
+label-song-ellipsis = true
+
+label-offline = "Offline"
+
+icon-play = " "
+icon-pause = " "
+icon-stop = " "
+icon-prev = " "
+icon-next = " "
+
+
+[module/wlan]
+type = internal/network
+interface = wlp7s0
+interval = 3.0
+format-connected = "直 <label-connected>"
+format-connected-background = ${colors.background-wifi}
+format-connected-padding = 1
+label-connected = "%essid%"
+
+
+[module/datetime]
+type = internal/date
+interval = 60
+format = ﭷ <label>
+format-background = ${colors.background-date}
+format-padding = 1
+label = %date%
+date = %Y-%m-%d %H:%M%
+
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+index-sort = true
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+label-focused = "%name%: %icon% "
+label-focused-underline = ${colors.foreground-workspace-focused}
+label-focused-background = ${colors.foreground-workspace-focused}
+label-focused-foreground = #ffffff
+label-focused-padding = 1
+
+label-unfocused = "%name%: %icon% "
+label-unfocused-foreground = ${colors.foreground-workspace}
+label-unfocused-background = ${colors.background-workspace}
+label-unfocused-padding = 1
+
+label-occupied = "%name%: %icon% "
+label-occupied-foreground = ${colors.foreground-workspace}
+label-occupied-background = ${colors.background-workspace}
+label-occupied-padding = 1
+
+label-visible = "%name%: %icon% "
+label-visible-foreground = ${colors.foreground-workspace}
+label-visible-background = ${colors.background-workspace}
+label-visible-padding = 1
+
+label-urgent = "%name%: %icon% "
+label-urgent-foreground = ${colors.foreground-workspace}
+label-urgent-background = ${colors.background-workspace}
+label-urgent-padding = 1
+
+label-mode = "%mode%"
+label-mode-background = #e60053
+label-mode-padding = 1
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2.5
+format =  <label> 
+format-foreground = ${colors.foreground-cpu}
+format-underline = ${colors.foreground-cpu}
+format-padding = 1
+label = %percentage%%
+label-foreground = ${colors.foreground}
+
+
+[module/mem]
+type = custom/script
+exec = free -m | sed -n 's/^Mem:\s\+[0-9]\+\s\+\([0-9]\+\)\s.\+/\1/p'
+format =  <label>
+format-foreground = ${colors.foreground-mem}
+format-underline = ${colors.foreground-mem}
+format-padding = 1
+label = %output%MB
+label-foreground = ${colors.foreground}
+
+
+[module/polywins]
+type = custom/script
+exec = ~/.config/scripts/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+tail = true
+
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 98
+
+format-foreground = ${colors.foreground}
+
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.foreground}
+format-charging-underline = ${colors.foreground-battery}
+format-charging-padding = 1
+label-charging = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.foreground}
+format-discharging-underline = ${colors.foreground-battery}
+format-discharging-padding = 1
+label-discharging = %percentage%%
+
+format-full =   <label-full>
+format-full-foreground = ${colors.foreground}
+format-full-underline = ${colors.foreground-battery}
+format-full-padding = 1
+label-full = %percentage%%
+
+ramp-capacity-0 = " " 
+ramp-capacity-1 = " " 
+ramp-capacity-2 = " " 
+ramp-capacity-3 = " " 
+ramp-capacity-4 = " "
+ramp-capacity-foreground = ${colors.foreground-battery}
+
+animation-charging-0 = " " 
+animation-charging-1 = " " 
+animation-charging-2 = " " 
+animation-charging-3 = " " 
+animation-charging-4 = " "
+animation-charging-framerate = 910 
+animation-charging-foreground = ${colors.foreground-battery}
+
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <label>
+format-prefix = " "
+format-foreground = ${colors.foreground-backlight}
+format-underline = ${colors.foreground-backlight}
+format-padding = 1
+label = %percentage%%
+
+
+[module/gputemp]
+type = custom/script
+exec = ~/.config/scripts/gputemp
+format = 﨏 <label>
+format-foreground = ${colors.foreground-gputemp}
+format-underline = ${colors.foreground-gputemp}
+format-padding = 1
+label = %output%
+label-foreground = ${colors.foreground}
+
+
+[module/redshift]
+type = custom/script
+exec = ~/.config/scripts/redshift-ctrl
+interval = 1.0
+format = <label>
+format-foreground = ${colors.foreground-redshift}
+format-underline = ${colors.foreground-redshift}
+format-padding = 1
+label = %output%
+click-left = ~/.config/scripts/redshift-ctrl toggle &
+

@@ -1,0 +1,28 @@
+{
+  "clangd.semanticHighlighting": true,
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+
+  "rust-analyzer.server.path": "/home/kyiimn/.local/bin/rust-analyzer",
+
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "tabstop": 4
+}
