@@ -1,66 +1,45 @@
-# Visualizer
-visualizer_type = "spectrum"
-visualizer_color = "blue"
-visualizer_look = "+|"
+visualizer_data_source                = /tmp/mpd.fifo
+visualizer_output_name                = fifo output
+visualizer_in_stereo                  = yes
+visualizer_type                       = spectrum
+visualizer_color                      = blue, cyan, green, yellow, magenta, red
+visualizer_look                       = xs
+visualizer_fps                        = 60
+visualizer_autoscale                  = yes
+visualizer_spectrum_smooth_look       = yes
 
-# Playlist
-playlist_show_remaining_time = yes
-playlist_shorten_total_times = yes
-playlist_separate_albums = yes
+### Appearance ###
+colors_enabled = "yes"
+playlist_display_mode = "columns"
+user_interface = "alternative"
+statusbar_visibility = "no"
+header_visibility = "no"
+titles_visibility = "no"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+display_bitrate = "no"
+display_remaining_time = "no"
 
-# Looks
-progressbar_look =  "->'"
-user_interface = alternative
-
-# How the browser looks
-browser_display_mode = columns
-search_engine_display_mode = columns
-playlist_editor_display_mode = columns
-
-# Centering
-autocenter_mode = yes
-centered_cursor = yes
-
-# Don't delete items
-allow_for_physical_item_deletion = no
-
-# Startup screens
-startup_screen = "playlist"
-startup_slave_screen = "visualizer"
-locked_screen_width_part = 50
-ask_for_locked_screen_width_part = no
-
-# Title
-clock_display_seconds = yes
-display_volume_level = yes
-display_bitrate = yes
-display_remaining_time = yes
-enable_window_title = yes
-
-# Media library settings
-ignore_leading_the = no
-media_library_sort_by_mtime = no
-media_library_primary_tag = album_artist
-default_place_to_search_in = database
-cyclic_scrolling = yes
-mpd_crossfade_time = "3"
-playlist_disable_highlight_delay = 1
-now_playing_prefix = "$b$r"
-now_playing_suffix = "$/b$/r"
-
-# Editor
-external_editor = nvim
-use_console_editor = yes
-
-# Colors
-progressbar_color = "blue"
-statusbar_color = "blue"
+# Progress bar #
+progressbar_look = ─|
+progressbar_color = "black"
 progressbar_elapsed_color = "blue"
-alternative_ui_separator_color = "blue"
-color1 = "blue"
-color2 = "blue"
-main_window_color = "blue"
-statusbar_time_color = "blue"
-player_state_color = "blue"
-window_border_color = "blue"
-active_window_border = "blue"
+
+# Song status #
+now_playing_prefix = "$b"
+now_playing_suffix = "$/b"
+song_status_format = "$b$5%f$/b {$8by} $b$6%l$8$/b"
+
+# Header #
+alternative_header_second_line_format =
+
+# Song list #
+song_list_format = "{%f}$R{%l}"
+
+# Playlist #
+#song_columns_list_format = "(40)[cyan]{f} (7f)[green]{l}"
+song_columns_list_format = "(40)[cyan]{f} (7f)[green]{l}"
+
+# Colors 
+main_window_color = "cyan"

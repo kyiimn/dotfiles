@@ -1,34 +1,33 @@
 [colors]
-background = #fdf6e3
-foreground = #ffffff
-#background = #66595959
+background = #002a3040
+foreground = #eceff4
 
-background-workspace = #f8e4a0
-foreground-workspace = #595959
-foreground-workspace-focused = #9d7c11
+background-workspace = ${background}
+foreground-workspace = #999999
+foreground-workspace-focused = #ffffff
 
-background-title = #9d7c11
-foreground-title = #ffffff
+foreground-title = #eceff4
 
-background-mpd = #b89214
-background-telegram = #9d7c11
-background-updates = #81660e
-background-screenkey = #66510b
-background-volume = #58460a
-background-wifi = #4a3b08
-background-date = #2f2505
+background-mpd = ${background}
+background-telegram = ${background}
+background-updates = ${background}
+background-bluetooth = ${background}
+background-screenkey = ${background}
+background-volume = ${background}
+background-wifi = ${background}
+background-date = ${background}
 
-foreground-mpd = #4f8c8b
-foreground-gputemp = #488090
-foreground-onedrive = #217faf
-foreground-gdrive = #ab9b4b
-foreground-power = #d03c45
+foreground-mpd = #444444
+foreground-gputemp = #444444
+foreground-onedrive = #444444
+foreground-gdrive = #444444
+foreground-power = #444444
 
-foreground-battery = #9e78bb
-foreground-cpu = #e9a56d
-foreground-time = #bf9444
-foreground-mem = #74cbcd
-foreground-redshift = #e8f000
-foreground-temp = #a4ebf3
-foreground-backlight = #a0e8a2
+foreground-battery = #444444
+foreground-cpu = #444444
+foreground-time = #444444
+foreground-mem = #444444
+foreground-redshift = #444444
+foreground-temp = #444444
+foreground-backlight = #444444
 

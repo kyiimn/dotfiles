@@ -18,7 +18,6 @@ bindsym Ctrl+Tab				exec rofi -show window
 
 bindsym $mod+e				exec alacritty -e ranger
 bindsym $mod+g        exec code
-bindsym $mod+t        exec 1password
 bindsym $mod+i				exec qutebrowser
 bindsym $mod+l					exec xscreensaver-command -lock
 
@@ -44,12 +43,12 @@ bindsym $mod+Ctrl+Right    		move right
 
 bindsym $mod+h              	split h
 bindsym $mod+v              	split v
- 
+
 bindsym $mod+f              	fullscreen toggle
 bindsym $mod+Shift+space		floating toggle
 bindsym $mod+space          	focus mode_toggle
 bindsym $mod+a              	focus parent
- 
+
 #bindsym $mod+Shift+Left		workspace prev
 #bindsym $mod+Shift+Right		workspace next
 
@@ -87,7 +86,7 @@ bindsym $mod+7					workspace $ws7
 bindsym $mod+8					workspace $ws8
 bindsym $mod+9					workspace $ws9
 bindsym $mod+0					workspace $ws10
- 
+
 bindsym $mod+Shift+1			move container to workspace $ws1
 bindsym $mod+Shift+2			move container to workspace $ws2
 bindsym $mod+Shift+3			move container to workspace $ws3
@@ -98,7 +97,7 @@ bindsym $mod+Shift+7			move container to workspace $ws7
 bindsym $mod+Shift+8			move container to workspace $ws8
 bindsym $mod+Shift+9			move container to workspace $ws9
 bindsym $mod+Shift+0			move container to workspace $ws10
- 
+
 # reload the configuration file
 bindsym $mod+Shift+c			reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -107,14 +106,14 @@ bindsym $mod+Shift+r			restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 #bindsym $mod+Shift+e exec "i3-msg exit"
- 
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
     bindsym Left				resize shrink width 5 px or 5 ppt
     bindsym Up					resize grow height 5 px or 5 ppt
     bindsym Down				resize shrink height 5 px or 5 ppt
     bindsym Right				resize grow width 5 px or 5 ppt
- 
+
     bindsym Return				mode "default"
     bindsym Escape				mode "default"
     bindsym $mod+r				mode "default"
@@ -146,57 +145,55 @@ mode "$mode_system" {
      bindsym Return				mode "default"
      bindsym Escape				mode "default"
 }
-bindsym $mod+F12				mode "$mode_system"
-bindsym $mod+plus				mode "$mode_system"
+#bindsym $mod+F12				mode "$mode_system"
+#bindsym $mod+plus				mode "$mode_system"
+bindsym $mod+F12      exec rofi -modi 'Powermenu:~/.config/rofi/powermenu.sh' -theme ~/.config/rofi/powermenu.rasi -show Powermenu -icon-theme "Papirus"
+bindsym $mod+plus      exec rofi -modi 'Powermenu:~/.config/rofi/powermenu.sh' -theme ~/.config/rofi/powermenu.rasi -show Powermenu -icon-theme "Papirus"
 
 focus_follows_mouse no
 
 popup_during_fullscreen smart
- 
+
 # SET GAPS
 #smart_gaps on
-for_window [class="^.*"] border pixel 1
-#gaps top 38
-#gaps inner 20 
-gaps top 0
-gaps bottom 0
-gaps inner 30
+for_window [class="^.*"] border pixel 0
+gaps top -10
+gaps bottom -10
+gaps inner 40
 
-set $bg-color 	         		#ffffff
-set $inactive-bg-color   		#222222
+set $bg-color               #2e3440
+set $inactive-bg-color      #2e3440
+set $urgent-bg-color     		#ff0000
+
 set $text-color          		#000000
 set $inactive-text-color 		#000000
-set $urgent-bg-color     		#bb3333
 
-set $focusd-indicator-color		#9a9a9a
-set $unfocused-indicator-color	#3a3a3a
-set $urgent-indicator-color		#bb9a9a
+set $focusd-indicator-color		#132430
+set $unfocused-indicator-color	#262c38
+set $urgent-indicator-color		#222834
 
-set $focusd-indicator-color		#ffffff
-set $unfocused-indicator-color	#000000
-set $urgent-indicator-color		#bb3333
 
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $focused-indicator-color
-#client.focused          $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $unfocused-indicator-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-indicator-color
- 
-# Floating programs
-for_window [class="(?i)1password"] floating enable
-for_window [class="(?i)telegram"] floating enable
-for_window [class="(?i)photoshop"] floating enable
-for_window [class="(?i)virt-manager"] floating enable
-for_window [class="(?i)lazarus"] floating enable
-for_window [class="(?i)gambas3"] floating enable
-for_window [class="(?i)fontforge"] floating enable
-for_window [title="(?i)github desktop"] floating enable
-for_window [class="(?i)obs"] floating enable
-for_window [class="(?i)ue4editor"] floating enable
-for_window [class="(?i)transmission-gtk"] floating enable
-for_window [class="(?i)xpad"] floating enable
 
+# Floating programs
+#for_window [class="(?i)1password"] floating enable
+for_window [class="(?i)telegram"] floating enable
+for_window [class="(?i)virt-manager"] floating enable
+for_window [class="(?i)fontforge"] floating enable
+for_window [class="(?i)obs"] floating enable
+for_window [class="(?i)steam"] floating enable
+#for_window [class="(?i)ue4editor"] floating enable
+for_window [class="(?i)transmission-gtk"] floating enable
+for_window [class="(?i)cadence"] floating enable
+for_window [class="(?i)kdeconnect.*"] floating enable
+for_window [class="(?i)blueman.*"] floating enable
+
+for_window [title="(?i)github desktop"] floating enable
+for_window [title="(?i)android emulator.*"] floating enable
 
 ##### LAUNCH ######################################
 # STARTUP
@@ -209,14 +206,17 @@ exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id telegram-desktop -startintray
 exec --no-startup-id cadence --minimized
+exec --no-startup-id cadence-session-start --system-start
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/.local/bin/MountOnedrive.sh
-#exec --no-startup-id oneko
 exec --no-startup-id mpd
+exec --no-startup-id conky
 
 # RELOAD
-exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
- 
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-28.jpg
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
+
 bar {
 		i3bar_command ~/.config/polybar/launch.sh
 }

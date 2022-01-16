@@ -5,20 +5,21 @@ include-file = ~/.config/polybar/colors
 #tray-position = right
 monitor = DisplayPort-0
 width =  100%
-height = 26
-padding-left = 0
-padding-right = 0
+#width = 100%:-12
+height = 30
+#padding-left = 1
+#padding-right = 1
 background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = false
-#border-top-size = 20
-#border-left-size = 30
-#border-right-size = 30
-border-bottom-size = 0
+#border-top-size = 15
+#border-bottom-size = 0
+#border-left-size = 12
+#border-right-size =
+#border-color = #00000000
+
 border-top-size = 3
-border-left-size =
-border-right-size =
-border-color = #00000000
+border-color = ${colors.background}
 
 underline-size = 0
 line-size = 0
@@ -26,20 +27,15 @@ line-size = 0
 wm-restack = i3
 
 modules-left = i3
-modules-center = title
-modules-right = mpd telegram updates screenkey pulseaudio wlan datetime
+modules-right = mpd updates screenkey pulseaudio gputemp bluetooth wlan datetime
 
-module-margin-left = 
-module-margin-right = 
+module-margin-left =
+module-margin-right =
 
-separator = 
+separator =
 
-font-0 = JetBrainsMono Nerd Font:size=10:antialias=true;2
-font-1 = JetBrainsMono Nerd Font:size=10:style=Bold;2
-font-2 = Material Design Icons:style=Bold:size=10;2
-font-3 = unifont:fontformat=truetype:size=10:antialias=true;2
-font-4 = Noto Sans CJK KR:size=8;2
-font-5 = JetBrainsMono Nerd Font:style=Bold:size=14;2
-font-6 = Noto Sans CJK KR:size=8;2
+font-0 = DroidSansMono Nerd Font:size=11:antialias=true;2
+font-1 = DroidSansMono Nerd Font:size=11:style=Bold:antialias=true;2
+font-2 = monospace:size=11:style=Bold:antialias=true;2
 
 include-file = ~/.config/polybar/modules

@@ -1,35 +1,56 @@
-# Playlist
-song_columns_list_format = "(6f)[default]{l} (30)[default]{t|f} (25)[default]{a} (40)[default]{b}"
-now_playing_prefix = "$b"
-now_playing_suffix = "$/b"
-playlist_display_mode = "columns" (classic/columns)
-autocenter_mode = "yes"
-centered_cursor = "yes"
+### Script ###
+#execute_on_song_change = "kunst --size 60x60 --silent"
+execute_on_song_change="~/.config/ncmpcpp/scripts/album-art"
 
-# Others
-song_window_title_format = "{%a - }{%t}{ - %b{ Disc %d}}|{%f}"
-search_engine_display_mode = "columns" (classic/columns)
-follow_now_playing_lyrics = "yes"
-clock_display_seconds = "yes"
+### Behaviour ###
+message_delay_time 				 = 1
+autocenter_mode 				 = "yes"
+centered_cursor 				 = "yes"
+ignore_leading_the 				 = "yes"
+playlist_disable_highlight_delay = 2
+allow_for_physical_item_deletion = "no"
 
-# Bars
-song_status_format = "$7%t » %a » %b"
-#progressbar_look = "|] "
-progressbar_look = "━■"
-titles_visibility = "yes"
+### Visualizer ###
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = "mpd_visualizer"
+visualizer_in_stereo   = "yes"
+visualizer_look 	   = ●●
+visualizer_type 	   = "ellipse"
 
-# Colors
-discard_colors_if_item_is_selected = "yes"
-header_window_color = "default"
-volume_color = "default"
-state_line_color = "default"
-state_flags_color = "default"
-main_window_color = "default"
-color1 = "default"
-color2 = "default"
-#main_window_highlight_color = "default"
-progressbar_color = "default"
-statusbar_color = "default"
-#active_column_color = "default"
-visualizer_color = "default"
+### Appearance ###
+playlist_display_mode = "columns"
+colors_enabled 		  = "yes"
+#user_interface       = classic
+user_interface 		  = alternative
+volume_color 		  = "white"
 
+### Window ###
+song_window_title_format = "{%a - }{%t}|{%f}"
+statusbar_visibility 	 = "no"
+header_visibility 		 = "no"
+titles_visibility 		 = "no"
+
+### Progress bar ###
+progressbar_look 			= "▂▂▂"
+progressbar_color 			= "black"
+progressbar_elapsed_color   = "yellow"
+
+### Alternative UI ###
+alternative_ui_separator_color 		  = "black"
+alternative_header_first_line_format  = $b$5$/b  $b$8{%t}|{%f}$/b $/b 
+alternative_header_second_line_format = {$b{$2 %a$9}{ - $7 %b$9}{ ($2%y$9)}}|{%D}
+
+### Song list ###
+song_status_format		 = "$7%t"
+song_list_format 		 = "  %t $R%a %l  "
+song_library_format 	 = {{%a - %t} (%b)}|{%f}
+song_columns_list_format = "(53)[white]{tr} (45)[blue]{a}"
+
+### Colors ###
+main_window_color 					= "blue"
+current_item_prefix 				= "$(blue)$r"
+current_item_suffix 				= "$/r$(end)"
+current_item_inactive_column_prefix = red
+current_item_inactive_column_suffix = red
+color1 = "white"
+color2 = "red"

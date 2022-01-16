@@ -18,6 +18,8 @@ ARR+=("")
 ARR+=("Development:")
 ARR+=(" visual studio code")
 ARR+=(" virt-manager")
+ARR+=(" android studio")
+ARR+=(" android emulator")
 ARR+=(" remmina")
 ARR+=(" dbeaver")
 ARR+=(" github-desktop")
@@ -26,15 +28,18 @@ ARR+=("")
 ARR+=("Game Development:")
 ARR+=(" unreal-engine")
 ARR+=(" unityhub")
+ARR+=(" rider for unreal")
 ARR+=("")
 ARR+=("Sound Programming:")
 ARR+=(" ardour")
 ARR+=(" audacity")
 ARR+=(" ncmpcpp")
+ARR+=(" cadence")
 ARR+=("")
 ARR+=("Graphics:")
 ARR+=(" gimp")
 ARR+=(" krita")
+ARR+=(" aseprite")
 ARR+=(" inkscape")
 ARR+=(" blender")
 ARR+=(" scribus")
@@ -50,7 +55,7 @@ ARR+=("")
 ARR+=("Fun:")
 ARR+=(" steam")
 
-CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -l 30 -p "app")
+CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -l 20 -p "app")
 
 case $CHOICE in
   " terminal (alacritty)") exec alacritty;;
@@ -66,18 +71,23 @@ case $CHOICE in
   " bpytop") exec alacritty -e bpytop;;
   " 1password") exec 1password;;
 	" visual studio code") exec code;;
+  " android studio") exec ~/Android/Studio/bin/studio.sh;;
+  " android emulator") exec ~/.local/bin/RunEmulator.sh;;
   " virt-manager") exec virt-manager;;
   " remmina") exec remmina;;
   " dbeaver") exec dbeaver;;
   " github-desktop") exec github-desktop;;
   " neovim") exec alacritty -e nvim;;
-  " unreal-engine") exec ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
-  " unityhub") exec unityhub;;
+  " unreal-engine") exec progl ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
+  " unityhub") exec progl unityhub;;
+  " rider for unreal") exec progl ~/Rider2021.3/bin/rider.sh;;
   " audacity") exec audacity;;
   " ardour") exec ardour6;;
   " ncmpcpp") exec alacritty --title 'MPDClient-floating' -e ncmpcpp;;
+  " cadence") exec cadence;;
   " gimp") exec gimp;;
   " krita") exec krita;;
+  " aseprite") exec aseprite;;
   " inkscape") exec inkscape;;
   " blender") exec blender;;
   " scribus") exec scribus;;

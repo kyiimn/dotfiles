@@ -10,14 +10,24 @@ label-foreground = ${colors.foreground}
 click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 
 
+[module/bluetooth]
+type = custom/script
+exec = rofi-bluetooth --status
+interval = 2
+click-left = rofi-bluetooth
+click-right = blueman-manager
+format-background = ${colors.background-bluetooth}
+format-padding = 1
+format-prefix-padding = 1
+
+
 [module/title]
 type = internal/xwindow
 format = <label>
-format-background = ${colors.background-title}
 format-foreground = ${colors.foreground-title}
 format-padding = 3
 label = %title%
-label-font = 2
+label-font = 3
 label-maxlen = 64
 
 
@@ -66,12 +76,12 @@ ramp-volume-4 = ""
 [module/mpd]
 type = internal/mpd
 interval = 1
-format-online = "<toggle> <label-song>"
+format-online = "<toggle><label-song>"
 format-online-background = ${colors.background-mpd}
-format-online-padding = 3
+format-online-padding = 1
 
-label-song = "%artist% - %title%"
-label-song-maxlen = 64
+label-song = " %title%"
+label-song-maxlen = 48
 label-song-ellipsis = true
 
 label-offline = "Offline"
@@ -90,17 +100,28 @@ interval = 3.0
 format-connected = "直 <label-connected>"
 format-connected-background = ${colors.background-wifi}
 format-connected-padding = 1
+format-disconnected = "睊 "
 label-connected = "%essid%"
 
 
 [module/datetime]
+type = internal/date
+interval = 1
+format = ﭷ <label>
+format-background = ${colors.background-date}
+format-padding = 1
+label = %date%
+date = %Y-%m-%d %H:%M:%S
+
+
+[module/time]
 type = internal/date
 interval = 60
 format = ﭷ <label>
 format-background = ${colors.background-date}
 format-padding = 1
 label = %date%
-date = %Y-%m-%d %H:%M%
+date = %H:%M%
 
 
 [module/i3]
@@ -124,35 +145,37 @@ ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
 
-label-focused = "%name%: %icon% "
-label-focused-underline = ${colors.foreground-workspace-focused}
-label-focused-background = ${colors.foreground-workspace-focused}
-label-focused-foreground = #ffffff
-label-focused-padding = 1
+label-focused = " %name%:%icon% "
+label-focused-underline = ${colors.underline-workspace-focused}
+label-focused-background = ${colors.background-workspace-focused}
+label-focused-foreground = ${colors.foreground-workspace-focused}
+label-focused-padding = 0
+label-focused-font = 2
 
-label-unfocused = "%name%: %icon% "
+label-unfocused = " %name%:%icon% "
 label-unfocused-foreground = ${colors.foreground-workspace}
 label-unfocused-background = ${colors.background-workspace}
-label-unfocused-padding = 1
+label-unfocused-padding = 0
 
-label-occupied = "%name%: %icon% "
+label-occupied = " %name%:%icon% "
 label-occupied-foreground = ${colors.foreground-workspace}
 label-occupied-background = ${colors.background-workspace}
-label-occupied-padding = 1
+label-occupied-padding = 0
 
-label-visible = "%name%: %icon% "
+label-visible = " %name%:%icon% "
 label-visible-foreground = ${colors.foreground-workspace}
 label-visible-background = ${colors.background-workspace}
-label-visible-padding = 1
+label-visible-padding = 0
 
-label-urgent = "%name%: %icon% "
+label-urgent = " %name%:%icon% "
 label-urgent-foreground = ${colors.foreground-workspace}
 label-urgent-background = ${colors.background-workspace}
-label-urgent-padding = 1
+label-urgent-padding = 0
 
-label-mode = "%mode%"
+label-mode = " %mode% "
 label-mode-background = #e60053
-label-mode-padding = 1
+label-mode-foreground = #ffffff
+label-mode-padding = 0
 
 
 [module/cpu]
@@ -238,13 +261,16 @@ label = %percentage%%
 
 
 [module/gputemp]
-type = custom/script
-exec = ~/.config/scripts/gputemp
+type = internal/temperature
+interval = 2
+hwmon-path = /sys/devices/pci0000:00/0000:00:03.1/0000:0a:00.0/0000:0b:00.0/0000:0c:00.0/hwmon/hwmon3/temp1_input
+base-temperature = 40
+warn-temperature = 100
+
 format = 﨏 <label>
-format-foreground = ${colors.foreground-gputemp}
-format-underline = ${colors.foreground-gputemp}
+format-foreground = ${colors.foreground}
 format-padding = 1
-label = %output%
+label = %temperature-c%
 label-foreground = ${colors.foreground}
 
 

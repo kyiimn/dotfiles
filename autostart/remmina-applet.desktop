@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=렘미나 애플릿
+Comment=애플릿 메뉴로 원격 데스크톱에 연결
+Icon=org.remmina.Remmina
+Exec=remmina -i
+Terminal=false
+Type=Application
+Hidden=false

@@ -35,9 +35,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Theme
-Plug 'morhetz/gruvbox'
-Plug 'shaunsingh/nord.nvim'
-Plug 'shaunsingh/solarized.nvim'
+" Plug 'morhetz/gruvbox'
+" Plug 'shaunsingh/nord.nvim'
+" Plug 'shaunsingh/solarized.nvim'
+Plug 'arcticicestudio/nord-vim', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
 
@@ -185,7 +186,7 @@ function! StatusDiagnostic() abort
     endif
     return join(msgs, ' '). ' ' . get(g:, 'coc_status', '') . ' ' . get(b:, 'coc_current_function', '')
 endfunction
-let airline_section_c = '%{StatusDiagnostic()}'
+le/t airline_section_c = '%{StatusDiagnostic()}'
 "airline_section_b is empty now, because corresponding plugins (e.g. coc-git) are not installed
 " but maybe not required
 " Mappings for CoCList
@@ -213,11 +214,10 @@ map <Leader>nt <ESC>:NERDTreeToggle<CR>
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
 let g:airline_theme='solarized'
+let g:airline_solarized_bg = 'dark'
 " Tab line 에 파일명만 출력되도록 설정
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 set laststatus=2 " turn on bottom bar
-" NERDTree ON 단축키를 "\nt"로 설정
-map <Leader>nt <ESC>:NERDTree<CR>
 "====================================================================================================
 nmap <silent> <C-Up> :bprevious<CR>
 xmap <silent> <C-Up> :bprevious<CR>
@@ -226,8 +226,8 @@ xmap <silent> <C-Down> :bnext<CR>
 "====================================================================================================
 set termguicolors
 
-let g:solarized_disable_background = v:true
-colorscheme solarized
+let g:nord_disable_background = v:true
+colorscheme nord
 
 "colo desert
 highlight Normal     ctermbg=NONE
@@ -238,7 +238,7 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 " Floating window background=white, foreground=black
 " CocFloating - Pmenu의 옆에 나오는 box & error시 나오는 box
 highlight CocFloating ctermbg=white ctermfg=black
-syntax
+"syntax
 syntax on
 
 "tap size

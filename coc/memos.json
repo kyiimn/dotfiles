@@ -1,0 +1,8 @@
+{
+  "coc-rust-analyzer|global": {
+    "release": "2021-11-29"
+  },
+  "coc-eslint|global": {
+    "eslintAlwaysAllowExecution": true
+  }
+}
