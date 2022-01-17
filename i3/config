@@ -206,7 +206,7 @@ exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id telegram-desktop -startintray
 exec --no-startup-id cadence --minimized
-exec --no-startup-id cadence-session-start --system-start
+#exec --no-startup-id cadence-session-start --system-start
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/.local/bin/MountOnedrive.sh
 exec --no-startup-id mpd
