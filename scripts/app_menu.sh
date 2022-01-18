@@ -20,6 +20,8 @@ ARR+=(" visual studio code")
 ARR+=(" virt-manager")
 ARR+=(" android studio")
 ARR+=(" android emulator")
+ARR+=(" figma")
+ARR+=(" postman")
 ARR+=(" remmina")
 ARR+=(" dbeaver")
 ARR+=(" github-desktop")
@@ -71,9 +73,11 @@ case $CHOICE in
   " bpytop") exec alacritty -e bpytop;;
   " 1password") exec 1password;;
 	" visual studio code") exec code;;
+  " virt-manager") exec virt-manager;;
   " android studio") exec ~/Android/Studio/bin/studio.sh;;
   " android emulator") exec ~/.local/bin/RunEmulator.sh;;
-  " virt-manager") exec virt-manager;;
+  " figma") exec figma-linux;;
+  " postman") exec postman;;
   " remmina") exec remmina;;
   " dbeaver") exec dbeaver;;
   " github-desktop") exec github-desktop;;
