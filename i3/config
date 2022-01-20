@@ -191,6 +191,7 @@ for_window [class="(?i)transmission-gtk"] floating enable
 for_window [class="(?i)cadence"] floating enable
 for_window [class="(?i)kdeconnect.*"] floating enable
 for_window [class="(?i)blueman.*"] floating enable
+for_window [class="(?i)epicgameslauncher.*"] floating enable
 
 for_window [title="(?i)github desktop"] floating enable
 for_window [title="(?i)android emulator.*"] floating enable

@@ -5,6 +5,7 @@ ARR+=("Application:")
 ARR+=(" terminal")
 ARR+=(" filemanager (ranger)")
 ARR+=(" filemanager (mc)")
+ARR+=(" filemanager (thunar)")
 ARR+=(" webbrowser (qutebrowser)")
 ARR+=(" webbrowser (edge)")
 ARR+=(" email (mutt)")
@@ -29,6 +30,7 @@ ARR+=(" neovim")
 ARR+=("")
 ARR+=("Game Development:")
 ARR+=(" unreal-engine")
+ARR+=(" epic games launcher")
 ARR+=(" unityhub")
 ARR+=(" rider for unreal")
 ARR+=("")
@@ -63,6 +65,7 @@ case $CHOICE in
   " terminal (alacritty)") exec alacritty;;
   " filemanager (ranger)") exec alacritty -e ranger;;
   " filemanager (mc)") exec alacritty -e mc;;
+  " filemanager (thunar)") exec thunar;;
  	" webbrowser (qutebrowser)") exec qutebrowser --target window;;
  	" webbrowser (edge)") exec microsoft-edge-stable;;
  	" email (mutt)") exec alacritty -e mutt;;
@@ -83,6 +86,7 @@ case $CHOICE in
   " github-desktop") exec github-desktop;;
   " neovim") exec alacritty -e nvim;;
   " unreal-engine") exec progl ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
+  " epic games launcher") env WINEPREFIX="/home/kyiimn/.wine" progl wine C:\\users\\kyiimn\\AppData\\Roaming\\Microsoft\\Windows\\Start\ Menu\\Programs\\Epic\ Games\ Launcher.lnk;;
   " unityhub") exec progl unityhub;;
   " rider for unreal") exec progl ~/Rider2021.3/bin/rider.sh;;
   " audacity") exec audacity;;

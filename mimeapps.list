@@ -54,3 +54,4 @@ image/x-portable-pixmap=feh.desktop
 image/x-tga=feh.desktop
 image/x-xbitmap=feh.desktop
 inode/directory=ranger.desktop
+application/uproject=com.unrealengine.UE4Editor.desktop
