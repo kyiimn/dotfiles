@@ -21,6 +21,7 @@ ARR+=(" visual studio code")
 ARR+=(" virt-manager")
 ARR+=(" android studio")
 ARR+=(" android emulator")
+ARR+=(" drawio")
 ARR+=(" figma")
 ARR+=(" postman")
 ARR+=(" remmina")
@@ -37,6 +38,7 @@ ARR+=("")
 ARR+=("Sound Programming:")
 ARR+=(" ardour")
 ARR+=(" audacity")
+ARR+=(" zrythm")
 ARR+=(" ncmpcpp")
 ARR+=(" cadence")
 ARR+=("")
@@ -79,6 +81,7 @@ case $CHOICE in
   " virt-manager") exec virt-manager;;
   " android studio") exec ~/Android/Studio/bin/studio.sh;;
   " android emulator") exec ~/.local/bin/RunEmulator.sh;;
+  " drawio") exec drawio;;
   " figma") exec figma-linux;;
   " postman") exec postman;;
   " remmina") exec remmina;;
@@ -90,6 +93,7 @@ case $CHOICE in
   " unityhub") exec progl unityhub;;
   " rider for unreal") exec progl ~/Rider2021.3/bin/rider.sh;;
   " audacity") exec audacity;;
+  " zrythm") exec zrythm;;
   " ardour") exec ardour6;;
   " ncmpcpp") exec alacritty --title 'MPDClient-floating' -e ncmpcpp;;
   " cadence") exec cadence;;

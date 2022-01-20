@@ -1,7 +1,44 @@
 [global/wm]
 include-file = ~/.config/polybar/colors
 
-[bar/bottom]
+[bar/left]
+tray-position = right
+monitor = DisplayPort-1
+width =  100%
+#width = 100%:-12
+height = 30
+#padding-left = 1
+#padding-right = 1
+background = ${colors.background}
+foreground = ${colors.foreground}
+bottom = false
+#border-top-size = 15
+#border-bottom-size = 0
+#border-left-size = 12
+#border-right-size =
+#border-color = #00000000
+
+border-top-size = 3
+border-color = ${colors.background}
+
+underline-size = 0
+line-size = 0
+
+wm-restack = i3
+
+modules-left = i3
+#modules-right = mpd updates screenkey pulseaudio gputemp bluetooth wlan datetime
+
+module-margin-left =
+module-margin-right =
+
+separator =
+
+font-0 = DroidSansMono Nerd Font:size=11:antialias=true;2
+font-1 = DroidSansMono Nerd Font:size=11:style=Bold:antialias=true;2
+font-2 = monospace:size=11:style=Bold:antialias=true;2
+
+[bar/right]
 #tray-position = right
 monitor = DisplayPort-0
 width =  100%
