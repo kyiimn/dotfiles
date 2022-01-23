@@ -88,10 +88,10 @@ case $CHOICE in
   " dbeaver") exec dbeaver;;
   " github-desktop") exec github-desktop;;
   " neovim") exec alacritty -e nvim;;
-  " unreal-engine") exec progl ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
-  " epic games launcher") env WINEPREFIX="/home/kyiimn/.wine" progl wine C:\\users\\kyiimn\\AppData\\Roaming\\Microsoft\\Windows\\Start\ Menu\\Programs\\Epic\ Games\ Launcher.lnk;;
-  " unityhub") exec progl unityhub;;
-  " rider for unreal") exec progl ~/Rider2021.3/bin/rider.sh;;
+  " unreal-engine") exec ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
+  " epic games launcher") env WINEPREFIX="/home/kyiimn/.wine" wine C:\\users\\kyiimn\\AppData\\Roaming\\Microsoft\\Windows\\Start\ Menu\\Programs\\Epic\ Games\ Launcher.lnk;;
+  " unityhub") exec unityhub;;
+  " rider for unreal") exec ~/Rider2021.3/bin/rider.sh;;
   " audacity") exec audacity;;
   " zrythm") exec zrythm;;
   " ardour") exec ardour6;;
