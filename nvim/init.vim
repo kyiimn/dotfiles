@@ -38,7 +38,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'morhetz/gruvbox'
 " Plug 'shaunsingh/nord.nvim'
 " Plug 'shaunsingh/solarized.nvim'
-Plug 'arcticicestudio/nord-vim', { 'on': 'NERDTreeToggle' }
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -209,6 +209,8 @@ nnoremap <silent><nowait> <Leader>cp  :<C-u>CocListResume<CR>
 "====================================================================================================
 " nerdtree
 map <Leader>nt <ESC>:NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+
 " vim-airline
 " Powerline-font 활성화
 let g:airline_powerline_fonts = 1
@@ -226,7 +228,12 @@ xmap <silent> <C-Down> :bnext<CR>
 "====================================================================================================
 set termguicolors
 
-let g:nord_disable_background = v:true
+let g:nord_disable_background = 1
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_underline = 1
 colorscheme nord
 
 "colo desert

@@ -20,6 +20,8 @@ window:
     instance: terminal
     general: terminal
 
+  opacity: 0.9
+
 scrolling:
   history: 5000
 
@@ -49,8 +51,6 @@ font:
   offset:
     x: 0
     y: 0
-
-background_opacity: 0.98
 
 live_config_reload: true
 

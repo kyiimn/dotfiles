@@ -111,8 +111,8 @@ bindsym $mod+Shift+r			restart
 # resize window (you can also use the mouse for that)
 mode "resize" {
     bindsym Left				resize shrink width 5 px or 5 ppt
-    bindsym Up					resize grow height 5 px or 5 ppt
-    bindsym Down				resize shrink height 5 px or 5 ppt
+    bindsym Down					resize grow height 5 px or 5 ppt
+    bindsym Up				resize shrink height 5 px or 5 ppt
     bindsym Right				resize grow width 5 px or 5 ppt
 
     bindsym Return				mode "default"
@@ -157,14 +157,18 @@ popup_during_fullscreen smart
 
 # SET GAPS
 #smart_gaps on
-for_window [class="^.*"] border pixel 0
-gaps top -40
-gaps bottom -10
-gaps inner 50
+for_window [class="^.*"] border pixel 1
+gaps top -5
+gaps bottom -5
+gaps inner 10
 
-set $bg-color               #2e3440
-set $inactive-bg-color      #2e3440
-set $urgent-bg-color     		#ff0000
+#set $bg-color               #2e3440
+#set $inactive-bg-color      #2e3440
+#set $urgent-bg-color     		#ff0000
+
+set $bg-color               #d8dee9
+set $inactive-bg-color      #4c566a
+set $urgent-bg-color        #ff0000
 
 set $text-color          		#000000
 set $inactive-text-color 		#000000
