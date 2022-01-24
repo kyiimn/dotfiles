@@ -166,7 +166,7 @@ gaps inner 10
 #set $inactive-bg-color      #2e3440
 #set $urgent-bg-color     		#ff0000
 
-set $bg-color               #d8dee9
+set $bg-color               #a8aeb9
 set $inactive-bg-color      #4c566a
 set $urgent-bg-color        #ff0000
 
