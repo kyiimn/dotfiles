@@ -28,6 +28,7 @@ ARR+=(" remmina")
 ARR+=(" dbeaver")
 ARR+=(" github-desktop")
 ARR+=(" neovim")
+ARR+=(" rgb-tui")
 ARR+=("")
 ARR+=("Game Development:")
 ARR+=(" unreal-engine")
@@ -46,6 +47,7 @@ ARR+=("Graphics:")
 ARR+=(" gimp")
 ARR+=(" krita")
 ARR+=(" aseprite")
+ARR+=(" azpainter")
 ARR+=(" inkscape")
 ARR+=(" blender")
 ARR+=(" scribus")
@@ -88,6 +90,7 @@ case $CHOICE in
   " dbeaver") exec dbeaver;;
   " github-desktop") exec github-desktop;;
   " neovim") exec alacritty -e nvim;;
+  " rgb-tui") exec alacritty -e rgb-tui;;
   " unreal-engine") exec ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
   " epic games launcher") env WINEPREFIX="/home/kyiimn/.wine" wine C:\\users\\kyiimn\\AppData\\Roaming\\Microsoft\\Windows\\Start\ Menu\\Programs\\Epic\ Games\ Launcher.lnk;;
   " unityhub") exec unityhub;;
@@ -100,6 +103,7 @@ case $CHOICE in
   " gimp") exec gimp;;
   " krita") exec krita;;
   " aseprite") exec aseprite;;
+  " azpainter") exec azpainter;;
   " inkscape") exec inkscape;;
   " blender") exec blender;;
   " scribus") exec scribus;;

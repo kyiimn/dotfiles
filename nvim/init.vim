@@ -16,6 +16,9 @@ Plug 'ntpeters/vim-better-whitespace'
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'
 
+" CtrlSF
+Plug 'dyng/ctrlsf.vim'
+
 " cxx highlight features are attractive, but make vim slow
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'chrisbra/csv.vim'
@@ -38,7 +41,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'morhetz/gruvbox'
 " Plug 'shaunsingh/nord.nvim'
 " Plug 'shaunsingh/solarized.nvim'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 call plug#end()
 
@@ -210,13 +214,49 @@ nnoremap <silent><nowait> <Leader>cp  :<C-u>CocListResume<CR>
 " nerdtree
 map <Leader>nt <ESC>:NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeDirArrows = 1
+
+" ctrlsf
+let g:ctrlsf_default_root = 'project'
+" Auto close the results panel when opening a file
+let g:ctrlsf_auto_close = { "normal":0, "compact":0 }
+" Immediately switch focus to the search window
+let g:ctrlsf_auto_focus = { "at":"start" }
+" Don't open the preview window automatically
+let g:ctrlsf_auto_preview = 1
+" Use the smart case sensitivity search scheme
+let g:ctrlsf_case_sensitive = 'smart'
+" Compact mode
+let g:ctrlsf_default_view_mode = 'compact'
+" Use absoulte search by default
+let g:ctrlsf_regex_pattern = 0
+" Width or height of search window
+let g:ctrlsf_winsize = '46'
+
+" (Ctrl+F) Open search prompt (Normal Mode)
+nmap <C-F>f <Plug>CtrlSFPrompt
+" (Ctrl-F + f) Open search prompt with selection (Visual Mode)
+xmap <C-F>f <Plug>CtrlSFVwordPath
+" (Ctrl-F + F) Perform search with selection (Visual Mode)
+xmap <C-F>F <Plug>CtrlSFVwordExec
+" (Ctrl-F + n) Open search prompt with current word (Normal Mode)
+nmap <C-F>n <Plug>CtrlSFCwordPath
+" (Ctrl-F + o )Open CtrlSF window (Normal Mode)
+nnoremap <C-F>o :CtrlSFOpen<CR>
+" (Ctrl-F + t) Toggle CtrlSF window (Normal Mode)
+nnoremap <C-F>t :CtrlSFToggle<CR>
+" (Ctrl-F + t) Toggle CtrlSF window (Insert Mode)
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " vim-airline
 " Powerline-font 활성화
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
-let g:airline_theme='solarized'
-let g:airline_solarized_bg = 'dark'
+" let g:airline_theme='solarized'
+" let g:airline_solarized_bg = 'dark'
+let g:airline_theme='onehalfdark'
+
 " Tab line 에 파일명만 출력되도록 설정
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 set laststatus=2 " turn on bottom bar
@@ -226,15 +266,21 @@ xmap <silent> <C-Up> :bprevious<CR>
 nmap <silent> <C-Down> :bnext<CR>
 xmap <silent> <C-Down> :bnext<CR>
 "====================================================================================================
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
-let g:nord_disable_background = 1
-let g:nord_cursor_line_number_background = 1
-let g:nord_bold = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-let g:nord_underline = 1
-colorscheme nord
+"let g:nord_disable_background = 1
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_bold = 1
+"let g:nord_italic = 1
+"let g:nord_italic_comments = 1
+"let g:nord_underline = 1
+"colorscheme nord
+
+set t_Co=256
+set cursorline
+colorscheme onehalflight
 
 "colo desert
 highlight Normal     ctermbg=NONE

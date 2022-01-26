@@ -2,7 +2,7 @@
 include-file = ~/.config/polybar/colors
 
 [bar/left]
-tray-position = right
+#tray-position = right
 monitor = DisplayPort-1
 width =  100%
 #width = 100%:-12
@@ -18,8 +18,10 @@ bottom = false
 #border-right-size =
 #border-color = #00000000
 
-border-top-size = 3
-border-color = ${colors.background}
+border-bottom-size = 1
+border-color = #999999
+#border-top-size = 3
+#border-color = ${colors.background}
 
 underline-size = 0
 line-size = 0
@@ -56,7 +58,10 @@ bottom = false
 #border-color = #00000000
 
 border-top-size = 3
-border-color = ${colors.background}
+border-bottom-size = 1
+border-color = #999999
+#border-top-size = 3
+#border-color = ${colors.background}
 
 underline-size = 0
 line-size = 0

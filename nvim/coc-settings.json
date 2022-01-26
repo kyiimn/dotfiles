@@ -12,7 +12,9 @@
     "typescriptreact",
     "json",
     "javascriptreact",
-    "typescript.tsx"
+    "typescript.tsx",
+    "php",
+    "stylesheet"
   ],
   "eslint.filetypes": [
     "javascript",

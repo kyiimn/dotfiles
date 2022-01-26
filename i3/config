@@ -20,6 +20,7 @@ bindsym $mod+e				exec alacritty -e ranger
 bindsym $mod+g        exec code
 bindsym $mod+i				exec qutebrowser
 bindsym $mod+l					exec xscreensaver-command -lock
+bindsym $mod+n				exec alacritty -e ncmpcpp
 
 bindsym $mod+Ctrl+1				exec 1password
 bindsym $mod+Ctrl+r				exec rofi -show run
@@ -157,10 +158,10 @@ popup_during_fullscreen smart
 
 # SET GAPS
 #smart_gaps on
-for_window [class="^.*"] border pixel 1
-gaps top -5
-gaps bottom -5
-gaps inner 10
+for_window [class="^.*"] border pixel 0
+gaps top -20
+gaps bottom -20
+gaps inner 40
 
 #set $bg-color               #2e3440
 #set $inactive-bg-color      #2e3440
@@ -211,17 +212,19 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id telegram-desktop -startintray
-exec --no-startup-id cadence --minimized
+#exec --no-startup-id cadence --minimized
 #exec --no-startup-id cadence-session-start --system-start
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/.local/bin/MountOnedrive.sh
 exec --no-startup-id mpd
-exec --no-startup-id conky
+#exec --no-startup-id conky
 
 # RELOAD
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-28.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
-exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
+exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/plaid.png
+
 
 bar {
 		i3bar_command ~/.config/polybar/launch.sh

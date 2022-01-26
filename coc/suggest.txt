@@ -1,2 +1,12 @@
+dot|dotfiles|file
+Pic|Pictures|file
+3|333333|buffer
+|base16-atelier-lakeside-light.config.py|file
+own_windo|own_window_argb_value|around
+own_window_argb_vi|own_window_argb_visual|around
+one|onehalf|around
+|pencil_light.yml|file
+color|colors|file
+ala|alacritty|file
 color|color|around
 1|1564|around
