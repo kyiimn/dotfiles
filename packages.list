@@ -26,16 +26,13 @@ amdgpu-pro-libgl 21.30_1290604-1
 amf-amdgpu-pro 21.30_1290604-1
 android-tools 31.0.3-3
 android-udev 20220102-1
-ant-gtk-theme 1.3.0-4
 aom 3.2.0-1
 apache 2.4.52-1
 apr 1.7.0-3
 apr-util 1.6.1-9
-arc-gtk-theme 20220102-1
 archlinux-keyring 20220118-1
 ardour 6.9-4
 argon2 20190702-4
-asar 3.1.0-1
 asciidoc 10.1.1-1
 aseprite-skia-bin 1.2.30-2
 at-spi2-atk 2.38.0-1
@@ -65,7 +62,7 @@ berry-git git+972f953-1
 binutils 2.36.1-3
 bison 3.8.2-1
 blas 3.10.0-1
-blender 17:3.0.0-4
+blender 17:3.0.1-1
 blosc 1.21.1-2
 blueman 2.2.3-2
 bluez 5.63-1
@@ -88,7 +85,7 @@ ca-certificates 20210603-1
 ca-certificates-mozilla 3.74-1
 ca-certificates-utils 20210603-1
 cabextract 1.9.1-2
-cadence 0.9.1-4
+cadence 0.9.1-5
 cairo 1.17.4-5
 cairo-perl 1.109-1
 cairomm 1.14.3-2
@@ -98,7 +95,6 @@ cava 0.7.4-1
 cblas 3.10.0-1
 cdparanoia 10.2-8
 cdrtools 3.02a09-5
-celt 0.11.3-4
 chromaprint 1.5.1-1
 cifs-utils 6.14-1
 clang 13.0.0-4
@@ -135,7 +131,6 @@ device-mapper 2.03.14-2
 dhcpcd 9.4.1-1
 diffutils 3.8-1
 djvulibre 3.5.28-3
-dkms 3.0.3-1
 dmraid 1.0.0.rc16.3-13
 dnsmasq 2.86-1
 dnssec-anchors 20190629-3
@@ -186,7 +181,6 @@ filesystem 2021.12.07-1
 findutils 4.8.0-1
 firewalld 1.0.3-2
 flac 1.3.3-3
-flat-remix 20211214-1
 flex 2.6.4-3
 flickcurl 1.26-12
 flow-bin 0.170.0-1
@@ -222,7 +216,6 @@ geocode-glib 3.26.2-1
 gettext 0.21-1
 ghex 3.41.1-1
 ghostscript 9.55.0-3
-gi-docgen 2021.8+3+g50d4de9-3
 giflib 5.2.1-2
 gimp 2.10.30-1
 girara 0.3.6-1
@@ -243,6 +236,7 @@ gmic 3.0.2-1
 gmp 6.2.1-1
 gnome-desktop 1:41.3-1
 gnome-keyring 1:40.0-1
+gnome-themes-extra 3.28+r6+g45b1d457-1
 gnupg 2.2.32-2
 gnutls 3.7.3-1
 go 2:1.17.6-2
@@ -279,7 +273,6 @@ gtk-doc 1.33.2-1
 gtk-engine-murrine 0.98.2-4
 gtk-engines 2.21.0-5
 gtk-layer-shell 0.6.0-2
-gtk-theme-numix-solarized 20210831-1
 gtk-update-icon-cache 1:4.6.0-2
 gtk-vnc 1.3.0-1
 gtk2 2.24.33-2
@@ -841,6 +834,8 @@ mailcap 2.1.53-1
 make 4.3-3
 man-db 2.9.4-2
 mate-polkit 1.26.0-1
+materia-gtk-theme 20210322-2
+materia-kde 20211226-1
 mbedtls 2.28.0-1
 mc 4.8.27-2
 md4c 0.4.8-1
@@ -945,7 +940,8 @@ pam 1.5.2-1
 pambase 20211210-1
 pango 1:1.50.3-1
 pangomm 2.46.2-1
-papirus-icon-theme 20220101-1
+paper-gtk-theme-git 302.770aba4-1
+paper-icon-theme 1.5.0-2
 parted 3.4-2
 patch 2.7.6-8
 pciutils 3.7.0-2
@@ -1017,8 +1013,6 @@ podofo 0.9.7-1
 polkit 0.120-4
 polkit-qt5 0.114.0-1
 polybar 3.5.7-2
-pop-gtk-theme 5.4.5-2
-pop-icon-theme 2.1.0.r2419.9998b20b78-1
 poppler 22.01.0-1
 poppler-data 0.4.11-1
 poppler-glib 22.01.0-1
@@ -1082,10 +1076,7 @@ python-rdflib 6.1.1-1
 python-requests 2.26.0-5
 python-setuptools 1:59.1.1-1
 python-six 1.16.0-5
-python-smartypants 2.0.1-9
 python-telegram 0.15.0-2
-python-toml 0.10.2-7
-python-typogrify 2.0.7-12
 python-urllib3 1.26.8-1
 python-websockets 10.1-2
 python-xlib 0.31-3
@@ -1152,24 +1143,13 @@ rtmidi 5.0.0-1
 rtmpdump 1:2.4.r99.f1b83c1-1
 rubberband 2.0.1-1
 ruby 3.0.3-1
-ruby-ffi 1.15.5-1
 ruby-irb 1.4.1-1
-ruby-maruku 0.7.3-6
-ruby-psych 4.0.3-2
-ruby-rb-fsevent 0.11.0-1
-ruby-rb-inotify 0.10.1-1
-ruby-rdoc 6.4.0-2
 ruby-reline 0.3.1-1
-ruby-sass 3.7.4-3
-ruby-sass-listen 4.0.0-9
-ruby-stringio 3.0.1-2
-ruby-yard 0.9.26-2
 rubygems 3.3.5-1
 run-parts 5.5-1
 runc 1.1.0-1
 rustup 1.24.3-2
 sane 1.1.1-1
-sassc 3.6.2-3
 sbc 1.5-2
 scrcpy 1.21-2
 screenkey 1.5-1
@@ -1221,6 +1201,7 @@ sudo 1.9.8.p2-3
 suil 0.10.10-2
 suitesparse 5.10.1-2
 supermin 5.3.1-1
+suru-icon-theme-git r250.2d81020-1
 svt-av1 0.9.0-1
 svt-hevc 1.5.1-1
 swtpm 0.7.0-1
@@ -1237,7 +1218,6 @@ talloc 2.3.3-3
 tar 1.34-1
 tbb 2021.5.0-1
 tcl 8.6.12-3
-tcsh 6.23.02-1
 tdb 1.4.5-3
 telegram-cli-git r1363.a234347-1
 telegram-desktop 3.4.8-1
@@ -1294,11 +1274,9 @@ upower 0.99.13-1
 usbmuxd 1.1.1-1
 usbredir 0.12.0-1
 usbutils 014-2
-uthash 2.3.0-1
 util-linux 2.37.3-1
 util-linux-libs 2.37.3-1
 v4l-utils 1.22.1-1
-vala 0.54.6-1
 vamp-plugin-sdk 2.10.0-1
 vde2 2.3.2-18
 vdhcoapp-bin 1.6.3-1
