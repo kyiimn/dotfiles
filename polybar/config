@@ -69,7 +69,7 @@ line-size = 0
 wm-restack = i3
 
 modules-left = i3
-modules-right = mpd updates screenkey pulseaudio gputemp bluetooth wlan datetime
+modules-right = mpd updates screenkey redshift pulseaudio gputemp bluetooth wlan datetime
 
 module-margin-left =
 module-margin-right =
