@@ -159,9 +159,9 @@ popup_during_fullscreen smart
 # SET GAPS
 #smart_gaps on
 for_window [class="^.*"] border pixel 0
-gaps top -20
+gaps top -40
 gaps bottom -20
-gaps inner 40
+gaps inner 60
 
 #set $bg-color               #2e3440
 #set $inactive-bg-color      #2e3440
@@ -205,7 +205,7 @@ for_window [title="(?i)android emulator.*"] floating enable
 ##### LAUNCH ######################################
 # STARTUP
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
-exec --no-startup-id xrandr --output DisplayPort-1 --left-of DisplayPort-0 --pos +840x0 --rotate right
+exec --no-startup-id ~/.local/bin/DisplaySetting.sh
 exec --no-startup-id picom
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id blueman-applet
@@ -217,15 +217,18 @@ exec --no-startup-id telegram-desktop -startintray
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/.local/bin/MountOnedrive.sh
 exec --no-startup-id mpd
+exec --no-startup-id ~/.config/scripts/i3unityfix.py
 #exec --no-startup-id conky
 
 # RELOAD
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-28.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
-exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/plaid2.png
+#exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/plaid2.png
+#exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
+exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/wallpaper-21.png
 
 
 bar {
-		i3bar_command ~/.config/polybar/launch.sh
+	i3bar_command ~/.config/polybar/launch.sh
 }

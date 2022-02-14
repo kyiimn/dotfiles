@@ -14,9 +14,9 @@ elif [ "$1" = 'toggle' ]; then
 elif [ "$1" = 'status' ]; then
 	MOUNT=`ps ax | grep screenkey | grep python | grep -v grep | wc -l`
 	if [ $MOUNT -eq 0 ]; then
-		echo 
+		echo SC:OFF
 	else
-		echo 
+		echo SC:ON
 	fi
 fi
 

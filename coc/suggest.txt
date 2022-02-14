@@ -1,3 +1,14 @@
+els|else|around
+then|then|around
+mono|monospace|around
+wall|wallpaper-39.png|file
+temp1_input|temp1_input|around
+Dis|DisplaySetting.sh|file
+wall|wallpaper-21.png|file
+i3|i3unityfix.py|file
+temp|temperature|around
+NERDTreeGit|NERDTreeGitStatusIndicatorMapCustom|around
+types|typescript|around
 dot|dotfiles|file
 Pic|Pictures|file
 3|333333|buffer

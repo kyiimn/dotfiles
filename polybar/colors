@@ -1,10 +1,10 @@
 [colors]
 background = #ffffff
-foreground = #571918
+foreground = #333333
 
 background-workspace = ${background}
-foreground-workspace = #cf9595
-foreground-workspace-focused = #571918
+foreground-workspace = #999999
+foreground-workspace-focused = #333333
 
 foreground-title = #eceff4
 

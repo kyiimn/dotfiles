@@ -3,7 +3,11 @@ SELF=`dirname "$0"`
 POWER=`${SELF}/power-status`
 if [ $POWER = 'on-line' ]; then
 	UPDATES=`checkupdates | wc -l`
-	echo $UPDATES
+  if [ "$UPDATES" -eq "0" ]; then
+    echo ""
+  else
+    echo "UPDATES: $UPDATES"
+  fi
 else
-	echo N/A
+	echo ""
 fi

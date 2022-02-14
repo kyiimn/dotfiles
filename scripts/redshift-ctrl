@@ -22,8 +22,8 @@ elif [ "$1" = 'toggle' ]; then
 	fi
 else
 	if [ $CTEMP = $NIGHT_TEMP ]; then
-		echo 
+		echo NIGHT
 	else
-		echo 
+		echo LIGHT
 	fi
 fi

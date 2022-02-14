@@ -35,6 +35,7 @@ ARR+=(" unreal-engine")
 ARR+=(" epic games launcher")
 ARR+=(" unityhub")
 ARR+=(" rider for unreal")
+ARR+=(" aseprite")
 ARR+=("")
 ARR+=("Sound Programming:")
 ARR+=(" ardour")
@@ -46,7 +47,6 @@ ARR+=("")
 ARR+=("Graphics:")
 ARR+=(" gimp")
 ARR+=(" krita")
-ARR+=(" aseprite")
 ARR+=(" azpainter")
 ARR+=(" inkscape")
 ARR+=(" blender")
@@ -95,6 +95,7 @@ case $CHOICE in
   " epic games launcher") env WINEPREFIX="/home/kyiimn/.wine" wine C:\\users\\kyiimn\\AppData\\Roaming\\Microsoft\\Windows\\Start\ Menu\\Programs\\Epic\ Games\ Launcher.lnk;;
   " unityhub") exec unityhub;;
   " rider for unreal") exec ~/Rider2021.3/bin/rider.sh;;
+  " aseprite") exec aseprite;;
   " audacity") exec audacity;;
   " zrythm") exec zrythm;;
   " ardour") exec ardour6;;
@@ -102,7 +103,6 @@ case $CHOICE in
   " cadence") exec cadence;;
   " gimp") exec gimp;;
   " krita") exec krita;;
-  " aseprite") exec aseprite;;
   " azpainter") exec azpainter;;
   " inkscape") exec inkscape;;
   " blender") exec blender;;

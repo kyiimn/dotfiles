@@ -26,12 +26,14 @@ Plug 'chrisbra/csv.vim'
 " typescript plugin
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'jparise/vim-graphql'        " GraphQL syntax
 Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'othree/yajs'
+" Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'jelera/vim-javascript-syntax'
+" Plug 'othree/yajs'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
@@ -323,3 +325,15 @@ autocmd FileType python setlocal tabstop=4
 
 " CoC extensions
 let g:coc_global_extensions = ['coc-tsserver']
+
+"autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+"autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+

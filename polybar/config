@@ -6,7 +6,7 @@ include-file = ~/.config/polybar/colors
 monitor = DisplayPort-1
 width =  100%
 #width = 100%:-12
-height = 30
+height = 24
 #padding-left = 1
 #padding-right = 1
 background = ${colors.background}
@@ -18,7 +18,7 @@ bottom = false
 #border-right-size =
 #border-color = #00000000
 
-border-bottom-size = 1
+border-bottom-size = 0
 border-color = #999999
 #border-top-size = 3
 #border-color = ${colors.background}
@@ -34,18 +34,17 @@ modules-left = i3
 module-margin-left =
 module-margin-right =
 
-separator =
+separator = |
 
-font-0 = DroidSansMono Nerd Font:size=11:antialias=true;2
-font-1 = DroidSansMono Nerd Font:size=11:style=Bold:antialias=true;2
-font-2 = monospace:size=11:style=Bold:antialias=true;2
+font-0 = monospace:size=10:antialias=true;2
+font-1 = monospace:size=10:style=Bold:antialias=true;2
 
 [bar/right]
 #tray-position = right
 monitor = DisplayPort-0
 width =  100%
 #width = 100%:-12
-height = 30
+height = 24
 #padding-left = 1
 #padding-right = 1
 background = ${colors.background}
@@ -58,7 +57,7 @@ bottom = false
 #border-color = #00000000
 
 border-top-size = 3
-border-bottom-size = 1
+border-bottom-size = 0
 border-color = #999999
 #border-top-size = 3
 #border-color = ${colors.background}
@@ -69,15 +68,16 @@ line-size = 0
 wm-restack = i3
 
 modules-left = i3
-modules-right = mpd updates screenkey redshift pulseaudio gputemp bluetooth wlan datetime
+modules-center = title
+modules-right = mpd redshift screenkey updates pulseaudio cputemp gputemp datetime
 
 module-margin-left =
 module-margin-right =
 
-separator =
+separator = |
 
-font-0 = DroidSansMono Nerd Font:size=11:antialias=true;2
-font-1 = DroidSansMono Nerd Font:size=11:style=Bold:antialias=true;2
-font-2 = monospace:size=11:style=Bold:antialias=true;2
+font-0 = monospace:size=10:antialias=true;2
+font-1 = monospace:size=10:style=Bold:antialias=true;2
+font-2 = Noto Sans CJK KR:size=9:style=Bold:antialias=true;2
 
 include-file = ~/.config/polybar/modules
