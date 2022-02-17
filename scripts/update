@@ -6,7 +6,7 @@ if [ $POWER = 'on-line' ]; then
   if [ "$UPDATES" -eq "0" ]; then
     echo ""
   else
-    echo "UPDATES: $UPDATES"
+    echo "UPDATES:$UPDATES"
   fi
 else
 	echo ""

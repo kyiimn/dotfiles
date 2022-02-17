@@ -22,8 +22,8 @@ elif [ "$1" = 'toggle' ]; then
 	fi
 else
 	if [ $CTEMP = $NIGHT_TEMP ]; then
-		echo NIGHT
+		echo 4500K
 	else
-		echo LIGHT
+		echo 6500K
 	fi
 fi

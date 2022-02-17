@@ -1,5 +1,6 @@
-els|else|around
+light|lightline|around
 then|then|around
+els|else|around
 mono|monospace|around
 wall|wallpaper-39.png|file
 temp1_input|temp1_input|around

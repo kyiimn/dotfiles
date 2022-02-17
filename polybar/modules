@@ -12,7 +12,7 @@ click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 
 [module/bluetooth]
 type = custom/script
-exec = rofi-bluetooth --status
+exec = ~/.config/scripts/rofi-bluetooth --status
 interval = 2
 click-left = rofi-bluetooth
 click-right = blueman-manager

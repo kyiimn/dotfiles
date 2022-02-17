@@ -45,6 +45,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'shaunsingh/solarized.nvim'
 " Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'sainnhe/everforest'
 
 call plug#end()
 
@@ -282,7 +283,14 @@ set termguicolors
 
 set t_Co=256
 set cursorline
-colorscheme onehalflight
+"colorscheme onehalflight
+
+let g:everforest_transparent_background = 1
+let g:everforest_background = 'soft'
+let g:everforest_enable_italic = 1
+let g:rose_pine_disable_background = "true"
+set background=light
+colorscheme everforest
 
 "colo desert
 highlight Normal     ctermbg=NONE
