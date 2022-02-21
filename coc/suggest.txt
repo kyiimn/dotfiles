@@ -1,3 +1,8 @@
+true|true|around
+so|solarized_light.yml|file
+ala|alacritty|file
+sys|system-cpu-frequency.sh|file
+script|script|around
 light|lightline|around
 then|then|around
 els|else|around
@@ -19,6 +24,5 @@ own_window_argb_vi|own_window_argb_visual|around
 one|onehalf|around
 |pencil_light.yml|file
 color|colors|file
-ala|alacritty|file
 color|color|around
 1|1564|around

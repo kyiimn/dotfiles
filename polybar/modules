@@ -1,3 +1,11 @@
+[module/cpufreq]
+type = custom/script
+exec = ~/.config/scripts/system-cpu-frequency.sh
+interval = 2
+label = CPUFREQ: %output%
+format-padding = 1
+
+
 [module/updates]
 type = custom/script
 exec = ~/.config/scripts/update
@@ -76,21 +84,19 @@ ramp-volume-4 = ""
 [module/mpd]
 type = internal/mpd
 interval = 1
-format-online = "<toggle><label-song>"
+format-online = "MPD: <toggle><label-song>"
 format-online-background = ${colors.background-mpd}
 format-online-padding = 1
 
 label-song = " %title%"
 label-song-maxlen = 48
 label-song-ellipsis = true
-
 label-offline = "Offline"
 
-icon-play = "PLAY "
-icon-pause = "PAUSE "
-icon-stop = "STOP "
-icon-prev = "BB "
-icon-next = "FF "
+icon-play = ">"
+icon-pause = "||"
+icon-prev = "<<"
+icon-next = ">>"
 
 
 [module/wlan]

@@ -1,6 +1,6 @@
 [colors]
-background = #aaffffff
-foreground = #333333
+background = #fdf6e3
+foreground = #586e75
 
 background-workspace = ${background}
 foreground-workspace = #999999

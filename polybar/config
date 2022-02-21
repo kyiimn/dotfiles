@@ -69,7 +69,7 @@ wm-restack = i3
 
 modules-left = i3
 modules-center = title
-modules-right = mpd redshift screenkey updates pulseaudio cputemp gputemp bluetooth datetime
+modules-right = mpd redshift screenkey updates pulseaudio cpufreq cputemp gputemp bluetooth datetime
 
 module-margin-left =
 module-margin-right =

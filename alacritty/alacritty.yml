@@ -73,4 +73,5 @@ key_bindings:
   - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 
 import:
-  - ~/.config/alacritty/colors/pencil_light.yml
+  - ~/.config/alacritty/colors/solarized_light.yml
+  #  - ~/.config/alacritty/colors/pencil_light.yml

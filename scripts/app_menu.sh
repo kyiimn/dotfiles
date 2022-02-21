@@ -34,6 +34,7 @@ ARR+=("Game Development:")
 ARR+=(" unreal-engine")
 ARR+=(" epic games launcher")
 ARR+=(" unityhub")
+ARR+=(" rider")
 ARR+=(" rider for unreal")
 ARR+=(" aseprite")
 ARR+=("")
@@ -57,10 +58,10 @@ ARR+=(" fontforge")
 ARR+=("")
 ARR+=("Multimedia:")
 ARR+=(" obsstudio")
-ARR+=(" davinci resolve")
 ARR+=(" vlc")
 ARR+=("")
 ARR+=("Fun:")
+ARR+=(" lutris")
 ARR+=(" steam")
 
 CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -l 20 -p "app")
@@ -94,6 +95,7 @@ case $CHOICE in
   " unreal-engine") exec ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
   " epic games launcher") env WINEPREFIX="/home/kyiimn/.wine" wine C:\\users\\kyiimn\\AppData\\Roaming\\Microsoft\\Windows\\Start\ Menu\\Programs\\Epic\ Games\ Launcher.lnk;;
   " unityhub") exec unityhub;;
+  " rider") exec rider;;
   " rider for unreal") exec ~/Rider2021.3/bin/rider.sh;;
   " aseprite") exec aseprite;;
   " audacity") exec audacity;;
@@ -111,8 +113,8 @@ case $CHOICE in
   " texmaker") exec texmaker;;
   " fontforge") exec fontforge;;
   " obsstudio") exec obs;;
-  " davinci resolve") exec /opt/resolve/bin/resolve;;
   " vlc") exec vlc;;
+  " lutris") exec lutris;;
   " steam") exec steam;;
   " webbrowser (edge over tor)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
 esac

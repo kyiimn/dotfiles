@@ -42,10 +42,12 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Theme
 " Plug 'morhetz/gruvbox'
 " Plug 'shaunsingh/nord.nvim'
-" Plug 'shaunsingh/solarized.nvim'
+Plug 'shaunsingh/solarized.nvim'
 " Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'sainnhe/everforest'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
 
@@ -101,7 +103,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
+map <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -256,9 +258,9 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " Powerline-font 활성화
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
-" let g:airline_theme='solarized'
-" let g:airline_solarized_bg = 'dark'
-let g:airline_theme='onehalfdark'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg = 'light'
+" let g:airline_theme='onehalfdark'
 
 " Tab line 에 파일명만 출력되도록 설정
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -285,12 +287,27 @@ set t_Co=256
 set cursorline
 "colorscheme onehalflight
 
-let g:everforest_transparent_background = 1
-let g:everforest_background = 'soft'
-let g:everforest_enable_italic = 1
-let g:rose_pine_disable_background = "true"
+"let g:everforest_transparent_background = 1
+"let g:everforest_background = 'soft'
+"let g:everforest_enable_italic = 1
+"let g:rose_pine_disable_background = "true"
+"set background=light
+"colorscheme everforest
+
+syntax enable
 set background=light
-colorscheme everforest
+
+let g:solarized_italic_comments = v:true
+let g:solarized_italic_keywords = v:true
+let g:solarized_italic_functions = v:true
+let g:solarized_italic_variables = v:false
+let g:solarized_contrast = v:true
+let g:solarized_borders = v:false
+let g:solarized_disable_background = v:true
+"colorscheme solarized
+
+set background=light
+colorscheme solarized8
 
 "colo desert
 highlight Normal     ctermbg=NONE
