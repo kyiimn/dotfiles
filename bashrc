@@ -55,6 +55,7 @@ completions=(
   pip
   bundler
   gem
+  npm
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
@@ -135,9 +136,6 @@ source /usr/share/nvm/init-nvm.sh
 # ruby
 export GEM_HOME=$HOME/gem
 export PATH=$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH
-
-# rider
-export PATH=$HOME/Rider2021.3/bin:$PATH
 
 # android
 source $HOME/.local/bin/AndroidEnv.sh

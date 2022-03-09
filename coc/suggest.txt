@@ -1,3 +1,7 @@
+hip|hip_2|around
+amd|amd_5|around
+miopen|miopentensile_1|around
+miopen|miopengemm_1|around
 true|true|around
 so|solarized_light.yml|file
 ala|alacritty|file

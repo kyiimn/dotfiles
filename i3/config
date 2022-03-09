@@ -225,8 +225,9 @@ exec --no-startup-id ~/.config/scripts/i3unityfix.py
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/plaid2.png
-exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
-#exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/wallpaper-21.png
+#exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/floral-artistic-2_FHD.jpg
+#exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/wal
 
 
 bar {

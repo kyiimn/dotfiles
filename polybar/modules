@@ -1,8 +1,15 @@
+[module/kernel]
+type = custom/script
+exec = uname -r
+label = %output%
+format-padding = 1
+
+
 [module/cpufreq]
 type = custom/script
 exec = ~/.config/scripts/system-cpu-frequency.sh
-interval = 2
-label = CPUFREQ: %output%
+interval = 5
+label = CPUFREQ:%output%
 format-padding = 1
 
 
@@ -21,7 +28,7 @@ click-left = alacritty -e ~/.config/scripts/pause yay -Syyu
 [module/bluetooth]
 type = custom/script
 exec = ~/.config/scripts/rofi-bluetooth --status
-interval = 2
+interval = 3
 click-left = rofi-bluetooth
 click-right = blueman-manager
 format-background = ${colors.background-bluetooth}
@@ -54,7 +61,7 @@ click-left = telegram-desktop &
 [module/screenkey]
 type = custom/script
 exec = ~/.config/scripts/screenkey.sh status
-interval = 1.0
+interval = 2
 format = <label>
 format-background = ${colors.background-screenkey}
 format-padding = 1
@@ -270,11 +277,11 @@ label = %percentage%%
 [module/cputemp]
 type = internal/temperature
 interval = 2
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
 base-temperature = 40
 warn-temperature = 80
 
-format = CPU:<label>
+format = CPUTEMP:<label>
 format-foreground = ${colors.foreground}
 format-padding = 1
 label = %temperature-c%
@@ -288,7 +295,7 @@ hwmon-path = /sys/devices/pci0000:00/0000:00:03.1/subsystem/devices/0000:13:00.0
 base-temperature = 40
 warn-temperature = 100
 
-format = GPU:<label>
+format = GPUTEMP:<label>
 format-foreground = ${colors.foreground}
 format-padding = 1
 label = %temperature-c%
@@ -298,7 +305,7 @@ label-foreground = ${colors.foreground}
 [module/redshift]
 type = custom/script
 exec = ~/.config/scripts/redshift-ctrl
-interval = 1.0
+interval = 2
 format = <label>
 format-foreground = ${colors.foreground}
 format-padding = 1
