@@ -73,6 +73,8 @@ Plug 'mxw/vim-jsx'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'lifepillar/vim-solarized8'
 Plug 'soft-aesthetic/soft-era-vim'
+Plug 'rafamadriz/neon'
+Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
@@ -138,6 +140,19 @@ require("lspconfig").tsserver.setup({
 
 require("trouble").setup {
 }
+
+local nightfox = require("nightfox")
+nightfox.setup({
+  fox = 'dawnfox',
+  transparent = true,
+  styles = {
+    comments = "italic",
+    keywords = "bold",
+    functions = "italic,bold"
+  }
+})
+nightfox.load()
+
 EOF
 
 autocmd BufWritePost * :Prettier
@@ -185,11 +200,16 @@ endfunction
 
 let g:solarized_termtrans = 1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let g:neon_style = 'light'
+let g:neon_italic_keyword = 1
+let g:neon_italic_function = 1
+let g:neon_transparent = 1
 
 syntax enable
 set background=light
-colorscheme solarized8
+" colorscheme solarized8
 " colorscheme soft-era
+" colorscheme neon
 
 hi DiagnosticError ctermfg=Red guifg=Red
 hi DiagnosticHint ctermfg=Green guifg=Green
