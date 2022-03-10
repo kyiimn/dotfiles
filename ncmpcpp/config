@@ -1,75 +1,66 @@
-# MPD
-# ---
-mpd_host = "127.0.0.1"
-mpd_port = "6600"
+### Visualizer ###
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = "mpd_visualizer"
+visualizer_in_stereo   = "yes"
+visualizer_look 	   = ●●
+visualizer_type 	   = "ellipse"
 
-mpd_crossfade_time = 2
-
-# VISUALIZER
-# ---
-visualizer_in_stereo = "no"
-visualizer_data_source = "/tmp/mpd.fifo"
-visualizer_fps = 60
-visualizer_output_name = "Visualizer"
-visualizer_type = "wave"
-visualizer_look = "▐"
-visualizer_color = "red,magenta,cyan,green,yellow"
-visualizer_spectrum_smooth_look = no
-
-# GLOBAL
-# ---
-cyclic_scrolling = "yes"
-mouse_support = "yes"
-mouse_list_scroll_whole_page = "yes"
-lines_scrolled = "1"
-message_delay_time = "1"
-playlist_shorten_total_times = "yes"
-playlist_display_mode = "columns"
-browser_display_mode = "columns"
-search_engine_display_mode = "columns"
-playlist_editor_display_mode = "columns"
+### Behaviour ###
+execute_on_song_change="~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
+message_delay_time = 1
+playlist_disable_highlight_delay = 2
 autocenter_mode = "yes"
 centered_cursor = "yes"
-user_interface = "classic"
-follow_now_playing_lyrics = "yes"
-locked_screen_width_part = "50"
-ask_for_locked_screen_width_part = "yes"
-display_bitrate = "no"
-external_editor = "nano"
-main_window_color = "default"
-startup_screen = "playlist"
+ignore_leading_the = "yes"
+allow_for_physical_item_deletion = "no"
 
-# PROGRESS BAR
-# ---
-progressbar_look = "━━━"
-#progressbar_look = "▃▃▃"
-progressbar_elapsed_color = 5
-progressbar_color = "black"
+#visualizer_look = "  "
+startup_screen = visualizer
+startup_slave_screen = playlist
+startup_slave_screen_focus = yes
+locked_screen_width_part = 31
 
-# UI VISIBILITY
-# ---
-header_visibility = "no"
+### Appearance ###
+colors_enabled = "yes"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+user_interface = classic
+volume_color = "cyan"
 statusbar_visibility = "yes"
+header_visibility = "no"
 titles_visibility = "no"
-enable_window_title = "yes"
+display_volume_level = "yes"
+statusbar_color = "black"
+empty_tag_marker = "   "
 
-# COLORS
-# ---
-statusbar_color = "white"
-color1 = "white"
-color2 = "blue"
+# Songs List #
+song_window_title_format = "Music"
 
-# UI APPEARANCE
-# ---
-now_playing_prefix = "$b$2$7 "
-now_playing_suffix = "  $/b$8"
-current_item_prefix = "$b$7$/b$3 "
-current_item_suffix = "  $8"
+# Progress bar #
+progressbar_look = "━━━"
+progressbar_color = "white"
+progressbar_elapsed_color = "blue"
 
+# Alternative UI
+alternative_ui_separator_color = "white"
+alternative_header_first_line_format = $b$5«$/b$5« $b$0{%t}|{%f}$/b $5»$b$5»$/b 
+alternative_header_second_line_format = {$b{$2%a$9}{ - $7%b$9}{ ($2%y$9)}}|{%D}
+
+# Song list #
+song_list_format = " $6%t $R$5{{%a}|{%f}} "
 song_columns_list_format = "(50)[]{t|fr:Title} (0)[magenta]{a}"
+song_library_format = {{%t - %a} (%b)}|{%f}
 
-song_list_format = " {%t $R   $8%a$8}|{%f $R   $8%l$8} $8"
+# UI FORMAT
+now_playing_prefix = $b
+now_playing_suffix = $/b
 
-song_status_format = "$b$6$7[$8      $7]$6 $2 $7{$8 %b }|{$8 %t }|{$8 %f }$7 $8"
+current_item_prefix = "$b$2♥$/b$4 "
 
-song_window_title_format = "Now Playing .."
+# Colors #
+main_window_color = "white"
+
+song_status_format = "$b$2 $4{{%t}|{%f}} $2"
+
+color1 = "black"
+color2 = "red"

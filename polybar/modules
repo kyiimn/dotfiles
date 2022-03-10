@@ -91,7 +91,7 @@ ramp-volume-4 = ""
 [module/mpd]
 type = internal/mpd
 interval = 1
-format-online = "MPD: <toggle><label-song>"
+format-online = "<label-song>"
 format-online-background = ${colors.background-mpd}
 format-online-padding = 1
 
@@ -100,10 +100,10 @@ label-song-maxlen = 48
 label-song-ellipsis = true
 label-offline = "Offline"
 
-icon-play = ">"
-icon-pause = "||"
-icon-prev = "<<"
-icon-next = ">>"
+icon-play = ""
+icon-pause = ""
+icon-prev = ""
+icon-next = ""
 
 
 [module/wlan]
