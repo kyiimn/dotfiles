@@ -26,7 +26,7 @@ font = Noto Sans CJK KR 11
 
 line_height = 0
 markup = full
-format = "<span size='x-large' font_desc='Cantarell,Noto Sans CJK KR 10' weight='bold' foreground='#63c5ea'>%s</span>\n%b"
+format = "<span size='x-large' font_desc='Cantarell,Noto Sans CJK KR 11' weight='bold' foreground='#8293a2'>%s</span>\n%b"
 alignment = left
 vertical_alignment = center
 

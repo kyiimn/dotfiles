@@ -1,0 +1,28 @@
+# Colors (Solarized Light)
+colors:
+  # Default colors
+  primary:
+    background: "0xfdfcfd"
+    foreground: "0x181f33"
+
+  # Normal colors
+  normal:
+    black: "0xfdfcfd"
+    red: "0x9da3ae"
+    green: "0xa7b6c7"
+    yellow: "0xc7bbc2"
+    blue: "0xb2c3d2"
+    magenta: "0xa5d9ea"
+    cyan: "0xd3d8e0"
+    white: "0x181f33"
+
+  # Bright colors
+  bright:
+    black: "0x939091"
+    red: "0x9da3ae"
+    green: "0xa7b6c7"
+    yellow: "0xc7bbc2"
+    blue: "0xb2c3d2"
+    magenta: "0xa5d9ea"
+    cyan: "0xd3d8e0"
+    white: "0x181f33"
