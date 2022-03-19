@@ -16,6 +16,8 @@ bindsym $mod+w					exec rofi -show window
 
 bindsym Ctrl+Tab				exec rofi -show window
 
+bindsym $mod+Tab    exec ~/.config/eww/dashboard/launch_dashboard
+
 bindsym $mod+e				exec alacritty -e ranger
 bindsym $mod+g        exec code
 bindsym $mod+i				exec qutebrowser
@@ -222,11 +224,11 @@ exec --no-startup-id ~/.config/scripts/i3unityfix.py
 
 # RELOAD
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-28.jpg
-#exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/plaid2.png
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/floral-artistic-2_FHD.jpg
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/floral-artistic-2_FHD.jpg
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/wal
 
 

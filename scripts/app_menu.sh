@@ -10,7 +10,7 @@ ARR+=(" webbrowser (qutebrowser)")
 ARR+=(" webbrowser (edge)")
 ARR+=(" email (mutt)")
 ARR+=(" calculator")
-ARR+=(" joplin")
+ARR+=(" notion")
 ARR+=(" libreoffice")
 ARR+=(" telegram")
 ARR+=(" bpytop")
@@ -75,7 +75,7 @@ case $CHOICE in
  	" webbrowser (edge)") exec microsoft-edge-stable;;
  	" email (mutt)") exec alacritty -e mutt;;
  	" calculator") exec rofi -show calc -modi calc -no-show-match -no-sort;;
- 	" joplin") exec /opt/appimages/Joplin.AppImage;;
+ 	" notion") exec notion-app;;
  	" libreoffice") exec libreoffice;;
   " telegram") exec telegram-desktop;;
   " bpytop") exec alacritty -e bpytop;;

@@ -59,3 +59,4 @@ inode/directory=ranger.desktop
 application/uproject=com.unrealengine.UE4Editor.desktop
 application/vnd.ms-excel=libreoffice-calc.desktop
 x-scheme-handler/discord-901534333360304168=discord-901534333360304168.desktop
+x-scheme-handler/notion=notion-app.desktop
