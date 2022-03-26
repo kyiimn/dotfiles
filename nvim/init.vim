@@ -69,13 +69,13 @@ Plug 'mxw/vim-jsx'
 " Plug 'morhetz/gruvbox'
 " Plug 'shaunsingh/nord.nvim'
 " Plug 'shaunsingh/solarized.nvim'
-" Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'lifepillar/vim-solarized8'
-Plug 'soft-aesthetic/soft-era-vim'
-Plug 'rafamadriz/neon'
-Plug 'EdenEast/nightfox.nvim'
+" Plug 'lifepillar/vim-solarized8'
+" Plug 'soft-aesthetic/soft-era-vim'
+" Plug 'rafamadriz/neon'
+" Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
@@ -142,17 +142,17 @@ require("lspconfig").tsserver.setup({
 require("trouble").setup {
 }
 
-local nightfox = require("nightfox")
-nightfox.setup({
-  fox = 'dawnfox',
-  transparent = true,
-  styles = {
-    comments = "italic",
-    keywords = "bold",
-    functions = "italic,bold"
-  }
-})
-nightfox.load()
+--local nightfox = require("nightfox")
+--nightfox.setup({
+--  fox = 'dawnfox',
+--  transparent = true,
+--  styles = {
+--    comments = "italic",
+--    keywords = "bold",
+--    functions = "italic,bold"
+--  }
+--})
+--nightfox.load()
 
 local saga = require("lspsaga")
 --saga.init_lsp_saga {
@@ -199,8 +199,9 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeDirArrows = 1
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+"let g:airline_theme = 'solarized'
 "let g:airline_theme = 'softera'
+let g:airline_theme = 'nord'
 let g:airline_solarized_bg = 'light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -229,10 +230,11 @@ let g:neon_italic_function = 1
 let g:neon_transparent = 1
 
 syntax enable
-set background=light
+" set background=light
 " colorscheme solarized8
 " colorscheme soft-era
 " colorscheme neon
+colorscheme nord
 
 hi DiagnosticError ctermfg=Red guifg=Red
 hi DiagnosticHint ctermfg=Green guifg=Green

@@ -1,0 +1,35 @@
+[colors]
+#background = #bbf9f9f9
+background = #8fbcbb
+foreground = #586e75
+
+background-workspace = ${background}
+foreground-workspace = #999999
+foreground-workspace-focused = #ffffff
+background-workspace-focused = #92a3b2
+
+foreground-title = #eceff4
+
+background-mpd = ${background}
+background-telegram = ${background}
+background-updates = ${background}
+background-bluetooth = ${background}
+background-screenkey = ${background}
+background-volume = ${background}
+background-wifi = ${background}
+background-date = ${background}
+
+foreground-mpd = #444444
+foreground-gputemp = #444444
+foreground-onedrive = #444444
+foreground-gdrive = #444444
+foreground-power = #444444
+
+foreground-battery = #444444
+foreground-cpu = #444444
+foreground-time = #444444
+foreground-mem = #444444
+foreground-redshift = #444444
+foreground-temp = #444444
+foreground-backlight = #444444
+
