@@ -161,9 +161,9 @@ popup_during_fullscreen smart
 # SET GAPS
 #smart_gaps on
 for_window [class="^.*"] border pixel 0
-gaps top -40
-gaps bottom -20
-gaps inner 60
+gaps top 14
+gaps bottom -30
+gaps inner 64
 
 #set $bg-color               #2e3440
 #set $inactive-bg-color      #2e3440
@@ -219,18 +219,18 @@ exec --no-startup-id telegram-desktop -startintray
 exec --no-startup-id 1password --silent
 exec --no-startup-id ~/.local/bin/MountOnedrive.sh
 #exec --no-startup-id mpd
-exec --no-startup-id ~/.config/scripts/i3unityfix.py
-#exec --no-startup-id conky
+exec --no-startup-id ~/.local/bin/i3unityfix.py
 
 # RELOAD
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-28.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/pexels-photo-355770.jpeg
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/archlinux.png
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/archlinux.png
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/plaid2.png
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/floral-artistic-2_FHD.jpg
-#exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/wal
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/sakura.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-8.jpg
 
 
 bar {

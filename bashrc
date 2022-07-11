@@ -3,8 +3,8 @@ export OSH=/home/kyiimn/.oh-my-bash
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-#OSH_THEME="agnoster"
-OSH_THEME="rainbowbrite"
+OSH_THEME="agnoster"
+#OSH_THEME="rainbowbrite"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -123,19 +123,24 @@ alias ll="exa --icons -l"
 alias lla="exa --icons -la"
 
 # bat
-alias cat="bat --theme 'OneHalfLight'"
+alias cat="bat --theme 'Nord'"
 
 # neofetch
 alias nf=neofetch
 
 export PATH=~/.local/bin:$PATH
 
-# nvm
-source /usr/share/nvm/init-nvm.sh
-
 # ruby
 export GEM_HOME=$HOME/gem
 export PATH=$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH
 
-# android
-source $HOME/.local/bin/AndroidEnv.sh
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+export ANDROID_HOME="/home/kyiimn/Android/Sdk"
+
+export JAVA_HOME="/home/kyiimn/android-studio/jre"
+
+export NDKROOT="/home/kyiimn/Android/Sdk/ndk/21.4.7075529"
+export NDK_ROOT="/home/kyiimn/Android/Sdk/ndk/21.4.7075529"

@@ -69,10 +69,10 @@ Plug 'mxw/vim-jsx'
 " Plug 'morhetz/gruvbox'
 " Plug 'shaunsingh/nord.nvim'
 " Plug 'shaunsingh/solarized.nvim'
-Plug 'arcticicestudio/nord-vim'
-" Plug 'altercation/vim-colors-solarized'
+" Plug 'arcticicestudio/nord-vim'
+Plug 'altercation/vim-colors-solarized'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-solarized8'
 " Plug 'soft-aesthetic/soft-era-vim'
 " Plug 'rafamadriz/neon'
 " Plug 'EdenEast/nightfox.nvim'
@@ -199,10 +199,10 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeDirArrows = 1
 
 let g:airline_powerline_fonts = 1
-"let g:airline_theme = 'solarized'
+let g:airline_theme = 'solarized'
 "let g:airline_theme = 'softera'
-let g:airline_theme = 'nord'
-let g:airline_solarized_bg = 'light'
+" let g:airline_theme = 'nord'
+let g:airline_solarized_bg = 'dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
@@ -224,17 +224,17 @@ endfunction
 
 let g:solarized_termtrans = 1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:neon_style = 'light'
+let g:neon_style = 'dark'
 let g:neon_italic_keyword = 1
 let g:neon_italic_function = 1
 let g:neon_transparent = 1
 
 syntax enable
-" set background=light
-" colorscheme solarized8
+set background=dark
+colorscheme solarized8
 " colorscheme soft-era
 " colorscheme neon
-colorscheme nord
+" colorscheme nord
 
 hi DiagnosticError ctermfg=Red guifg=Red
 hi DiagnosticHint ctermfg=Green guifg=Green

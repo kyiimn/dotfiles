@@ -11,8 +11,8 @@ window:
   #  y: 0
 
   padding:
-    x: 30
-    y: 30
+    x: 24
+    y: 24
 
   title: terminal
 
@@ -20,7 +20,7 @@ window:
     instance: terminal
     general: terminal
 
-  opacity: 1
+  opacity: .95
 
 scrolling:
   history: 5000
@@ -50,7 +50,7 @@ font:
       #family: JetBrainsMono Nerd Font Mono
     style: Bold Italic
 
-  size: 12
+  size: 13
 
   offset:
     x: 0

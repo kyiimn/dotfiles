@@ -1,5 +1,5 @@
 [colors]
-background = #002a3040
+background = #cc1a1e30
 foreground = #eceff4
 
 background-workspace = ${background}

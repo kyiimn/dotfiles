@@ -8,12 +8,10 @@ ARR+=(" filemanager (mc)")
 ARR+=(" filemanager (thunar)")
 ARR+=(" webbrowser (qutebrowser)")
 ARR+=(" webbrowser (edge)")
-ARR+=(" email (mutt)")
 ARR+=(" calculator")
 ARR+=(" notion")
 ARR+=(" libreoffice")
 ARR+=(" telegram")
-ARR+=(" bpytop")
 ARR+=(" 1password")
 ARR+=("")
 ARR+=("Development:")
@@ -35,13 +33,11 @@ ARR+=(" unreal-engine")
 ARR+=(" epic games launcher")
 ARR+=(" unityhub")
 ARR+=(" rider")
-ARR+=(" rider for unreal")
 ARR+=(" aseprite")
 ARR+=("")
 ARR+=("Sound Programming:")
 ARR+=(" ardour")
 ARR+=(" audacity")
-ARR+=(" zrythm")
 ARR+=(" ncmpcpp")
 ARR+=(" cadence")
 ARR+=("")
@@ -49,11 +45,8 @@ ARR+=("Graphics:")
 ARR+=(" gimp")
 ARR+=(" krita")
 ARR+=(" azpainter")
-ARR+=(" inkscape")
 ARR+=(" blender")
-ARR+=(" scribus")
 ARR+=(" darktable")
-ARR+=(" texmaker")
 ARR+=(" fontforge")
 ARR+=("")
 ARR+=("Multimedia:")
@@ -63,6 +56,7 @@ ARR+=("")
 ARR+=("Fun:")
 ARR+=(" lutris")
 ARR+=(" steam")
+ARR+=(" dosbox")
 
 CHOICE=$(printf '%s\n' "${ARR[@]}" | rofi -dmenu -l 20 -p "app")
 
@@ -92,11 +86,10 @@ case $CHOICE in
   " github-desktop") exec github-desktop;;
   " neovim") exec alacritty -e nvim;;
   " rgb-tui") exec alacritty -e rgb-tui;;
-  " unreal-engine") exec ~/UnrealEngine/Engine/Binaries/Linux/UE4Editor;;
+  " unreal-engine") exec ~/UnrealEngine/Engine/Binaries/Linux/UnrealEditor;;
   " epic games launcher") env WINEPREFIX="/home/kyiimn/.wine" wine C:\\users\\kyiimn\\AppData\\Roaming\\Microsoft\\Windows\\Start\ Menu\\Programs\\Epic\ Games\ Launcher.lnk;;
   " unityhub") exec unityhub;;
   " rider") exec rider;;
-  " rider for unreal") exec ~/Rider2021.3/bin/rider.sh;;
   " aseprite") exec aseprite;;
   " audacity") exec audacity;;
   " zrythm") exec zrythm;;
@@ -116,5 +109,6 @@ case $CHOICE in
   " vlc") exec vlc;;
   " lutris") exec lutris;;
   " steam") exec steam;;
+  " dosbox") exec dosbox-x;;
   " webbrowser (edge over tor)") exec google-chrome-stable --proxy-server="socks5://localhost:9050" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost";;
 esac

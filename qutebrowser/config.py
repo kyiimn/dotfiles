@@ -119,5 +119,5 @@ c.url.start_pages = "https://kyiimn.github.io/Longing-For-The-Woods/"
 c.window.title_format = "{private}{perc}{title_sep}qutebrowser"
 
 config.load_autoconfig()
-config.source('themes/base16-atelier-lakeside-light.config.py')
-#config.source('themes/nord-qutebrowser.py')
+#config.source('themes/base16-atelier-lakeside-light.config.py')
+config.source('themes/nord-qutebrowser.py')
