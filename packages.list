@@ -255,6 +255,7 @@ gnome-desktop-4 1:42.2-1
 gnome-desktop-common 1:42.2-1
 gnome-keyring 1:42.1-1
 gnome-settings-daemon 42.2-1
+gnome-themes-extra 3.28+r6+g45b1d457-1
 gnupg 2.2.36-1
 gnutls 3.7.6-1
 go 2:1.18.3-1
@@ -695,6 +696,7 @@ librevenge 0.0.4-4
 librsvg 2:2.54.4-1
 libsamplerate 0.2.2-1
 libsasl 2.1.28-1
+libsass 3.6.5-2
 libseccomp 2.5.4-1
 libsecret 0.20.5-2
 libshout 1:2.4.6-1
@@ -1097,7 +1099,7 @@ python-lxml 4.9.0-1
 python-mako 1.1.6-3
 python-markdown 3.3.7-1
 python-markupsafe 2.1.1-1
-python-more-itertools 8.13.0-1
+python-more-itertools 8.13.0-2
 python-msgpack 1.0.3-1
 python-mutagen 1.45.1-6
 python-nspektr 0.4.0-1
@@ -1265,6 +1267,7 @@ runc 1.1.3-1
 rustup 1.24.3-2
 samba 4.16.2-1
 sane 1.1.1-1
+sassc 3.6.2-3
 sbc 1.5-2
 scrcpy 1.23-2
 screenkey 1.5-1
