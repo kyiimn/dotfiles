@@ -6,19 +6,23 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'nvim-lua/popup.nvim'
+
+" api
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'tamago324/nlsp-settings.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
+
+" etc
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'MunifTanjim/prettier.nvim'
-Plug 'glepnir/lspsaga.nvim'
 
 " auto-complete
 Plug 'hrsh7th/nvim-cmp'
@@ -40,13 +44,17 @@ Plug 'lewis6991/gitsigns.nvim'
 " statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/tagbar'
 
 " NERDTree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'ryanoasis/vim-devicons'
+" Plug 'ntpeters/vim-better-whitespace'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" NvimTree
+Plug 'kyazdani42/nvim-tree.lua'
 
 " find files
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -69,13 +77,12 @@ Plug 'mxw/vim-jsx'
 " Plug 'morhetz/gruvbox'
 " Plug 'shaunsingh/nord.nvim'
 " Plug 'shaunsingh/solarized.nvim'
-" Plug 'arcticicestudio/nord-vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
+" Plug 'altercation/vim-colors-solarized'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'lifepillar/vim-solarized8'
-" Plug 'soft-aesthetic/soft-era-vim'
-" Plug 'rafamadriz/neon'
-" Plug 'EdenEast/nightfox.nvim'
+Plug 'soft-aesthetic/soft-era-vim'
+Plug 'rafamadriz/neon'
 
 call plug#end()
 
@@ -118,52 +125,14 @@ require 'user.indentline'
 require 'user.lsp'
 require 'user.prettier'
 require 'user.telescope'
+require 'user.nvim-tree'
 --require 'user.treesitter'
-
-local buf_map = function(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
-        silent = true,
-    })
-end
-require("lspconfig").tsserver.setup({
-    on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
-        local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup({})
-        ts_utils.setup_client(client)
-        buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
-        buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
-        buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
-        on_attach(client, bufnr)
-    end,
-})
-
-require("trouble").setup {
-}
-
---local nightfox = require("nightfox")
---nightfox.setup({
---  fox = 'dawnfox',
---  transparent = true,
---  styles = {
---    comments = "italic",
---    keywords = "bold",
---    functions = "italic,bold"
---  }
---})
---nightfox.load()
-
-local saga = require("lspsaga")
---saga.init_lsp_saga {
---}
 EOF
 
-autocmd BufWritePost * :Prettier
-autocmd InsertLeave * :Prettier
-nmap <silent> <Leader>f :Prettier<CR>
-
-command! -nargs=? Format :Prettier
+" autocmd BufWritePost * :Prettier
+" autocmd InsertLeave * :Prettier
+" nmap <silent> <Leader>f :Prettier<CR>
+" command! -nargs=? Format :Prettier
 
 nmap <silent> <C-Up> <ESC>:bprevious<CR>
 imap <silent> <C-Up> <ESC>:bprevious<CR>
@@ -173,36 +142,20 @@ nmap <silent> <C-Delete> <ESC>:bdelete<CR>
 imap <silent> <C-Delete> <ESC>:bdelete<CR>
 
 nmap <Leader>tt <ESC>:TroubleToggle<CR>
+nmap <Leader>pp <ESC>:Prettier<CR>
 
-" lspsaga
-nnoremap <silent>gh :Lspsaga lsp_finder<CR>
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
-nnoremap <silent>K :Lspsaga hover_doc<CR>
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-nnoremap <silent>gs :Lspsaga signature_help<CR>
-nnoremap <silent>gr :Lspsaga rename<CR>
-nnoremap <silent>gd :Lspsaga preview_definition<CR>
-nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
-tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
+"map <Leader>nt <ESC>:NERDTreeToggle<CR>
+map <Leader>nt <ESC>:NvimTreeToggle<CR>
 
-
-" NERDTree
-map <Leader>nt <ESC>:NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeDirArrows = 1
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+"let g:airline_theme = 'solarized'
 "let g:airline_theme = 'softera'
-" let g:airline_theme = 'nord'
-let g:airline_solarized_bg = 'dark'
+let g:airline_theme = 'nord'
+"let g:airline_solarized_bg = 'light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
@@ -213,7 +166,7 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> d
   \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
+  \ dete#do_map('do_action', 'preview')
   nnoremap <silent><buffer><expr> q
   \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> i
@@ -224,17 +177,17 @@ endfunction
 
 let g:solarized_termtrans = 1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:neon_style = 'dark'
+let g:neon_style = 'light'
 let g:neon_italic_keyword = 1
 let g:neon_italic_function = 1
 let g:neon_transparent = 1
 
 syntax enable
-set background=dark
-colorscheme solarized8
+"set background=light
+" colorscheme solarized8
 " colorscheme soft-era
 " colorscheme neon
-" colorscheme nord
+colorscheme nord
 
 hi DiagnosticError ctermfg=Red guifg=Red
 hi DiagnosticHint ctermfg=Green guifg=Green
