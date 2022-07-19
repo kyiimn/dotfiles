@@ -232,7 +232,7 @@ exec --no-startup-id ~/.local/bin/i3unityfix.py
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/floral-artistic-2_FHD.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/sakura.jpg
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/forest_bw.png
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/forest_bw.png
 
 
 bar {
