@@ -26,6 +26,7 @@ bindsym $mod+n				exec alacritty -e ncmpcpp
 
 bindsym $mod+Ctrl+1				exec 1password
 bindsym $mod+Ctrl+r				exec rofi -show run
+bindsym $mod+Ctrl+c       exec ~/.config/scripts/grayscale toggle
 
 bindsym $mod+Shift+minus		move scratchpad
 bindsym $mod+minus				scratchpad show
@@ -208,7 +209,8 @@ for_window [title="(?i)android emulator.*"] floating enable
 # STARTUP
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec --no-startup-id ~/.local/bin/DisplaySetting.sh
-exec --no-startup-id picom
+#exec --no-startup-id picom
+exec --no-startup-id ~/.config/scripts/grayscale toggle
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id blueman-applet
 exec --no-startup-id kdeconnect-indicator
@@ -230,7 +232,7 @@ exec --no-startup-id ~/.local/bin/i3unityfix.py
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/floral-artistic-2_FHD.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/sakura.jpg
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper-8.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/forest_bw.png
 
 
 bar {
