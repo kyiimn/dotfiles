@@ -12,12 +12,12 @@ if [ "$1" = 'toggle' ]; then
     echo color > $MF
     killall -9 picom
     feh --bg-fill $WALLPAPER_COLOR
-    sleep .1
+    sleep .5
     picom &
   else
     echo grayscale > $MF
     killall -9 picom
-    sleep .1
+    sleep .5
     picom --glx-fshader-win "${GRAYSCALE_SHADER}" &
     feh --bg-fill $WALLPAPER_BW
   fi
