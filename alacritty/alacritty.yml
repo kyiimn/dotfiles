@@ -82,5 +82,5 @@ key_bindings:
 
 import:
   # - ~/.config/alacritty/colors/nya.yml
-  #  - ~/.config/alacritty/colors/pencil_light.yml
-  - ~/.config/alacritty/colors/nord.yml
+ #  - ~/.config/alacritty/colors/pencil_light.yml
+  - ~/.config/alacritty/colors/solarized_light.yml

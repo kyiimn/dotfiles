@@ -1,0 +1,4 @@
+evdev:input:b0003v3151p4002*
+ KEYBOARD_KEY_7004c=key_pageup
+ KEYBOARD_KEY_7004b=key_pagedown
+ KEYBOARD_KEY_7004e=key_delete

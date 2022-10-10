@@ -35,6 +35,10 @@ bindsym --release Print			exec scrot
 bindsym --release $mod+Print	exec scrot -s
 bindsym --release $mod+o		exec scrot -s
 
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1%- unmute"
+bindsym XF86AudioPlay exec "amixer -q sset Master,0 toggle"
+
 bindsym $mod+Left           	focus left
 bindsym $mod+Down           	focus down
 bindsym $mod+Up             	focus up
@@ -162,9 +166,9 @@ popup_during_fullscreen smart
 # SET GAPS
 #smart_gaps on
 for_window [class="^.*"] border pixel 0
-gaps top 14
-gaps bottom -30
-gaps inner 64
+gaps top 28
+gaps bottom 0
+gaps inner 32
 
 #set $bg-color               #2e3440
 #set $inactive-bg-color      #2e3440
@@ -207,6 +211,7 @@ for_window [title="(?i)android emulator.*"] floating enable
 
 ##### LAUNCH ######################################
 # STARTUP
+exec --no-startup-id xrdb -merge $HOME/.Xresources
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec --no-startup-id ~/.local/bin/DisplaySetting.sh
 #exec --no-startup-id picom

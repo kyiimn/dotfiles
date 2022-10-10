@@ -277,7 +277,7 @@ label = %percentage%%
 [module/cputemp]
 type = internal/temperature
 interval = 2
-hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input
 base-temperature = 40
 warn-temperature = 80
 

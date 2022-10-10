@@ -1,5 +1,5 @@
 [Added Associations]
-image/jpeg=feh.desktop;
+image/jpeg=krita_jpeg.desktop;feh.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-VT77D1.desktop;
 x-scheme-handler/rdp=org.remmina.Remmina.desktop;
 x-scheme-handler/spice=org.remmina.Remmina.desktop;
@@ -28,6 +28,7 @@ image/x-tga=feh.desktop;
 image/x-xbitmap=feh.desktop;
 application/vnd.ms-excel=libreoffice-calc.desktop;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;
+application/x-partial-download=vlc.desktop;
 
 [Default Applications]
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop

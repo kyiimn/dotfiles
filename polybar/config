@@ -5,10 +5,10 @@ include-file = ~/.config/polybar/colors
 #tray-position = right
 monitor = DisplayPort-1
 #width =  100%
-width = 100%:-58
+width = 100%
 height = 20
-offset-x = 29
-offset-y = 24
+offset-x = 0
+offset-y = 0
 padding-left = 1
 padding-right = 1
 background = ${colors.background}
@@ -20,8 +20,8 @@ bottom = false
 #border-right-size =
 #border-color = #00000000
 
-border-top-size = 6
-border-bottom-size = 6
+border-top-size = 1
+border-bottom-size = 1
 border-color = ${colors.background}
 
 underline-size = 0
@@ -38,17 +38,17 @@ module-margin-right =
 
 separator = ·
 
-font-0 = monospace:size=11:style=Bold:antialias=true;2
-font-1 = monospace:size=11:style=Bold:antialias=true;2
+font-0 = monospace:size=9:style=Bold:antialias=true;2
+font-1 = monospace:size=9:style=Bold:antialias=true;2
 
 [bar/right]
 #tray-position = right
 monitor = DisplayPort-0
 #width =  100%
-width = 100%:-58
+width = 100%
 height = 20
-offset-x = 29
-offset-y = 24
+offset-x = 0
+offset-y = 0
 padding-left = 1
 padding-right = 1
 background = ${colors.background}
@@ -60,8 +60,8 @@ bottom = false
 #border-right-size =
 #border-color = #00000000
 
-border-top-size = 9
-border-bottom-size = 6
+border-top-size = 5
+border-bottom-size = 1
 border-color = ${colors.background}
 
 underline-size = 0
@@ -79,8 +79,8 @@ module-margin-right =
 
 separator = ·
 
-font-0 = monospace:size=11:style=Bold:antialias=true;2
-font-1 = monospace:size=11:style=Bold:antialias=true;2
-font-2 = Noto Sans CJK KR:size=9:style=Bold:antialias=true;2
+font-0 = monospace:size=9:style=Bold:antialias=true;2
+font-1 = monospace:size=9:style=Bold:antialias=true;2
+font-2 = Noto Sans CJK KR:size=8:style=Bold:antialias=true;2
 
 include-file = ~/.config/polybar/modules

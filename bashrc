@@ -3,8 +3,8 @@ export OSH=/home/kyiimn/.oh-my-bash
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="agnoster"
-#OSH_THEME="rainbowbrite"
+#OSH_THEME="agnoster"
+OSH_THEME="rainbowbrite"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -123,7 +123,7 @@ alias ll="exa --icons -l"
 alias lla="exa --icons -la"
 
 # bat
-alias cat="bat --theme 'Nord'"
+alias cat="bat --theme 'Solarized (light)'"
 
 # neofetch
 alias nf=neofetch

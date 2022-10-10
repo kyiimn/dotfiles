@@ -38,7 +38,7 @@ Plug 'numToStr/Comment.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 " treesitter
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " statusline
@@ -152,10 +152,10 @@ let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeDirArrows = 1
 
 let g:airline_powerline_fonts = 1
-"let g:airline_theme = 'solarized'
+let g:airline_theme = 'solarized'
 "let g:airline_theme = 'softera'
-let g:airline_theme = 'nord'
-"let g:airline_solarized_bg = 'light'
+"let g:airline_theme = 'nord'
+let g:airline_solarized_bg = 'light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
@@ -184,10 +184,10 @@ let g:neon_transparent = 1
 
 syntax enable
 "set background=light
-" colorscheme solarized8
+colorscheme solarized8
 " colorscheme soft-era
 " colorscheme neon
-colorscheme nord
+" colorscheme nord
 
 hi DiagnosticError ctermfg=Red guifg=Red
 hi DiagnosticHint ctermfg=Green guifg=Green

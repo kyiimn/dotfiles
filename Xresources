@@ -46,7 +46,8 @@
 *.color14: nord7
 *.color15: nord6
 
-Xft.dpi: 120
+!Xft.dpi: 120
+Xft.dpi: 80
 
 Xcursor.theme: Adwaita
 Xcursor.size: 64
