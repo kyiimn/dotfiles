@@ -165,7 +165,7 @@ popup_during_fullscreen smart
 
 # SET GAPS
 #smart_gaps on
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 6
 gaps top 28
 gaps bottom 0
 gaps inner 32
@@ -174,16 +174,16 @@ gaps inner 32
 #set $inactive-bg-color      #2e3440
 #set $urgent-bg-color     		#ff0000
 
-set $bg-color               #a8aeb9
-set $inactive-bg-color      #4c566a
+set $bg-color               #fdf6e3
+set $inactive-bg-color      #586e75
 set $urgent-bg-color        #ff0000
 
 set $text-color          		#000000
 set $inactive-text-color 		#000000
 
-set $focusd-indicator-color		#132430
-set $unfocused-indicator-color	#262c38
-set $urgent-indicator-color		#222834
+set $focused-indicator-color		#cdc6b3
+set $unfocused-indicator-color	#889ea5
+set $urgent-indicator-color		#ff0000
 
 
 #                       border              background         text                 indicator
@@ -214,8 +214,8 @@ for_window [title="(?i)android emulator.*"] floating enable
 exec --no-startup-id xrdb -merge $HOME/.Xresources
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec --no-startup-id ~/.local/bin/DisplaySetting.sh
-#exec --no-startup-id picom
-exec --no-startup-id ~/.config/scripts/grayscale toggle
+exec --no-startup-id picom
+#exec --no-startup-id ~/.config/scripts/grayscale toggle
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id blueman-applet
 exec --no-startup-id kdeconnect-indicator
@@ -234,7 +234,7 @@ exec --no-startup-id ~/.local/bin/i3unityfix.py
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/archlinux.png
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/ZE9ZvL4.png
 #exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/plaid2.png
-#exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
+exec_always --no-startup-id feh --bg-tile ~/Pictures/wallpaper/fw3n9pw7bbf81.png
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/floral-artistic-2_FHD.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/sakura.jpg
 #exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/forest_bw.png

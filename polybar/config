@@ -72,7 +72,7 @@ override-redirect = true
 
 modules-left = i3
 modules-center = title
-modules-right = mpd kernel screenkey grayscale updates pulseaudio cputemp bluetooth datetime
+modules-right = mpd kernel screenkey updates pulseaudio cputemp bluetooth datetime
 
 module-margin-left =
 module-margin-right =

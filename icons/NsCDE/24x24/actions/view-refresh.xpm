@@ -1,0 +1,35 @@
+/* XPM */
+/* This file is a part of the NsCDE - Not so Common Desktop Environment */
+static char *view_refresh_24x24[] = {
+/* columns rows colors chars-per-pixel */
+"24 24 4 1 ",
+"X      s None m None c None",
+".      s bottomShadowColor m black c #4a38441b45a5",
+"o      s topShadowColor m black c #cef4c998caf2",
+"@      s foreground m black c #ffffffffffff",
+/* pixels */
+"ooooooooooooooooooooooo.",
+"oooooooooooooooooooooo..",
+"ooXXXXXXXXXXXXXXXXXXXX..",
+"ooXXXXXXXX@@@@@XXXXXXX..",
+"ooXXXXXX@@@@X@@@@XXXXX..",
+"ooXXXXXX@@@XXX@@@@XXXX..",
+"ooXXXXX@@@@XXX@@@@XXXX..",
+"ooXXXXX@@@XXXXX@@@@XXX..",
+"ooXXXXX@@@XXXXX@@@@XXX..",
+"ooXX@@@@@@@@@XX@@@@XXX..",
+"ooXXX@@@@@@@XXX.XXXXXX..",
+"ooXXXX@@@@@XXX@@@XXXXX..",
+"ooXXXXX@@@XXX@@@@@XXXX..",
+"ooXXXXXX.XXX@@@@@@@XXX..",
+"ooXXX@@@@XX@@@@@@@@@XX..",
+"ooXXX@@@@XXXXX@@@XXXXX..",
+"ooXXX@@@@XXXXX@@@XXXXX..",
+"ooXXXX@@@@XXX@@@@XXXXX..",
+"ooXXXX@@@@XXX@@@XXXXXX..",
+"ooXXXXX@@@@X@@@@XXXXXX..",
+"ooXXXXXXX@@@@@XXXXXXXX..",
+"ooXXXXXXXXXXXXXXXXXXXX..",
+"oo......................",
+"o......................."
+};

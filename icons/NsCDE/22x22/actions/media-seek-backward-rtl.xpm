@@ -1,0 +1,33 @@
+/* XPM */
+/* This file is a part of the NsCDE - Not so Common Desktop Environment */
+static char *_2x22_media_seek_backward_rtl[] = {
+/* columns rows colors chars-per-pixel */
+"22 22 4 1 ",
+"@ s foreground m white c #ffffffffffff",
+". s bottomShadowColor m black c #4a38441b45a5",
+"X s background m black c #91ff85f98900",
+"o s topShadowColor m white c #cef4c998caf2",
+/* pixels */
+"oooooooooooooooooooooo",
+"oXXXXXXXXXXXXXXXXXXXX.",
+"oXXXXXXXXXXXXXXXXXXXX.",
+"oXXXXXXXXXXXXXXXXXXXX.",
+"oXXXXXXXXXXXXXXXXXXXX.",
+"oXXX@XXXXXX@XXXXXXXXX.",
+"oXXX@@XXXXX@@XXXXXXXX.",
+"oXXX@@@XXXX@@@XXXXXXX.",
+"oXXX@@@@XXX@@@@XXXXXX.",
+"oXXX@@@@@XX@@@@@XXXXX.",
+"oXXX@@@@@@X@@@@@@XXXX.",
+"oXXX@@@@@@@@@@@@@@XXX.",
+"oXXX@@@@@@X@@@@@@XXXX.",
+"oXXX@@@@@XX@@@@@XXXXX.",
+"oXXX@@@@XXX@@@@XXXXXX.",
+"oXXX@@@XXXX@@@XXXXXXX.",
+"oXXX@@XXXXX@@XXXXXXXX.",
+"oXXX@XXXXXX@XXXXXXXXX.",
+"oXXXXXXXXXXXXXXXXXXXX.",
+"oXXXXXXXXXXXXXXXXXXXX.",
+"oXXXXXXXXXXXXXXXXXXXX.",
+"o....................."
+};
